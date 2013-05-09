@@ -18,8 +18,7 @@ namespace M17_01
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database11DataSet.Horario_Salas' table. You can move, or remove it, as needed.
-            this.horario_SalasTableAdapter.Fill(this.database11DataSet.Horario_Salas);
+            
             // TODO: This line of code loads data into the 'database11DataSet.Horas' table. You can move, or remove it, as needed.
             this.horasTableAdapter.Fill(this.database11DataSet.Horas);
             // TODO: This line of code loads data into the 'database11DataSet.Semana' table. You can move, or remove it, as needed.
