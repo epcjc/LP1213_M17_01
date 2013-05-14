@@ -22,6 +22,17 @@ namespace M17_01
             frm.ShowDialog();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3();
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         
     }
 }
