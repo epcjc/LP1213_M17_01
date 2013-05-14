@@ -1,0 +1,6 @@
+SELECT        Salas_1.Salas
+FROM            (((Horas INNER JOIN
+                         Horario_Salas ON Horas.ID_Tempo = Horario_Salas.ID_Tempo) INNER JOIN
+                         Salas Salas_1 ON Horario_Salas.ID_Sala = Salas_1.ID) INNER JOIN
+                         Semana ON Horario_Salas.ID_DiaSemana = Semana.ID_Semana)
+WHERE        (Semana.ID_Semana = 1) AND (Horas.ID_Tempo = 5)
