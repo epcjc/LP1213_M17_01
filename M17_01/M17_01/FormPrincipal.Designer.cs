@@ -38,7 +38,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(25, 90);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(162, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Lista Material";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,7 +48,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(25, 42);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.Size = new System.Drawing.Size(162, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "Inserção material";
             this.button2.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@
             // 
             this.button4.Location = new System.Drawing.Point(25, 134);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 23);
+            this.button4.Size = new System.Drawing.Size(162, 23);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Ver salas ocupadas";
+            this.button4.Text = "Ver salas não ocupadas";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
