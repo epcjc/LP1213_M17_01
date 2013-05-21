@@ -16,22 +16,10 @@ namespace M17_01
             InitializeComponent();
         }
 
-
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'database11DataSet.Requisiçoes_material' table. You can move, or remove it, as needed.
-            this.requisiçoes_materialTableAdapter.Fill(this.database11DataSet.Requisiçoes_material);
-
-        }
-
-        private void requisiçoes_materialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void requisiçoes_SalasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.requisiçoes_materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database11DataSet);
-
+           
         }
-
-    }        
+    }
 }
