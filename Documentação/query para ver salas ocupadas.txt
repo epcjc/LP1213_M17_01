@@ -1,1 +1,12 @@
 SELECT Salas, ID FROM Salas WHERE (Salas NOT IN (SELECT Salas_1.Salas FROM (((Horario_Salas INNER JOIN Horas ON Horario_Salas.ID_Tempo = Horas.ID_Tempo) INNER JOIN Salas Salas_1 ON Horario_Salas.ID_Sala = Salas_1.ID) INNER JOIN Semana ON Horario_Salas.ID_DiaSemana = Semana.ID_Semana) WHERE (Semana.ID_Semana = idsemana) AND (Horas.ID_Tempo = idtempo)))
+
+
+SELECT        Salas, ID
+FROM            Salas
+WHERE        (Salas NOT IN
+                             (SELECT        Salas_1.Salas
+                               FROM            (((Horario_Salas INNER JOIN
+                                                         Horas ON Horario_Salas.ID_Tempo = Horas.ID_Tempo) INNER JOIN
+                                                         Salas Salas_1 ON Horario_Salas.ID_Sala = Salas_1.ID) INNER JOIN
+                                                         Semana ON Horario_Salas.ID_DiaSemana = Semana.ID_Semana)
+                               WHERE        (Semana.ID_Semana = idsemana) AND (Horas.ID_Tempo = idtempo)))
