@@ -16,23 +16,10 @@ namespace M17_01
             InitializeComponent();
         }
 
-        //private void requisiçoes_SalasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-           
-        //}
-
-        //private void requisiçoes_materialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-           
-        //}
-
-        private void Form4_Load(object sender, EventArgs e)
+        private void requisiçoes_SalasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database11DataSet.REq_Material1' table. You can move, or remove it, as needed.
-           // this.rEq_Material1TableAdapter.FillRequ_Material(this.database11DataSet.REq_Material1);
-
+            this.Validate();
+           
         }
     }
 }

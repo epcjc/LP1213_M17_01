@@ -9560,24 +9560,20 @@ namespace M17_01.Database11DataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Salas, ID
-FROM            Salas
-WHERE        (Salas NOT IN
-                             (SELECT        Salas_1.Salas
-                               FROM            (((Horario_Salas INNER JOIN
-                                                         Horas ON Horario_Salas.ID_Tempo = Horas.ID_Tempo) INNER JOIN
-                                                         Salas Salas_1 ON Horario_Salas.ID_Sala = Salas_1.ID) INNER JOIN
-                                                         Semana ON Horario_Salas.ID_DiaSemana = Semana.ID_Semana)
-                               WHERE        (Semana.ID_Semana = idsemana) AND (Horas.ID_Tempo = idtempo)))";
+            this._commandCollection[0].CommandText = @"SELECT Salas, ID FROM Salas WHERE (Salas NOT IN (SELECT Salas_1.Salas FROM (((Horario_Salas INNER JOIN Horas ON Horario_Salas.ID_Tempo = Horas.ID_Tempo) INNER JOIN Salas Salas_1 ON Horario_Salas.ID_Sala = Salas_1.ID) INNER JOIN Semana ON Horario_Salas.ID_DiaSemana = Semana.ID_Semana) WHERE (Semana.ID_Semana = idsemana) AND (Horas.ID_Tempo = idtempo)))";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idsemana", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("idtempo", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), null, global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fillbyhora_sala(Database11DataSet.Salas1DataTable dataTable) {
+        public virtual int Fillbyhora_sala(Database11DataSet.Salas1DataTable dataTable, short idsemana, short idtempo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(idsemana));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(idtempo));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -9589,8 +9585,10 @@ WHERE        (Salas NOT IN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database11DataSet.Salas1DataTable GetData() {
+        public virtual Database11DataSet.Salas1DataTable GetData(short idsemana, short idtempo) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((short)(idsemana));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((short)(idtempo));
             Database11DataSet.Salas1DataTable dataTable = new Database11DataSet.Salas1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
