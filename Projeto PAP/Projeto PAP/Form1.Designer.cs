@@ -1,6 +1,6 @@
-﻿namespace M17_01
+﻿namespace Projeto_PAP
 {
-    partial class Form4
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Form4
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 261);
-            this.Name = "Form4";
-            this.Text = "Form4";
-            this.ResumeLayout(false);
-
+            this.Text = "Form1";
         }
 
         #endregion
-
-
     }
 }
+
