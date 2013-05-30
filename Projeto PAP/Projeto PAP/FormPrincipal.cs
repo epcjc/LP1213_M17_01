@@ -21,5 +21,17 @@ namespace Projeto_PAP
             Application.Exit();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.ShowDialog();
+        }
     }
 }

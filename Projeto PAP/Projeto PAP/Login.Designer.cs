@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.loginDataSet = new Projeto_PAP.LoginDataSet();
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loginTableAdapter = new Projeto_PAP.LoginDataSetTableAdapters.loginTableAdapter();
-            this.tableAdapterManager = new Projeto_PAP.LoginDataSetTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.loginDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -66,18 +60,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(201, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nome Utilizador";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(128, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
@@ -95,30 +91,11 @@
             this.textBox2.Size = new System.Drawing.Size(142, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // loginDataSet
-            // 
-            this.loginDataSet.DataSetName = "LoginDataSet";
-            this.loginDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataMember = "login";
-            this.loginBindingSource.DataSource = this.loginDataSet;
-            // 
-            // loginTableAdapter
-            // 
-            this.loginTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.loginTableAdapter = this.loginTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Projeto_PAP.LoginDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(550, 405);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -128,9 +105,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.loginDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
+         //   this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +119,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private LoginDataSet loginDataSet;
-        private System.Windows.Forms.BindingSource loginBindingSource;
-        private LoginDataSetTableAdapters.loginTableAdapter loginTableAdapter;
-        private LoginDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

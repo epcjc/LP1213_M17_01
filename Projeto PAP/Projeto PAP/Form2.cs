@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
@@ -24,26 +24,34 @@ namespace Projeto_PAP
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
-            this.materialTableAdapter.Fill(this.database1DataSet.Material);
             // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
             this.materialTableAdapter.Fill(this.database1DataSet.Material);
 
         }
 
-        private void materialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database1DataSet);
-
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.materialTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text, this.textBox3.Text);
+
+                MessageBox.Show("Inserido com Sucesso");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
+
+       
+        
     }
 }
