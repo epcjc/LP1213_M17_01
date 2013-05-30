@@ -33,5 +33,16 @@ namespace Projeto_PAP.Properties {
                 return ((string)(this["Database1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Login.mdf;Integrated Se" +
+            "curity=True;User Instance=True")]
+        public string LoginConnectionString {
+            get {
+                return ((string)(this["LoginConnectionString"]));
+            }
+        }
     }
 }
