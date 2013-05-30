@@ -33,5 +33,29 @@ namespace Projeto_PAP
             Form2 frm = new Form2();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form3 frm = new Form3();
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 frm = new Form4();
+            frm.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form5 frm = new Form5();
+            frm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form6 frm = new Form6();
+            frm.ShowDialog();
+        }
     }
 }

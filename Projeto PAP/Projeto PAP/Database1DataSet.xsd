@@ -564,6 +564,72 @@ SELECT ID_Turma, Turma FROM Turmas WHERE (ID_Turma = @ID_Turma)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillRequi_Material" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillRequi_Material" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillRequi_Material">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Requisitadores.Nome_Requisitador, RequisiçõesMaterial.Data_Requisicao, RequisiçõesMaterial.Inicio_Requisicao, 
+                      RequisiçõesMaterial.Fim_requisicao, Material.Nome_Material, RequisiçõesMaterial.Hora_Requisitado, RequisiçõesMaterial.Hora_Entregue, 
+                      RequisiçõesMaterial.Observacoes
+FROM         Material INNER JOIN
+                      RequisiçõesMaterial ON Material.ID_Material = RequisiçõesMaterial.ID_Material INNER JOIN
+                      Requisitadores ON RequisiçõesMaterial.ID_Requisitador = Requisitadores.ID_Requisitador</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nome_Requisitador" DataSetColumn="Nome_Requisitador" />
+              <Mapping SourceColumn="Data_Requisicao" DataSetColumn="Data_Requisicao" />
+              <Mapping SourceColumn="Inicio_Requisicao" DataSetColumn="Inicio_Requisicao" />
+              <Mapping SourceColumn="Fim_requisicao" DataSetColumn="Fim_requisicao" />
+              <Mapping SourceColumn="Nome_Material" DataSetColumn="Nome_Material" />
+              <Mapping SourceColumn="Hora_Requisitado" DataSetColumn="Hora_Requisitado" />
+              <Mapping SourceColumn="Hora_Entregue" DataSetColumn="Hora_Entregue" />
+              <Mapping SourceColumn="Observacoes" DataSetColumn="Observacoes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REq.SalasTableAdapter" GeneratorDataComponentClassName="REq_SalasTableAdapter" Name="REq.Salas" UserDataComponentName="REq.SalasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillReq_salas" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="FillReq_salas" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="FillReq_salas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Salas.Sala, Horas.Hora_Inicio, Horas.Hora_Fim, Professores.Nome_Professor, Requisições_Salas.Observacoes
+FROM         Requisições_Salas INNER JOIN
+                      Horas ON Requisições_Salas.ID_Tempo = Horas.ID_Tempo INNER JOIN
+                      Professores ON Requisições_Salas.ID_Professor = Professores.ID_Professor INNER JOIN
+                      Salas ON Requisições_Salas.ID_Sala = Salas.ID_Sala</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Sala" DataSetColumn="Sala" />
+              <Mapping SourceColumn="Hora_Inicio" DataSetColumn="Hora_Inicio" />
+              <Mapping SourceColumn="Hora_Fim" DataSetColumn="Hora_Fim" />
+              <Mapping SourceColumn="Nome_Professor" DataSetColumn="Nome_Professor" />
+              <Mapping SourceColumn="Observacoes" DataSetColumn="Observacoes" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Salas1TableAdapter" GeneratorDataComponentClassName="Salas1TableAdapter" Name="Salas1" UserDataComponentName="Salas1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.Salas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Sala, ID_Sala FROM Salas WHERE (Sala NOT IN (SELECT Sala_1.Salas FROM Horario_Salas INNER JOIN Horas ON Horario_Salas.ID_Tempo = Horas.ID_Tempo INNER JOIN Sala AS Sala_1 ON Horario_Salas.ID_Sala = Sala_1.ID INNER JOIN Semana AS Semana_1 ON Horario_Salas.ID_DiaSemana = Semana_1.ID_Semana WHERE (Semana_1.ID_Semana = idsemana) AND (Horas.ID_Tempo = idtempo)))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -777,6 +843,113 @@ SELECT ID_Turma, Turma FROM Turmas WHERE (ID_Turma = @ID_Turma)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nome_Requisitador" msprop:Generator_ColumnVarNameInTable="columnNome_Requisitador" msprop:Generator_ColumnPropNameInRow="Nome_Requisitador" msprop:Generator_ColumnPropNameInTable="Nome_RequisitadorColumn" msprop:Generator_UserColumnName="Nome_Requisitador">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data_Requisicao" msprop:Generator_ColumnVarNameInTable="columnData_Requisicao" msprop:Generator_ColumnPropNameInRow="Data_Requisicao" msprop:Generator_ColumnPropNameInTable="Data_RequisicaoColumn" msprop:Generator_UserColumnName="Data_Requisicao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Inicio_Requisicao" msprop:Generator_ColumnVarNameInTable="columnInicio_Requisicao" msprop:Generator_ColumnPropNameInRow="Inicio_Requisicao" msprop:Generator_ColumnPropNameInTable="Inicio_RequisicaoColumn" msprop:Generator_UserColumnName="Inicio_Requisicao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fim_requisicao" msprop:Generator_ColumnVarNameInTable="columnFim_requisicao" msprop:Generator_ColumnPropNameInRow="Fim_requisicao" msprop:Generator_ColumnPropNameInTable="Fim_requisicaoColumn" msprop:Generator_UserColumnName="Fim_requisicao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome_Material" msprop:Generator_ColumnVarNameInTable="columnNome_Material" msprop:Generator_ColumnPropNameInRow="Nome_Material" msprop:Generator_ColumnPropNameInTable="Nome_MaterialColumn" msprop:Generator_UserColumnName="Nome_Material">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hora_Requisitado" msprop:Generator_ColumnVarNameInTable="columnHora_Requisitado" msprop:Generator_ColumnPropNameInRow="Hora_Requisitado" msprop:Generator_ColumnPropNameInTable="Hora_RequisitadoColumn" msprop:Generator_UserColumnName="Hora_Requisitado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hora_Entregue" msprop:Generator_ColumnVarNameInTable="columnHora_Entregue" msprop:Generator_ColumnPropNameInRow="Hora_Entregue" msprop:Generator_ColumnPropNameInTable="Hora_EntregueColumn" msprop:Generator_UserColumnName="Hora_Entregue">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacoes" msprop:Generator_ColumnVarNameInTable="columnObservacoes" msprop:Generator_ColumnPropNameInRow="Observacoes" msprop:Generator_ColumnPropNameInTable="ObservacoesColumn" msprop:Generator_UserColumnName="Observacoes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REq.Salas" msprop:Generator_TableClassName="_REq_SalasDataTable" msprop:Generator_TableVarName="_tableREq_Salas" msprop:Generator_TablePropName="_REq_Salas" msprop:Generator_RowDeletingName="_REq_SalasRowDeleting" msprop:Generator_UserTableName="REq.Salas" msprop:Generator_RowChangingName="_REq_SalasRowChanging" msprop:Generator_RowEvHandlerName="_REq_SalasRowChangeEventHandler" msprop:Generator_RowDeletedName="_REq_SalasRowDeleted" msprop:Generator_RowEvArgName="_REq_SalasRowChangeEvent" msprop:Generator_RowChangedName="_REq_SalasRowChanged" msprop:Generator_RowClassName="_REq_SalasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Sala" msprop:Generator_ColumnVarNameInTable="columnSala" msprop:Generator_ColumnPropNameInRow="Sala" msprop:Generator_ColumnPropNameInTable="SalaColumn" msprop:Generator_UserColumnName="Sala">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hora_Inicio" msprop:Generator_ColumnVarNameInTable="columnHora_Inicio" msprop:Generator_ColumnPropNameInRow="Hora_Inicio" msprop:Generator_ColumnPropNameInTable="Hora_InicioColumn" msprop:Generator_UserColumnName="Hora_Inicio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Hora_Fim" msprop:Generator_ColumnVarNameInTable="columnHora_Fim" msprop:Generator_ColumnPropNameInRow="Hora_Fim" msprop:Generator_ColumnPropNameInTable="Hora_FimColumn" msprop:Generator_UserColumnName="Hora_Fim">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome_Professor" msprop:Generator_ColumnVarNameInTable="columnNome_Professor" msprop:Generator_ColumnPropNameInRow="Nome_Professor" msprop:Generator_ColumnPropNameInTable="Nome_ProfessorColumn" msprop:Generator_UserColumnName="Nome_Professor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacoes" msprop:Generator_ColumnVarNameInTable="columnObservacoes" msprop:Generator_ColumnPropNameInRow="Observacoes" msprop:Generator_ColumnPropNameInTable="ObservacoesColumn" msprop:Generator_UserColumnName="Observacoes">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Salas1" msprop:Generator_TableClassName="Salas1DataTable" msprop:Generator_TableVarName="tableSalas1" msprop:Generator_TablePropName="Salas1" msprop:Generator_RowDeletingName="Salas1RowDeleting" msprop:Generator_UserTableName="Salas1" msprop:Generator_RowChangingName="Salas1RowChanging" msprop:Generator_RowEvHandlerName="Salas1RowChangeEventHandler" msprop:Generator_RowDeletedName="Salas1RowDeleted" msprop:Generator_RowEvArgName="Salas1RowChangeEvent" msprop:Generator_RowChangedName="Salas1RowChanged" msprop:Generator_RowClassName="Salas1Row">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -822,15 +995,15 @@ SELECT ID_Turma, Turma FROM Turmas WHERE (ID_Turma = @ID_Turma)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Horario_Salas_Horas" msdata:parent="Horas" msdata:child="Horario_Salas" msdata:parentkey="ID_Tempo" msdata:childkey="ID_Tempo" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_ParentPropName="HorasRow" msprop:Generator_UserRelationName="FK_Horario_Salas_Horas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Horas" msprop:Generator_UserParentTable="Horas" />
-      <msdata:Relationship name="FK_Horario_Salas_Salas" msdata:parent="Salas" msdata:child="Horario_Salas" msdata:parentkey="ID_Sala" msdata:childkey="ID_Sala" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_ParentPropName="SalasRow" msprop:Generator_UserRelationName="FK_Horario_Salas_Salas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Salas" msprop:Generator_UserParentTable="Salas" />
-      <msdata:Relationship name="FK_Horario_Salas_Semana" msdata:parent="Semana" msdata:child="Horario_Salas" msdata:parentkey="ID_Semana" msdata:childkey="ID_Semana" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_ParentPropName="SemanaRow" msprop:Generator_UserRelationName="FK_Horario_Salas_Semana" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Semana" msprop:Generator_UserParentTable="Semana" />
-      <msdata:Relationship name="FK_Horario_Salas_Turmas" msdata:parent="Turmas" msdata:child="Horario_Salas" msdata:parentkey="ID_Turma" msdata:childkey="ID_Turma" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_ParentPropName="TurmasRow" msprop:Generator_UserRelationName="FK_Horario_Salas_Turmas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Turmas" msprop:Generator_UserParentTable="Turmas" />
-      <msdata:Relationship name="FK_Requisições_Salas_Horas" msdata:parent="Horas" msdata:child="Requisições_Salas" msdata:parentkey="ID_Tempo" msdata:childkey="ID_Tempo" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_ParentPropName="HorasRow" msprop:Generator_UserRelationName="FK_Requisições_Salas_Horas" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Horas" msprop:Generator_UserParentTable="Horas" />
-      <msdata:Relationship name="FK_Requisições_Salas_Professores" msdata:parent="Professores" msdata:child="Requisições_Salas" msdata:parentkey="ID_Professor" msdata:childkey="ID_Professor" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_ParentPropName="ProfessoresRow" msprop:Generator_UserRelationName="FK_Requisições_Salas_Professores" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Professores" msprop:Generator_UserParentTable="Professores" />
-      <msdata:Relationship name="FK_Requisições_Salas_Salas" msdata:parent="Salas" msdata:child="Requisições_Salas" msdata:parentkey="ID_Sala" msdata:childkey="ID_Sala" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_ParentPropName="SalasRow" msprop:Generator_UserRelationName="FK_Requisições_Salas_Salas" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Salas" msprop:Generator_UserParentTable="Salas" />
-      <msdata:Relationship name="FK_RequisiçõesMaterial_Material" msdata:parent="Material" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Material" msdata:childkey="ID_Material" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_ParentPropName="MaterialRow" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Material" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Material" msprop:Generator_UserParentTable="Material" />
-      <msdata:Relationship name="FK_RequisiçõesMaterial_Requisitadores" msdata:parent="Requisitadores" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Requisitador" msdata:childkey="ID_Requisitador" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_ParentPropName="RequisitadoresRow" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Requisitadores" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Requisitadores" msprop:Generator_UserParentTable="Requisitadores" />
+      <msdata:Relationship name="FK_Horario_Salas_Horas" msdata:parent="Horas" msdata:child="Horario_Salas" msdata:parentkey="ID_Tempo" msdata:childkey="ID_Tempo" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_UserParentTable="Horas" msprop:Generator_UserRelationName="FK_Horario_Salas_Horas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Horas" msprop:Generator_ParentPropName="HorasRow" />
+      <msdata:Relationship name="FK_Horario_Salas_Salas" msdata:parent="Salas" msdata:child="Horario_Salas" msdata:parentkey="ID_Sala" msdata:childkey="ID_Sala" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_UserParentTable="Salas" msprop:Generator_UserRelationName="FK_Horario_Salas_Salas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Salas" msprop:Generator_ParentPropName="SalasRow" />
+      <msdata:Relationship name="FK_Horario_Salas_Semana" msdata:parent="Semana" msdata:child="Horario_Salas" msdata:parentkey="ID_Semana" msdata:childkey="ID_Semana" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_UserParentTable="Semana" msprop:Generator_UserRelationName="FK_Horario_Salas_Semana" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Semana" msprop:Generator_ParentPropName="SemanaRow" />
+      <msdata:Relationship name="FK_Horario_Salas_Turmas" msdata:parent="Turmas" msdata:child="Horario_Salas" msdata:parentkey="ID_Turma" msdata:childkey="ID_Turma" msprop:Generator_UserChildTable="Horario_Salas" msprop:Generator_ChildPropName="GetHorario_SalasRows" msprop:Generator_UserParentTable="Turmas" msprop:Generator_UserRelationName="FK_Horario_Salas_Turmas" msprop:Generator_RelationVarName="relationFK_Horario_Salas_Turmas" msprop:Generator_ParentPropName="TurmasRow" />
+      <msdata:Relationship name="FK_Requisições_Salas_Horas" msdata:parent="Horas" msdata:child="Requisições_Salas" msdata:parentkey="ID_Tempo" msdata:childkey="ID_Tempo" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_UserParentTable="Horas" msprop:Generator_UserRelationName="FK_Requisições_Salas_Horas" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Horas" msprop:Generator_ParentPropName="HorasRow" />
+      <msdata:Relationship name="FK_Requisições_Salas_Professores" msdata:parent="Professores" msdata:child="Requisições_Salas" msdata:parentkey="ID_Professor" msdata:childkey="ID_Professor" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_UserParentTable="Professores" msprop:Generator_UserRelationName="FK_Requisições_Salas_Professores" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Professores" msprop:Generator_ParentPropName="ProfessoresRow" />
+      <msdata:Relationship name="FK_Requisições_Salas_Salas" msdata:parent="Salas" msdata:child="Requisições_Salas" msdata:parentkey="ID_Sala" msdata:childkey="ID_Sala" msprop:Generator_UserChildTable="Requisições_Salas" msprop:Generator_ChildPropName="GetRequisições_SalasRows" msprop:Generator_UserParentTable="Salas" msprop:Generator_UserRelationName="FK_Requisições_Salas_Salas" msprop:Generator_RelationVarName="relationFK_Requisições_Salas_Salas" msprop:Generator_ParentPropName="SalasRow" />
+      <msdata:Relationship name="FK_RequisiçõesMaterial_Material" msdata:parent="Material" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Material" msdata:childkey="ID_Material" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_UserParentTable="Material" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Material" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Material" msprop:Generator_ParentPropName="MaterialRow" />
+      <msdata:Relationship name="FK_RequisiçõesMaterial_Requisitadores" msdata:parent="Requisitadores" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Requisitador" msdata:childkey="ID_Requisitador" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_UserParentTable="Requisitadores" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Requisitadores" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Requisitadores" msprop:Generator_ParentPropName="RequisitadoresRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
