@@ -32,7 +32,7 @@ namespace Projeto_PAP
         {
             if (logar())
             {
-                FormPrincipal frm = new FormPrincipal();
+                FrmPrincipal frm = new FrmPrincipal();
                 frm.Show();
             }
             else

@@ -79,7 +79,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome Requisitador";
+            this.label1.Text = "Nome Requisitante";
             // 
             // label2
             // 
@@ -88,7 +88,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Contacto Requisitador";
+            this.label2.Text = "Contacto Requisitante";
             // 
             // button1
             // 

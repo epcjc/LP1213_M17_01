@@ -102,11 +102,11 @@
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -140,8 +140,8 @@
     <EmbeddedResource Include="Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
