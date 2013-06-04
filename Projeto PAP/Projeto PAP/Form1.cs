@@ -45,5 +45,16 @@ namespace Projeto_PAP
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.ShowDialog();
+
+        }
+
+      
+
+      
     }
 }
