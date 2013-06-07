@@ -9,17 +9,11 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class Form7 : Form
+    public partial class Form8 : Form
     {
-        public Form7()
+        public Form8()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-           
-            this.Close();
         }
 
         private void salasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -30,8 +24,10 @@ namespace Projeto_PAP
 
         }
 
-        private void Form7_Load(object sender, EventArgs e)
+        private void Form8_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Turmas' table. You can move, or remove it, as needed.
+            this.turmasTableAdapter.Fill(this.database1DataSet.Turmas);
             // TODO: This line of code loads data into the 'database1DataSet.Salas' table. You can move, or remove it, as needed.
             this.salasTableAdapter.Fill(this.database1DataSet.Salas);
 
@@ -39,24 +35,20 @@ namespace Projeto_PAP
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-            try{
-                           
-                this.salasTableAdapter.Insert(this.textBox1.Text);
-
-                MessageBox.Show("Inserido com Sucesso");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            this.Close();
         }
 
-        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            Form7 frm = new Form7();
+            frm.ShowDialog();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form10 frm = new Form10();
+            frm.ShowDialog();
 
         }
     }

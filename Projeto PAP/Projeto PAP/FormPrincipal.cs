@@ -9,51 +9,52 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class FrmPrincipal : Form
+    public partial class FormPrincipal : Form
     {
-        public FrmPrincipal()
+        public FormPrincipal()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Form5 frm = new Form5();
-            frm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            Form8 frm = new Form8();
-            frm.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
             frm.ShowDialog();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.ShowDialog();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
-            Form9 frm = new Form9();
+            Form3 frm = new Form3();
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form4 frm = new Form4();
             frm.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Form6 frm = new Form6();
+            Form5 frm = new Form5();
             frm.ShowDialog();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form4 frm = new Form4();
+            Form6 frm = new Form6();
             frm.ShowDialog();
         }
     }

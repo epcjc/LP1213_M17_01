@@ -9,13 +9,12 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class Form3 : Form
+    public partial class Apagar_Requesitantes : Form
     {
-        public Form3()
+        public Apagar_Requesitantes()
         {
             InitializeComponent();
         }
-
         private void requisitadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -24,34 +23,23 @@ namespace Projeto_PAP
 
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Apagar_Requesitantes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
             this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
 
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
 
-            try
-            {
-
-                this.requisitadoresTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text);
-                MessageBox.Show("Inserido com Sucesso");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
+
+       
     }
 }

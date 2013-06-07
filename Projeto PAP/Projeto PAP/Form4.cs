@@ -57,5 +57,11 @@ namespace Projeto_PAP
             Form3 frm = new Form3();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Apagar_Requesitantes frm = new Apagar_Requesitantes();
+            frm.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Projeto_PAP
 {
-    partial class Form7
+    partial class Form10
     {
         /// <summary>
         /// Required designer variable.
@@ -29,67 +29,67 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
+            this.turmasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.turmasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.TurmasTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmasBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome Sala";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(103, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(50, 122);
+            this.button1.Location = new System.Drawing.Point(26, 109);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Inserir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(214, 122);
+            this.button2.Location = new System.Drawing.Point(151, 109);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 1;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome Turma";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(109, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // database1DataSet
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // salasBindingSource
+            // turmasBindingSource
             // 
-            this.salasBindingSource.DataMember = "Salas";
-            this.salasBindingSource.DataSource = this.database1DataSet;
+            this.turmasBindingSource.DataMember = "Turmas";
+            this.turmasBindingSource.DataSource = this.database1DataSet;
             // 
-            // salasTableAdapter
+            // turmasTableAdapter
             // 
-            this.salasTableAdapter.ClearBeforeFill = true;
+            this.turmasTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -101,26 +101,25 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
-            this.tableAdapterManager.SalasTableAdapter = this.salasTableAdapter;
+            this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
-            this.tableAdapterManager.TurmasTableAdapter = null;
+            this.tableAdapterManager.TurmasTableAdapter = this.turmasTableAdapter;
             this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Form7
+            // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 223);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(358, 191);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form7";
-            this.Text = "Form7";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form7_FormClosing);
-            this.Load += new System.EventHandler(this.Form7_Load);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Name = "Form10";
+            this.Text = "Form10";
+            this.Load += new System.EventHandler(this.Form10_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,13 +127,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
         private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource salasBindingSource;
-        private Database1DataSetTableAdapters.SalasTableAdapter salasTableAdapter;
+        private System.Windows.Forms.BindingSource turmasBindingSource;
+        private Database1DataSetTableAdapters.TurmasTableAdapter turmasTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
