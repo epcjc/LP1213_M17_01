@@ -64,7 +64,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 69);
+            this.textBox1.Location = new System.Drawing.Point(35, 63);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(242, 20);
             this.textBox1.TabIndex = 2;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.HelpButton = true;
             this.helpProvider1.SetHelpString(this, "Insira o nome do requesitante a apagar, caso não seja isso que quer fazer clique " +
-        "em cancelar");
+                    "em cancelar");
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Apagar_Requesitantes";
