@@ -144,6 +144,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PesqNomeReq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqNomeReq.Designer.cs">
+      <DependentUpon>PesqNomeReq.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Apagar_Requesitantes.resx">
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqNomeReq.resx">
+      <DependentUpon>PesqNomeReq.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

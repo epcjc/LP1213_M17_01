@@ -36,7 +36,7 @@ namespace Projeto_PAP
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            //this.requisitadoresTableAdapter.Delete(
 
         }
 
