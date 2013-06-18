@@ -56,5 +56,12 @@ namespace Projeto_PAP
             Form4 frm = new Form4();
             frm.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Professores frm = new Professores();
+            frm.ShowDialog();
+
+        }
     }
 }

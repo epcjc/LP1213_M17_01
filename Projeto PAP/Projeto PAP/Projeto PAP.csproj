@@ -138,6 +138,18 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="InserirHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserirHorario.Designer.cs">
+      <DependentUpon>InserirHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InserirProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserirProf.Designer.cs">
+      <DependentUpon>InserirProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="InserirReq.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,18 @@
     </Compile>
     <Compile Include="PesqNomeReq.Designer.cs">
       <DependentUpon>PesqNomeReq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesqProfessores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqProfessores.Designer.cs">
+      <DependentUpon>PesqProfessores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Professores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Professores.Designer.cs">
+      <DependentUpon>Professores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +218,12 @@
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InserirHorario.resx">
+      <DependentUpon>InserirHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InserirProf.resx">
+      <DependentUpon>InserirProf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InserirReq.resx">
       <DependentUpon>InserirReq.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +232,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PesqNomeReq.resx">
       <DependentUpon>PesqNomeReq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqProfessores.resx">
+      <DependentUpon>PesqProfessores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Professores.resx">
+      <DependentUpon>Professores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
