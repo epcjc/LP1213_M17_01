@@ -33,6 +33,8 @@
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.DataTable1TableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
+            this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
+            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -50,15 +52,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.requisiçõesMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.requisiçõesMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisiçõesMaterialTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisiçõesMaterialBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // database1DataSet
@@ -89,6 +92,14 @@
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // materialTableAdapter
+            // 
+            this.materialTableAdapter.ClearBeforeFill = true;
+            // 
+            // requisitadoresTableAdapter
+            // 
+            this.requisitadoresTableAdapter.ClearBeforeFill = true;
             // 
             // button1
             // 
@@ -230,10 +241,6 @@
             this.requisitadoresBindingSource.DataMember = "Requisitadores";
             this.requisitadoresBindingSource.DataSource = this.database1DataSet;
             // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.requisitadoresBindingSource;
@@ -250,10 +257,6 @@
             this.materialBindingSource.DataMember = "Material";
             this.materialBindingSource.DataSource = this.database1DataSet;
             // 
-            // materialTableAdapter
-            // 
-            this.materialTableAdapter.ClearBeforeFill = true;
-            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.materialBindingSource;
@@ -265,11 +268,20 @@
             this.comboBox2.TabIndex = 36;
             this.comboBox2.ValueMember = "ID_Material";
             // 
+            // requisiçõesMaterialBindingSource
+            // 
+            this.requisiçõesMaterialBindingSource.DataMember = "RequisiçõesMaterial";
+            this.requisiçõesMaterialBindingSource.DataSource = this.database1DataSet;
+            // 
+            // requisiçõesMaterialTableAdapter
+            // 
+            this.requisiçõesMaterialTableAdapter.ClearBeforeFill = true;
+            // 
             // InserirReq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 310);
+            this.ClientSize = new System.Drawing.Size(548, 341);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label8);
@@ -295,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisiçõesMaterialBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +341,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource materialBindingSource;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource requisiçõesMaterialBindingSource;
+        private Database1DataSetTableAdapters.RequisiçõesMaterialTableAdapter requisiçõesMaterialTableAdapter;
     }
 }
