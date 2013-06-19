@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApagarProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApagarProf.Designer.cs">
+      <DependentUpon>ApagarProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apagar_Requesitantes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarMaterial.Designer.cs">
+      <DependentUpon>EliminarMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarReqSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarReqSala.Designer.cs">
+      <DependentUpon>EliminarReqSala.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -156,11 +174,23 @@
     <Compile Include="InserirReq.Designer.cs">
       <DependentUpon>InserirReq.cs</DependentUpon>
     </Compile>
+    <Compile Include="InserirReqSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InserirReqSala.Designer.cs">
+      <DependentUpon>InserirReqSala.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesqMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqMaterial.Designer.cs">
+      <DependentUpon>PesqMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="PesqNomeReq.cs">
       <SubType>Form</SubType>
@@ -182,8 +212,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApagarProf.resx">
+      <DependentUpon>ApagarProf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apagar_Requesitantes.resx">
       <DependentUpon>Apagar_Requesitantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarMaterial.resx">
+      <DependentUpon>EliminarMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarReqSala.resx">
+      <DependentUpon>EliminarReqSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -227,8 +266,14 @@
     <EmbeddedResource Include="InserirReq.resx">
       <DependentUpon>InserirReq.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InserirReqSala.resx">
+      <DependentUpon>InserirReqSala.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqMaterial.resx">
+      <DependentUpon>PesqMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PesqNomeReq.resx">
       <DependentUpon>PesqNomeReq.cs</DependentUpon>

@@ -38,7 +38,7 @@ namespace Projeto_PAP
         {
           try{
 
-            this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.Text), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.Text), this.textBox6.Text, this.textBox7.Text, this.textBox8.Text); 
+            this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.textBox8.Text); 
 
 
 

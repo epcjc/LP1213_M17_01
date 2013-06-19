@@ -31,12 +31,35 @@ namespace Projeto_PAP
         }
         private void button2_Click(object sender, EventArgs e)
         {
+           // ((Form4)this.Parent).requisitadoresDataGridView.Update();
             this.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.requisitadoresTableAdapter.Delete(
+            try{
+                this.requisitadoresTableAdapter.DeleteQuery(Convert.ToInt16(this.comboBox1.SelectedValue));
+                   MessageBox.Show("Eliminado com Sucesso");
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Professor com requisição");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nome_RequisitadorLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
 

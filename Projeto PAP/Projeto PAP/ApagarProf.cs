@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class Professores : Form
+    public partial class ApagarProf : Form
     {
-        public Professores()
+        public ApagarProf()
         {
             InitializeComponent();
         }
@@ -24,39 +24,23 @@ namespace Projeto_PAP
 
         }
 
-        private void Professores_Load(object sender, EventArgs e)
+        private void ApagarProf_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet.Professores' table. You can move, or remove it, as needed.
             this.professoresTableAdapter.Fill(this.database1DataSet.Professores);
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            InserirProf frm = new InserirProf();
-            frm.ShowDialog();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            ApagarProf frm = new ApagarProf();
-            frm.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            PesqProfessores frm = new PesqProfessores();
-            frm.ShowDialog();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try{
+                this.professoresTableAdapter.DeleteProf(Convert.ToInt16(this.comboBox1.SelectedValue));
+               MessageBox.Show("Inserido com Sucesso");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

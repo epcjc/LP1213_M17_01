@@ -53,6 +53,18 @@ namespace Projeto_PAP
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PesqMaterial frm = new PesqMaterial();
+            frm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            EliminarMaterial frm = new EliminarMaterial();
+            frm.ShowDialog();
+        }
+
       
 
       

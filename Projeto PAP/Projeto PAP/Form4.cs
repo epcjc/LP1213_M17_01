@@ -60,8 +60,8 @@ namespace Projeto_PAP
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //Apagar_Requesitantes frm = new Apagar_Requesitantes();
-            //frm.ShowDialog();
+           Apagar_Requesitantes frm = new Apagar_Requesitantes();
+            frm.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -200,7 +200,6 @@
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
         private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView requisitadoresDataGridView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
@@ -210,6 +209,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        public System.Windows.Forms.DataGridView requisitadoresDataGridView;
 
     }
 }
