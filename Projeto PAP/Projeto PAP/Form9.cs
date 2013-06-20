@@ -38,5 +38,23 @@ namespace Projeto_PAP
             InserirHorario frm = new InserirHorario();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            EliminarHorario frm = new EliminarHorario();
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PesqHorario frm = new PesqHorario();
+            frm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AlterarHorario frm = new AlterarHorario();
+            frm.ShowDialog();
+        }
     }
 }

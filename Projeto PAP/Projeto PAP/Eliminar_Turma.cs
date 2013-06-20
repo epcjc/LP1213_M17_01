@@ -9,25 +9,25 @@ using System.Windows.Forms;
 
 namespace Projeto_PAP
 {
-    public partial class EliminarMaterial : Form
+    public partial class Eliminar_Turma : Form
     {
-        public EliminarMaterial()
+        public Eliminar_Turma()
         {
             InitializeComponent();
         }
 
-        private void materialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void turmasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.materialBindingSource.EndEdit();
+            this.turmasBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.database1DataSet);
 
         }
 
-        private void EliminarMaterial_Load(object sender, EventArgs e)
+        private void Eliminar_Turma_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
-            this.materialTableAdapter.Fill(this.database1DataSet.Material);
+            // TODO: This line of code loads data into the 'database1DataSet.Turmas' table. You can move, or remove it, as needed.
+            this.turmasTableAdapter.Fill(this.database1DataSet.Turmas);
 
         }
 
@@ -35,12 +35,13 @@ namespace Projeto_PAP
         {
             try
             {
-                this.materialTableAdapter.DeleteMaterial(Convert.ToInt16(this.comboBox1.SelectedValue));
-                MessageBox.Show("Eliminado com Sucesso");
+                this.turmasTableAdapter.DeleteTurma(Convert.ToInt16(this.comboBox1.SelectedValue));
+                MessageBox.Show("Eliminado com sucesso");
             }
+
             catch (Exception)
             {
-                MessageBox.Show("Material ocupado");
+                MessageBox.Show("Turma inserida em horário");
             }
         }
 

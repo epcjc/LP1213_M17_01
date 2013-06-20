@@ -51,5 +51,29 @@ namespace Projeto_PAP
             frm.ShowDialog();
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            EliminarSala frm = new EliminarSala();
+            frm.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Eliminar_Turma frm = new Eliminar_Turma();
+            frm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            PesqTurma frm = new PesqTurma();
+            frm.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PesqSala frm = new PesqSala();
+            frm.ShowDialog();
+        }
     }
 }

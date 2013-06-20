@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlterarHorario.Designer.cs">
+      <DependentUpon>AlterarHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApagarProf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,17 +84,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EliminarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarHorario.Designer.cs">
+      <DependentUpon>EliminarHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EliminarMaterial.Designer.cs">
       <DependentUpon>EliminarMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarReqSala.cs">
+    <Compile Include="EliminarSala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarReqSala.Designer.cs">
-      <DependentUpon>EliminarReqSala.cs</DependentUpon>
+    <Compile Include="EliminarSala.Designer.cs">
+      <DependentUpon>EliminarSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eliminar_Turma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eliminar_Turma.Designer.cs">
+      <DependentUpon>Eliminar_Turma.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -186,6 +204,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PesqHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqHorario.Designer.cs">
+      <DependentUpon>PesqHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PesqMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +228,24 @@
     <Compile Include="PesqProfessores.Designer.cs">
       <DependentUpon>PesqProfessores.cs</DependentUpon>
     </Compile>
+    <Compile Include="PesqREqSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqREqSalas.Designer.cs">
+      <DependentUpon>PesqREqSalas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesqSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqSala.Designer.cs">
+      <DependentUpon>PesqSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesqTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesqTurma.Designer.cs">
+      <DependentUpon>PesqTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Professores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,17 +254,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlterarHorario.resx">
+      <DependentUpon>AlterarHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApagarProf.resx">
       <DependentUpon>ApagarProf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Apagar_Requesitantes.resx">
       <DependentUpon>Apagar_Requesitantes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarHorario.resx">
+      <DependentUpon>EliminarHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EliminarMaterial.resx">
       <DependentUpon>EliminarMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarReqSala.resx">
-      <DependentUpon>EliminarReqSala.cs</DependentUpon>
+    <EmbeddedResource Include="EliminarSala.resx">
+      <DependentUpon>EliminarSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eliminar_Turma.resx">
+      <DependentUpon>Eliminar_Turma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -272,6 +323,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PesqHorario.resx">
+      <DependentUpon>PesqHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PesqMaterial.resx">
       <DependentUpon>PesqMaterial.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +334,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PesqProfessores.resx">
       <DependentUpon>PesqProfessores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqREqSalas.resx">
+      <DependentUpon>PesqREqSalas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqSala.resx">
+      <DependentUpon>PesqSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesqTurma.resx">
+      <DependentUpon>PesqTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Professores.resx">
       <DependentUpon>Professores.cs</DependentUpon>

@@ -42,5 +42,10 @@ namespace Projeto_PAP
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

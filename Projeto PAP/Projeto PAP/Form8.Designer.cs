@@ -141,6 +141,7 @@
             this.button4.TabIndex = 10;
             this.button4.Text = "Eliminar Sala";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -150,6 +151,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Procurar/Alterar Sala";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -225,6 +227,7 @@
             this.button6.TabIndex = 12;
             this.button6.Text = "Eliminar Turma";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -234,6 +237,7 @@
             this.button7.TabIndex = 13;
             this.button7.Text = "Procurar/Alterar Turma";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // Form8
             // 
