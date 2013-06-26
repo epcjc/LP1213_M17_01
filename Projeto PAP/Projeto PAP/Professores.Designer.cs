@@ -99,6 +99,8 @@
             // 
             // professoresDataGridView
             // 
+            this.professoresDataGridView.AllowUserToAddRows = false;
+            this.professoresDataGridView.AllowUserToDeleteRows = false;
             this.professoresDataGridView.AutoGenerateColumns = false;
             this.professoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.professoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -107,6 +109,7 @@
             this.professoresDataGridView.DataSource = this.professoresBindingSource;
             this.professoresDataGridView.Location = new System.Drawing.Point(13, 77);
             this.professoresDataGridView.Name = "professoresDataGridView";
+            this.professoresDataGridView.ReadOnly = true;
             this.professoresDataGridView.Size = new System.Drawing.Size(697, 160);
             this.professoresDataGridView.TabIndex = 5;
             // 
@@ -123,6 +126,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome_Professor";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome_Professor";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // button3
             // 

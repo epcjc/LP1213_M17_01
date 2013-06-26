@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesqHorario));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.horarioDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +56,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.horarioBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -93,6 +93,13 @@
             this.splitContainer1.SplitterDistance = 97;
             this.splitContainer1.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(62, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(182, 36);
@@ -105,6 +112,8 @@
             // 
             // horarioDataGridView
             // 
+            this.horarioDataGridView.AllowUserToAddRows = false;
+            this.horarioDataGridView.AllowUserToDeleteRows = false;
             this.horarioDataGridView.AutoGenerateColumns = false;
             this.horarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.horarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -286,13 +295,6 @@
             this.horarioBindingNavigatorSaveItem.Name = "horarioBindingNavigatorSaveItem";
             this.horarioBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.horarioBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(62, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
             // 
             // PesqHorario
             // 

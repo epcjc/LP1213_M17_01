@@ -33,34 +33,34 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.database1DataSet = new Projeto_PAP.Database1DataSet();
+            this.requisitadoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.requisitadoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.requisitadoresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.requisitadoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingNavigator)).BeginInit();
             this.requisitadoresBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -101,15 +101,51 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // database1DataSet
+            // requisitadoresDataGridView
             // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.requisitadoresDataGridView.AllowUserToAddRows = false;
+            this.requisitadoresDataGridView.AllowUserToDeleteRows = false;
+            this.requisitadoresDataGridView.AutoGenerateColumns = false;
+            this.requisitadoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.requisitadoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.requisitadoresDataGridView.DataSource = this.requisitadoresBindingSource;
+            this.requisitadoresDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.requisitadoresDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.requisitadoresDataGridView.Name = "requisitadoresDataGridView";
+            this.requisitadoresDataGridView.Size = new System.Drawing.Size(444, 214);
+            this.requisitadoresDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Requisitador";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Requisitante";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome_Requisitador";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Requisitante";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Contacto_Requisitador";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Contacto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // requisitadoresBindingSource
             // 
             this.requisitadoresBindingSource.DataMember = "Requisitadores";
             this.requisitadoresBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // requisitadoresTableAdapter
             // 
@@ -158,6 +194,13 @@
             this.requisitadoresBindingNavigator.TabIndex = 1;
             this.requisitadoresBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -190,16 +233,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -222,7 +258,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // requisitadoresBindingNavigatorSaveItem
@@ -233,40 +269,6 @@
             this.requisitadoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.requisitadoresBindingNavigatorSaveItem.Text = "Save Data";
             this.requisitadoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.requisitadoresBindingNavigatorSaveItem_Click_2);
-            // 
-            // requisitadoresDataGridView
-            // 
-            this.requisitadoresDataGridView.AutoGenerateColumns = false;
-            this.requisitadoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.requisitadoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.requisitadoresDataGridView.DataSource = this.requisitadoresBindingSource;
-            this.requisitadoresDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.requisitadoresDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.requisitadoresDataGridView.Name = "requisitadoresDataGridView";
-            this.requisitadoresDataGridView.Size = new System.Drawing.Size(444, 214);
-            this.requisitadoresDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Requisitador";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Requisitante";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome_Requisitador";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Requisitante";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Contacto_Requisitador";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Contacto";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // PesqNomeReq
             // 
@@ -283,12 +285,12 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingNavigator)).EndInit();
             this.requisitadoresBindingNavigator.ResumeLayout(false);
             this.requisitadoresBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

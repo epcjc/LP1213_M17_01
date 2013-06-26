@@ -103,6 +103,8 @@
             // 
             // materialDataGridView
             // 
+            this.materialDataGridView.AllowUserToAddRows = false;
+            this.materialDataGridView.AllowUserToDeleteRows = false;
             this.materialDataGridView.AutoGenerateColumns = false;
             this.materialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.materialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

@@ -36,20 +36,36 @@ namespace Projeto_PAP
 
         private void button1_Click(object sender, EventArgs e)
         {
-          try{
+            try
+            {
+                this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.textBox8.Text);
 
-            this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.textBox8.Text); 
+                MessageBox.Show("Inserido com Sucesso");
 
+            }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!");
+            }
 
+        }
 
-            MessageBox.Show("Inserido com Sucesso");
-          }
-          catch (Exception ex)
-          {
-             MessageBox.Show(ex.ToString());
-          }
         
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                errorProvider1.SetError(textBox2, "Necessario inserir");
+            }
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBox3.Text == "")
+            {
+                errorProvider2.SetError(textBox3, "Necessario inserir");
+            }
         }
     }
 }
