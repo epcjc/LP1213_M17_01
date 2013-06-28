@@ -67,22 +67,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlterarHorario.cs">
+    <Compile Include="Horário\AlterarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlterarHorario.Designer.cs">
+    <Compile Include="Horário\AlterarHorario.Designer.cs">
       <DependentUpon>AlterarHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="ApagarProf.cs">
+    <Compile Include="Professores\ApagarProf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ApagarProf.Designer.cs">
+    <Compile Include="Professores\ApagarProf.Designer.cs">
       <DependentUpon>ApagarProf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Apagar_Requesitantes.cs">
+    <Compile Include="Requisitantes\Apagar_Requesitantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Apagar_Requesitantes.Designer.cs">
+    <Compile Include="Requisitantes\Apagar_Requesitantes.Designer.cs">
       <DependentUpon>Apagar_Requesitantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
@@ -90,28 +90,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EliminarHorario.cs">
+    <Compile Include="Horário\EliminarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarHorario.Designer.cs">
+    <Compile Include="Horário\EliminarHorario.Designer.cs">
       <DependentUpon>EliminarHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarMaterial.cs">
+    <Compile Include="Material\EliminarMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarMaterial.Designer.cs">
+    <Compile Include="Material\EliminarMaterial.Designer.cs">
       <DependentUpon>EliminarMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarSala.cs">
+    <Compile Include="Salas\EliminarSala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EliminarSala.Designer.cs">
+    <Compile Include="Salas\EliminarSala.Designer.cs">
       <DependentUpon>EliminarSala.cs</DependentUpon>
     </Compile>
-    <Compile Include="Eliminar_Turma.cs">
+    <Compile Include="Turma\Eliminar_Turma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Eliminar_Turma.Designer.cs">
+    <Compile Include="Turma\Eliminar_Turma.Designer.cs">
       <DependentUpon>Eliminar_Turma.cs</DependentUpon>
     </Compile>
     <Compile Include="Material\Form1.cs">
@@ -120,10 +120,10 @@
     <Compile Include="Material\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
+    <Compile Include="Turma\Form10.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form10.Designer.cs">
+    <Compile Include="Turma\Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
     <Compile Include="Material\Form2.cs">
@@ -132,46 +132,46 @@
     <Compile Include="Material\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="Requisitantes\Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
+    <Compile Include="Requisitantes\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="Requisitantes\Form4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
+    <Compile Include="Requisitantes\Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Requisições Material\Form5.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
+    <Compile Include="Requisições Material\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="Requisições Salas\Form6.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
+    <Compile Include="Requisições Salas\Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="Salas\Form7.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
+    <Compile Include="Salas\Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
+    <Compile Include="Salas\Form8.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form8.Designer.cs">
+    <Compile Include="Salas\Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
+    <Compile Include="Horário\Form9.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form9.Designer.cs">
+    <Compile Include="Horário\Form9.Designer.cs">
       <DependentUpon>Form9.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
@@ -180,28 +180,28 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserirHorario.cs">
+    <Compile Include="Horário\InserirHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InserirHorario.Designer.cs">
+    <Compile Include="Horário\InserirHorario.Designer.cs">
       <DependentUpon>InserirHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserirProf.cs">
+    <Compile Include="Professores\InserirProf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InserirProf.Designer.cs">
+    <Compile Include="Professores\InserirProf.Designer.cs">
       <DependentUpon>InserirProf.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserirReq.cs">
+    <Compile Include="Requisições Material\InserirReq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InserirReq.Designer.cs">
+    <Compile Include="Requisições Material\InserirReq.Designer.cs">
       <DependentUpon>InserirReq.cs</DependentUpon>
     </Compile>
-    <Compile Include="InserirReqSala.cs">
+    <Compile Include="Requisições Salas\InserirReqSala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InserirReqSala.Designer.cs">
+    <Compile Include="Requisições Salas\InserirReqSala.Designer.cs">
       <DependentUpon>InserirReqSala.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -210,52 +210,52 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqHorario.cs">
+    <Compile Include="Horário\PesqHorario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqHorario.Designer.cs">
+    <Compile Include="Horário\PesqHorario.Designer.cs">
       <DependentUpon>PesqHorario.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqMaterial.cs">
+    <Compile Include="Material\PesqMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqMaterial.Designer.cs">
+    <Compile Include="Material\PesqMaterial.Designer.cs">
       <DependentUpon>PesqMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqNomeReq.cs">
+    <Compile Include="Requisitantes\PesqNomeReq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqNomeReq.Designer.cs">
+    <Compile Include="Requisitantes\PesqNomeReq.Designer.cs">
       <DependentUpon>PesqNomeReq.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqProfessores.cs">
+    <Compile Include="Professores\PesqProfessores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqProfessores.Designer.cs">
+    <Compile Include="Professores\PesqProfessores.Designer.cs">
       <DependentUpon>PesqProfessores.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqREqSalas.cs">
+    <Compile Include="Requisições Salas\PesqREqSalas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqREqSalas.Designer.cs">
+    <Compile Include="Requisições Salas\PesqREqSalas.Designer.cs">
       <DependentUpon>PesqREqSalas.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqSala.cs">
+    <Compile Include="Salas\PesqSala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqSala.Designer.cs">
+    <Compile Include="Salas\PesqSala.Designer.cs">
       <DependentUpon>PesqSala.cs</DependentUpon>
     </Compile>
-    <Compile Include="PesqTurma.cs">
+    <Compile Include="Turma\PesqTurma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PesqTurma.Designer.cs">
+    <Compile Include="Turma\PesqTurma.Designer.cs">
       <DependentUpon>PesqTurma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Professores.cs">
+    <Compile Include="Professores\Professores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Professores.Designer.cs">
+    <Compile Include="Professores\Professores.Designer.cs">
       <DependentUpon>Professores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -284,97 +284,97 @@
     <Compile Include="Relatórios.Designer.cs">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AlterarHorario.resx">
+    <EmbeddedResource Include="Horário\AlterarHorario.resx">
       <DependentUpon>AlterarHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApagarProf.resx">
+    <EmbeddedResource Include="Professores\ApagarProf.resx">
       <DependentUpon>ApagarProf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Apagar_Requesitantes.resx">
+    <EmbeddedResource Include="Requisitantes\Apagar_Requesitantes.resx">
       <DependentUpon>Apagar_Requesitantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarHorario.resx">
+    <EmbeddedResource Include="Horário\EliminarHorario.resx">
       <DependentUpon>EliminarHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarMaterial.resx">
+    <EmbeddedResource Include="Material\EliminarMaterial.resx">
       <DependentUpon>EliminarMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarSala.resx">
+    <EmbeddedResource Include="Salas\EliminarSala.resx">
       <DependentUpon>EliminarSala.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Eliminar_Turma.resx">
+    <EmbeddedResource Include="Turma\Eliminar_Turma.resx">
       <DependentUpon>Eliminar_Turma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form10.resx">
+    <EmbeddedResource Include="Turma\Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
+    <EmbeddedResource Include="Requisitantes\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
+    <EmbeddedResource Include="Requisitantes\Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
+    <EmbeddedResource Include="Requisições Material\Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
+    <EmbeddedResource Include="Requisições Salas\Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
+    <EmbeddedResource Include="Salas\Form7.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
+    <EmbeddedResource Include="Salas\Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
+    <EmbeddedResource Include="Horário\Form9.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserirHorario.resx">
+    <EmbeddedResource Include="Horário\InserirHorario.resx">
       <DependentUpon>InserirHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserirProf.resx">
+    <EmbeddedResource Include="Professores\InserirProf.resx">
       <DependentUpon>InserirProf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserirReq.resx">
+    <EmbeddedResource Include="Requisições Material\InserirReq.resx">
       <DependentUpon>InserirReq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InserirReqSala.resx">
+    <EmbeddedResource Include="Requisições Salas\InserirReqSala.resx">
       <DependentUpon>InserirReqSala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqHorario.resx">
+    <EmbeddedResource Include="Horário\PesqHorario.resx">
       <DependentUpon>PesqHorario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqMaterial.resx">
+    <EmbeddedResource Include="Material\PesqMaterial.resx">
       <DependentUpon>PesqMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqNomeReq.resx">
+    <EmbeddedResource Include="Requisitantes\PesqNomeReq.resx">
       <DependentUpon>PesqNomeReq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqProfessores.resx">
+    <EmbeddedResource Include="Professores\PesqProfessores.resx">
       <DependentUpon>PesqProfessores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqREqSalas.resx">
+    <EmbeddedResource Include="Requisições Salas\PesqREqSalas.resx">
       <DependentUpon>PesqREqSalas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqSala.resx">
+    <EmbeddedResource Include="Salas\PesqSala.resx">
       <DependentUpon>PesqSala.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PesqTurma.resx">
+    <EmbeddedResource Include="Turma\PesqTurma.resx">
       <DependentUpon>PesqTurma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Professores.resx">
+    <EmbeddedResource Include="Professores\Professores.resx">
       <DependentUpon>Professores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -401,6 +401,9 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <None Include="Ajuda.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="app.config" />
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
@@ -471,6 +474,7 @@
       <DependentUpon>Login.mdf</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

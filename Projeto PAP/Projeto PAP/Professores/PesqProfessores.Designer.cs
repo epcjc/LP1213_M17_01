@@ -1,6 +1,6 @@
 ﻿namespace Projeto_PAP
 {
-    partial class PesqHorario
+    partial class PesqProfessores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,23 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesqHorario));
-            this.database1DataSet = new Projeto_PAP.Database1DataSet();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesqProfessores));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.horarioDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horarioTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.HorarioTableAdapter();
+            this.professoresDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDProfessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProfessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.professoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new Projeto_PAP.Database1DataSet();
+            this.professoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ProfessoresTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
-            this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
-            this.horarioBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.professoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -55,24 +50,19 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            this.professoresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.horarioDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horarioBindingNavigator)).BeginInit();
-            this.horarioBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingNavigator)).BeginInit();
+            this.professoresBindingNavigator.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // splitContainer1
             // 
@@ -89,94 +79,68 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
-            this.splitContainer1.Panel2.Controls.Add(this.horarioDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(561, 272);
-            this.splitContainer1.SplitterDistance = 82;
+            this.splitContainer1.Panel2.Controls.Add(this.professoresDataGridView);
+            this.splitContainer1.Size = new System.Drawing.Size(477, 281);
+            this.splitContainer1.SplitterDistance = 60;
             this.splitContainer1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 38);
+            this.textBox1.Location = new System.Drawing.Point(91, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.textBox1, "escrever nome da sala");
+            this.textBox1.Size = new System.Drawing.Size(134, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(182, 36);
+            this.button1.Location = new System.Drawing.Point(291, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // horarioDataGridView
+            // professoresDataGridView
             // 
-            this.horarioDataGridView.AllowUserToAddRows = false;
-            this.horarioDataGridView.AllowUserToDeleteRows = false;
-            this.horarioDataGridView.AutoGenerateColumns = false;
-            this.horarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.horarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.horarioDataGridView.DataSource = this.horarioBindingSource;
-            this.horarioDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.helpProvider1.SetHelpString(this.horarioDataGridView, "selecionar atraves de duplo clique o que deseja alterar e de seguida clicar no bo" +
-        "tão guardar");
-            this.horarioDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.horarioDataGridView.Name = "horarioDataGridView";
-            this.helpProvider1.SetShowHelp(this.horarioDataGridView, true);
-            this.horarioDataGridView.Size = new System.Drawing.Size(561, 186);
-            this.horarioDataGridView.TabIndex = 0;
+            this.professoresDataGridView.AutoGenerateColumns = false;
+            this.professoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.professoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDProfessorDataGridViewTextBoxColumn,
+            this.nomeProfessorDataGridViewTextBoxColumn});
+            this.professoresDataGridView.DataSource = this.professoresBindingSource;
+            this.professoresDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.professoresDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.professoresDataGridView.Name = "professoresDataGridView";
+            this.professoresDataGridView.Size = new System.Drawing.Size(477, 217);
+            this.professoresDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
+            // iDProfessorDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Hora_Inicio";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Hora_Inicio";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.iDProfessorDataGridViewTextBoxColumn.DataPropertyName = "ID_Professor";
+            this.iDProfessorDataGridViewTextBoxColumn.HeaderText = "Nº Professor";
+            this.iDProfessorDataGridViewTextBoxColumn.Name = "iDProfessorDataGridViewTextBoxColumn";
+            this.iDProfessorDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // nomeProfessorDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora_Fim";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Hora_Fim";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.nomeProfessorDataGridViewTextBoxColumn.DataPropertyName = "Nome_Professor";
+            this.nomeProfessorDataGridViewTextBoxColumn.HeaderText = "Nome_Professor";
+            this.nomeProfessorDataGridViewTextBoxColumn.Name = "nomeProfessorDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // professoresBindingSource
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Dia_Semana";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Dia_Semana";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.professoresBindingSource.DataMember = "Professores";
+            this.professoresBindingSource.DataSource = this.database1DataSet;
             // 
-            // dataGridViewTextBoxColumn4
+            // database1DataSet
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Turma";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Turma";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn5
+            // professoresTableAdapter
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sala";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sala";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // horarioBindingSource
-            // 
-            this.horarioBindingSource.DataMember = "Horario";
-            this.horarioBindingSource.DataSource = this.database1DataSet;
-            // 
-            // salasBindingSource
-            // 
-            this.salasBindingSource.DataMember = "Salas";
-            this.salasBindingSource.DataSource = this.database1DataSet;
-            // 
-            // horarioTableAdapter
-            // 
-            this.horarioTableAdapter.ClearBeforeFill = true;
+            this.professoresTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -184,26 +148,21 @@
             this.tableAdapterManager.Horario_SalasTableAdapter = null;
             this.tableAdapterManager.HorasTableAdapter = null;
             this.tableAdapterManager.MaterialTableAdapter = null;
-            this.tableAdapterManager.ProfessoresTableAdapter = null;
+            this.tableAdapterManager.ProfessoresTableAdapter = this.professoresTableAdapter;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
-            this.tableAdapterManager.SalasTableAdapter = this.salasTableAdapter;
+            this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // salasTableAdapter
+            // professoresBindingNavigator
             // 
-            this.salasTableAdapter.ClearBeforeFill = true;
-            // 
-            // horarioBindingNavigator
-            // 
-            this.horarioBindingNavigator.AddNewItem = null;
-            this.horarioBindingNavigator.BindingSource = this.horarioBindingSource;
-            this.horarioBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.horarioBindingNavigator.DeleteItem = null;
-            this.horarioBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.professoresBindingNavigator.AddNewItem = null;
+            this.professoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.professoresBindingNavigator.DeleteItem = null;
+            this.professoresBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -212,22 +171,23 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.horarioBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.horarioBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.horarioBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.horarioBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.horarioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.horarioBindingNavigator.Name = "horarioBindingNavigator";
-            this.horarioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.horarioBindingNavigator.Size = new System.Drawing.Size(561, 25);
-            this.horarioBindingNavigator.TabIndex = 1;
-            this.horarioBindingNavigator.Text = "bindingNavigator1";
+            this.bindingNavigatorSeparator2,
+            this.professoresBindingNavigatorSaveItem});
+            this.professoresBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.professoresBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.professoresBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.professoresBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.professoresBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.professoresBindingNavigator.Name = "professoresBindingNavigator";
+            this.professoresBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.professoresBindingNavigator.Size = new System.Drawing.Size(477, 25);
+            this.professoresBindingNavigator.TabIndex = 0;
+            this.professoresBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -291,31 +251,49 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // PesqHorario
+            // professoresBindingNavigatorSaveItem
+            // 
+            this.professoresBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.professoresBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("professoresBindingNavigatorSaveItem.Image")));
+            this.professoresBindingNavigatorSaveItem.Name = "professoresBindingNavigatorSaveItem";
+            this.professoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.professoresBindingNavigatorSaveItem.Text = "Save Data";
+            this.professoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.professoresBindingNavigatorSaveItem_Click);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Professor";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Professor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome_Professor";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome_Professor";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // PesqProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 272);
-            this.Controls.Add(this.horarioBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(477, 281);
+            this.Controls.Add(this.professoresBindingNavigator);
             this.Controls.Add(this.splitContainer1);
-            this.HelpButton = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "PesqHorario";
-            this.Text = "PesqHorario";
-            this.Load += new System.EventHandler(this.PesqHorario_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            this.Name = "PesqProfessores";
+            this.Text = "PesqProfessores";
+            this.Load += new System.EventHandler(this.PesqProfessores_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.horarioDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horarioBindingNavigator)).EndInit();
-            this.horarioBindingNavigator.ResumeLayout(false);
-            this.horarioBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingNavigator)).EndInit();
+            this.professoresBindingNavigator.ResumeLayout(false);
+            this.professoresBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,13 +301,15 @@
 
         #endregion
 
-        private Database1DataSet database1DataSet;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.BindingSource horarioBindingSource;
-        private Database1DataSetTableAdapters.HorarioTableAdapter horarioTableAdapter;
+        private System.Windows.Forms.DataGridView professoresDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDProfessorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProfessorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource professoresBindingSource;
+        private Database1DataSet database1DataSet;
+        private Database1DataSetTableAdapters.ProfessoresTableAdapter professoresTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator horarioBindingNavigator;
+        private System.Windows.Forms.BindingNavigator professoresBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -339,17 +319,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView horarioDataGridView;
+        private System.Windows.Forms.ToolStripButton professoresBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private Database1DataSetTableAdapters.SalasTableAdapter salasTableAdapter;
-        private System.Windows.Forms.BindingSource salasBindingSource;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.HelpProvider helpProvider1;
-
+        private System.Windows.Forms.Button button1;
     }
 }

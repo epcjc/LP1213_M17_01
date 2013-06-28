@@ -65,12 +65,14 @@ namespace Projeto_PAP
         {
             PesqMaterial frm = new PesqMaterial();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             EliminarMaterial frm = new EliminarMaterial();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
 
        

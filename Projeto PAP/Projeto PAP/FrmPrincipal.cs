@@ -69,5 +69,13 @@ namespace Projeto_PAP
             Relatórios frm = new Relatórios();
             frm.ShowDialog();
         }
+
+        private void FrmPrincipal_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            Help.ShowHelp(this, "Ajuda.chm");
+        }
+
+       
+       
     }
 }
