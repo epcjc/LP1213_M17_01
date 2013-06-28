@@ -45,7 +45,7 @@ namespace Projeto_PAP
             {
 
                 this.horario_SalasTableAdapter.DeleteHorario(Convert.ToInt16(this.iD_HorarioComboBox.SelectedValue));
-                MessageBox.Show("Eliminado com sucesso");
+                this.Close();
             }
             catch (Exception ex)
             {

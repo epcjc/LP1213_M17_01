@@ -42,7 +42,7 @@ namespace Projeto_PAP
         {
             try{
                 this.salasTableAdapter.DeleteSala(Convert.ToInt16(this.salaComboBox.SelectedValue));
-                MessageBox.Show("Eliminado com Sucesso");
+                this.Close();
             }
             catch (Exception)
             {

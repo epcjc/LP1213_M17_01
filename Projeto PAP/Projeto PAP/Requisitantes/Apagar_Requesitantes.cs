@@ -40,7 +40,7 @@ namespace Projeto_PAP
         {
             try{
                 this.requisitadoresTableAdapter.DeleteQuery(Convert.ToInt16(this.comboBox1.SelectedValue));
-                   MessageBox.Show("Eliminado com Sucesso");
+                this.Close();
             }
             catch (Exception )
             {

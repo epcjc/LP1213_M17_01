@@ -11,6 +11,14 @@ namespace Projeto_PAP
 {
     public partial class Form6 : Form
     {
+        public void atualizarDataGrid()
+        {
+            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+
+            this.rEq_SalasDataGridView.Refresh();
+
+        }
+
         public Form6()
         {
             InitializeComponent();
@@ -59,6 +67,7 @@ namespace Projeto_PAP
         {
             InserirReqSala frm = new InserirReqSala();
             frm.ShowDialog();
+            atualizarDataGrid();
 
         }
     }

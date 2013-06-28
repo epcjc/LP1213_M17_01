@@ -51,13 +51,6 @@ namespace Projeto_PAP
                     this.materialTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text, this.textBox3.Text);
                     this.Close();
                 }
-
-
-                
-                
-                
-
-
             }
             catch (Exception ex)
             {

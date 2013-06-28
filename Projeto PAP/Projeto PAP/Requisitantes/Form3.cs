@@ -43,10 +43,16 @@ namespace Projeto_PAP
 
             try
             {
+                if (textBox1.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Inserir nome");
 
-                this.requisitadoresTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text);
-                MessageBox.Show("Inserido com Sucesso");
-
+                }
+                else
+                {
+                    this.requisitadoresTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text);
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

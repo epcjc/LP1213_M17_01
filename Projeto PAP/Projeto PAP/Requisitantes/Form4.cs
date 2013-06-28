@@ -11,6 +11,15 @@ namespace Projeto_PAP
 {
     public partial class Form4 : Form
     {
+         public void atualizarDataGrid()
+        {
+            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+
+            this.requisitadoresDataGridView.Refresh();
+
+        }
+
+
         public Form4()
         {
             InitializeComponent();
@@ -56,18 +65,24 @@ namespace Projeto_PAP
         {
             Form3 frm = new Form3();
             frm.ShowDialog();
+            atualizarDataGrid();
+        
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
            Apagar_Requesitantes frm = new Apagar_Requesitantes();
             frm.ShowDialog();
+            atualizarDataGrid();
+        
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             PesqNomeReq frm = new PesqNomeReq();
             frm.ShowDialog();
+            atualizarDataGrid();
+        
         }
     }
 }

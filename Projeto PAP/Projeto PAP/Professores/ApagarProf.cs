@@ -35,7 +35,7 @@ namespace Projeto_PAP
         {
             try{
                 this.professoresTableAdapter.DeleteProf(Convert.ToInt16(this.comboBox1.SelectedValue));
-               MessageBox.Show("Inserido com Sucesso");
+                this.Close();
             }
             catch (Exception ex)
             {

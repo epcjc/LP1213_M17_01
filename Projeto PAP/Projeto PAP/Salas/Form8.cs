@@ -11,6 +11,14 @@ namespace Projeto_PAP
 {
     public partial class Form8 : Form
     {
+        public void atualizarDataGrid()
+        {
+            this.salasTableAdapter.Fill(this.database1DataSet.Salas);
+
+            this.salasDataGridView.Refresh();
+
+        }
+
         public Form8()
         {
             InitializeComponent();
@@ -42,13 +50,14 @@ namespace Projeto_PAP
         {
             Form7 frm = new Form7();
             frm.ShowDialog();
-
+            atualizarDataGrid();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             Form10 frm = new Form10();
             frm.ShowDialog();
+            atualizarDataGrid();
 
         }
 
@@ -56,24 +65,27 @@ namespace Projeto_PAP
         {
             EliminarSala frm = new EliminarSala();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Eliminar_Turma frm = new Eliminar_Turma();
-            frm.ShowDialog();
+            frm.ShowDialog(); atualizarDataGrid();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             PesqTurma frm = new PesqTurma();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             PesqSala frm = new PesqSala();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
     }
 }

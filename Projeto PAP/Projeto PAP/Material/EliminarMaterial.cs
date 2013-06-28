@@ -36,7 +36,7 @@ namespace Projeto_PAP
             try
             {
                 this.materialTableAdapter.DeleteMaterial(Convert.ToInt16(this.comboBox1.SelectedValue));
-                MessageBox.Show("Eliminado com Sucesso");
+                this.Close();
             }
             catch (Exception)
             {

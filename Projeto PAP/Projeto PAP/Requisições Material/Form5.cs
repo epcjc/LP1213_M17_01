@@ -11,6 +11,14 @@ namespace Projeto_PAP
 {
     public partial class Form5 : Form
     {
+        public void atualizarDataGrid()
+        {
+            this.dataTable1TableAdapter.FillRequi_Material(this.database1DataSet.DataTable1);
+
+            this.dataTable1DataGridView.Refresh();
+
+        }
+
         public Form5()
         {
             InitializeComponent();
@@ -48,6 +56,7 @@ namespace Projeto_PAP
         {
             InserirReq frm = new InserirReq();
             frm.ShowDialog();
+            atualizarDataGrid();
         }
 
         private void button3_Click(object sender, EventArgs e)

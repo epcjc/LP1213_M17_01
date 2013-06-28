@@ -36,7 +36,7 @@ namespace Projeto_PAP
             try
             {
                 this.turmasTableAdapter.DeleteTurma(Convert.ToInt16(this.comboBox1.SelectedValue));
-                MessageBox.Show("Eliminado com sucesso");
+                this.Close();
             }
 
             catch (Exception)

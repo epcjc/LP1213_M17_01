@@ -23,8 +23,27 @@ namespace Projeto_PAP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.turmasTableAdapter.Insert(this.textBox1.Text);
-            //this.turmasBindingNavigatorSaveItem_Click(this.textBox1.Text,this. InsertKeyMode
+            try
+            {
+                if (textBox1.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("necessário inserir nome");
+                }
+                else
+                {
+
+                    this.turmasTableAdapter.Insert(this.textBox1.Text);
+                    this.Close();
+                }
+
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+                
+
+           
         }
 
         private void turmasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
