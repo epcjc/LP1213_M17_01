@@ -72,6 +72,7 @@ namespace Projeto_PAP
         {
             Eliminar_Turma frm = new Eliminar_Turma();
             frm.ShowDialog(); atualizarDataGrid();
+            atualizarDataGrid();
         }
 
         private void button7_Click(object sender, EventArgs e)

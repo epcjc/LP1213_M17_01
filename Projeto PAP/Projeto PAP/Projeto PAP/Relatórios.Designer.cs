@@ -67,7 +67,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(189, 105);
+            this.button2.Location = new System.Drawing.Point(255, 105);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(134, 23);
             this.button2.TabIndex = 7;
@@ -77,11 +77,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(354, 105);
+            this.button3.Location = new System.Drawing.Point(476, 105);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 23);
             this.button3.TabIndex = 8;
-            this.button3.Text = "requisições salas";
+            this.button3.Text = "Salas";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 208);
+            this.ClientSize = new System.Drawing.Size(716, 208);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
