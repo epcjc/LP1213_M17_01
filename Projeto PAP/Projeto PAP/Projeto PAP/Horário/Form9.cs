@@ -69,5 +69,10 @@ namespace Projeto_PAP
             frm.ShowDialog();
             atualizarDataGrid();
         }
+
+        private void horarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

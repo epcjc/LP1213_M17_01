@@ -70,5 +70,10 @@ namespace Projeto_PAP
             atualizarDataGrid();
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

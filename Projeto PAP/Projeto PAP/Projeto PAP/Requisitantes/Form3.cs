@@ -59,5 +59,10 @@ namespace Projeto_PAP
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

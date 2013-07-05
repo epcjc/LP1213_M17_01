@@ -52,8 +52,10 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.salasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.requisições_SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
@@ -77,6 +79,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Size = new System.Drawing.Size(552, 282);
             this.splitContainer1.SplitterDistance = 68;
             this.splitContainer1.TabIndex = 0;
@@ -260,6 +263,14 @@
             this.requisições_SalasBindingSource.DataMember = "Requisições_Salas";
             this.requisições_SalasBindingSource.DataSource = this.database1DataSet;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 188);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(552, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // PesqREqSalas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +283,8 @@
             this.Load += new System.EventHandler(this.PesqREqSalas_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
@@ -309,5 +322,6 @@
         private System.Windows.Forms.ToolStripButton salasBindingNavigatorSaveItem;
         private Database1DataSetTableAdapters.Requisições_SalasTableAdapter requisições_SalasTableAdapter;
         private System.Windows.Forms.BindingSource requisições_SalasBindingSource;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

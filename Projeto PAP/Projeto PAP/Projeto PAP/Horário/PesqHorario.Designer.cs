@@ -57,6 +57,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -89,9 +90,10 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.horarioDataGridView);
-            this.splitContainer1.Size = new System.Drawing.Size(561, 272);
-            this.splitContainer1.SplitterDistance = 82;
+            this.splitContainer1.Size = new System.Drawing.Size(594, 321);
+            this.splitContainer1.SplitterDistance = 96;
             this.splitContainer1.TabIndex = 0;
             // 
             // textBox1
@@ -127,11 +129,11 @@
             this.horarioDataGridView.DataSource = this.horarioBindingSource;
             this.horarioDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.helpProvider1.SetHelpString(this.horarioDataGridView, "selecionar atraves de duplo clique o que deseja alterar e de seguida clicar no bo" +
-        "tão guardar");
+                    "tão guardar");
             this.horarioDataGridView.Location = new System.Drawing.Point(0, 0);
             this.horarioDataGridView.Name = "horarioDataGridView";
             this.helpProvider1.SetShowHelp(this.horarioDataGridView, true);
-            this.horarioDataGridView.Size = new System.Drawing.Size(561, 186);
+            this.horarioDataGridView.Size = new System.Drawing.Size(594, 221);
             this.horarioDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -220,14 +222,14 @@
             this.horarioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.horarioBindingNavigator.Name = "horarioBindingNavigator";
             this.horarioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.horarioBindingNavigator.Size = new System.Drawing.Size(561, 25);
+            this.horarioBindingNavigator.Size = new System.Drawing.Size(594, 25);
             this.horarioBindingNavigator.TabIndex = 1;
             this.horarioBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -291,11 +293,19 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 199);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // PesqHorario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 272);
+            this.ClientSize = new System.Drawing.Size(594, 321);
             this.Controls.Add(this.horarioBindingNavigator);
             this.Controls.Add(this.splitContainer1);
             this.HelpButton = true;
@@ -308,6 +318,7 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.horarioDataGridView)).EndInit();
@@ -350,6 +361,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
 
     }
 }

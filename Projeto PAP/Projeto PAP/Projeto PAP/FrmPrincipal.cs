@@ -70,7 +70,13 @@ namespace Projeto_PAP
             frm.ShowDialog();
         }
 
-        private void FrmPrincipal_HelpButtonClicked(object sender, CancelEventArgs e)
+        
+        private void FrmPrincipal_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "Ajuda.chm");
         }
