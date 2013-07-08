@@ -81,6 +81,11 @@ namespace Projeto_PAP
             Help.ShowHelp(this, "Ajuda.chm");
         }
 
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
        
        
     }
