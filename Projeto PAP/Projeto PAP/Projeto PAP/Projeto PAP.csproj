@@ -67,6 +67,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database1DataSet.cs">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Material\Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Horário\AlterarHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +296,9 @@
     </Compile>
     <EmbeddedResource Include="Horário\AlterarHorario.resx">
       <DependentUpon>AlterarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Professores\ApagarProf.resx">
       <DependentUpon>ApagarProf.cs</DependentUpon>
