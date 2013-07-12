@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
@@ -69,6 +70,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
             this.tableAdapterManager.Horario_SalasTableAdapter = null;
             this.tableAdapterManager.HorasTableAdapter = null;
             this.tableAdapterManager.MaterialTableAdapter = null;
@@ -182,6 +185,7 @@
             this.ClientSize = new System.Drawing.Size(343, 164);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);

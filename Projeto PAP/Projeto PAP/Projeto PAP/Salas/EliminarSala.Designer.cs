@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label salaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarSala));
             this.label1 = new System.Windows.Forms.Label();
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +88,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
             this.tableAdapterManager.Horario_SalasTableAdapter = null;
             this.tableAdapterManager.HorasTableAdapter = null;
             this.tableAdapterManager.MaterialTableAdapter = null;
@@ -176,6 +179,7 @@
             this.ClientSize = new System.Drawing.Size(290, 233);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarSala";
             this.Text = "EliminarReqSala";
             this.Load += new System.EventHandler(this.EliminarReqSala_Load);

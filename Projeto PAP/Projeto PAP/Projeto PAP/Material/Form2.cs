@@ -26,6 +26,10 @@ namespace Projeto_PAP
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Curso' table. You can move, or remove it, as needed.
+            this.cursoTableAdapter.Fill(this.database1DataSet.Curso);
+            // TODO: This line of code loads data into the 'database1DataSet.Categoria' table. You can move, or remove it, as needed.
+            this.categoriaTableAdapter.Fill(this.database1DataSet.Categoria);
             // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
             this.materialTableAdapter.Fill(this.database1DataSet.Material);
 
@@ -48,7 +52,7 @@ namespace Projeto_PAP
                 else
                 {
 
-                    this.materialTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text, this.textBox3.Text);
+                  this.materialTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text, this.textBox3.Text, Convert.ToInt16(this.comboBox1.SelectedValue), Convert.ToInt16(this.comboBox2.SelectedValue));
                     this.Close();
                 }
             }

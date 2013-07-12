@@ -33,6 +33,7 @@
             System.Windows.Forms.Label iD_TempoLabel;
             System.Windows.Forms.Label iD_ProfessorLabel;
             System.Windows.Forms.Label observacoesLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserirReqSala));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.requisições_SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.requisições_SalasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.Requisições_SalasTableAdapter();
@@ -123,6 +124,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
             this.tableAdapterManager.Horario_SalasTableAdapter = null;
             this.tableAdapterManager.HorasTableAdapter = this.horasTableAdapter;
             this.tableAdapterManager.MaterialTableAdapter = null;
@@ -280,6 +283,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 239);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirReqSala";
             this.Text = "InserirReqSala";
             this.Load += new System.EventHandler(this.InserirReqSala_Load);

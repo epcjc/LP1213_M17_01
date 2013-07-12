@@ -34,6 +34,7 @@
             System.Windows.Forms.Label iD_SemanaLabel;
             System.Windows.Forms.Label iD_TurmaLabel;
             System.Windows.Forms.Label iD_SalaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarHorario));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.horario_SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horario_SalasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.Horario_SalasTableAdapter();
@@ -138,6 +139,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
             this.tableAdapterManager.Horario_SalasTableAdapter = this.horario_SalasTableAdapter;
             this.tableAdapterManager.HorasTableAdapter = this.horasTableAdapter;
             this.tableAdapterManager.MaterialTableAdapter = null;
@@ -323,6 +326,7 @@
             this.ClientSize = new System.Drawing.Size(338, 203);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarHorario";
             this.Text = "EliminarHorario";
             this.Load += new System.EventHandler(this.EliminarHorario_Load);

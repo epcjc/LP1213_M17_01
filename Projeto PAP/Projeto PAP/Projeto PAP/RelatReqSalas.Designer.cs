@@ -30,15 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatReqSalas));
+            this.SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Database1DataSet = new Projeto_PAP.Database1DataSet();
             this.rEqSalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.SalasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rEqSalasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalasBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SalasBindingSource
+            // 
+            this.SalasBindingSource.DataMember = "Salas";
+            this.SalasBindingSource.DataSource = this.Database1DataSet;
             // 
             // Database1DataSet
             // 
@@ -62,11 +68,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(439, 272);
             this.reportViewer1.TabIndex = 0;
             // 
-            // SalasBindingSource
-            // 
-            this.SalasBindingSource.DataMember = "Salas";
-            this.SalasBindingSource.DataSource = this.Database1DataSet;
-            // 
             // SalasTableAdapter
             // 
             this.SalasTableAdapter.ClearBeforeFill = true;
@@ -77,12 +78,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 272);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatReqSalas";
             this.Text = "RelatReqSalas";
             this.Load += new System.EventHandler(this.RelatReqSalas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SalasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rEqSalasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SalasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

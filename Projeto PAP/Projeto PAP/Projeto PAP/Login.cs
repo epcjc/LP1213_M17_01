@@ -32,13 +32,17 @@ namespace Projeto_PAP
         {
             if (logar())
             {
+                
                 FrmPrincipal frm = new FrmPrincipal();
+                this.Hide();
                 frm.Show();
+                
             }
             else
             {
                 MessageBox.Show("Acesso não permitido");
             }
+            
         }
 
         public bool logar()

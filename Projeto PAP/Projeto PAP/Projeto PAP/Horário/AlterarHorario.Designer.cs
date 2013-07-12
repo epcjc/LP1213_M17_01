@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterarHorario));
             System.Windows.Forms.Label iD_TempoLabel;
             System.Windows.Forms.Label iD_SemanaLabel;
             System.Windows.Forms.Label iD_TurmaLabel;
             System.Windows.Forms.Label iD_SalaLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterarHorario));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.horario_SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horario_SalasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.Horario_SalasTableAdapter();
@@ -75,6 +75,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // iD_TempoLabel
+            // 
+            iD_TempoLabel.AutoSize = true;
+            iD_TempoLabel.Location = new System.Drawing.Point(11, 68);
+            iD_TempoLabel.Name = "iD_TempoLabel";
+            iD_TempoLabel.Size = new System.Drawing.Size(57, 13);
+            iD_TempoLabel.TabIndex = 3;
+            iD_TempoLabel.Text = "ID Tempo:";
+            iD_TempoLabel.Click += new System.EventHandler(this.iD_TempoLabel_Click);
+            // 
+            // iD_SemanaLabel
+            // 
+            iD_SemanaLabel.AutoSize = true;
+            iD_SemanaLabel.Location = new System.Drawing.Point(11, 95);
+            iD_SemanaLabel.Name = "iD_SemanaLabel";
+            iD_SemanaLabel.Size = new System.Drawing.Size(63, 13);
+            iD_SemanaLabel.TabIndex = 5;
+            iD_SemanaLabel.Text = "ID Semana:";
+            // 
+            // iD_TurmaLabel
+            // 
+            iD_TurmaLabel.AutoSize = true;
+            iD_TurmaLabel.Location = new System.Drawing.Point(11, 122);
+            iD_TurmaLabel.Name = "iD_TurmaLabel";
+            iD_TurmaLabel.Size = new System.Drawing.Size(54, 13);
+            iD_TurmaLabel.TabIndex = 7;
+            iD_TurmaLabel.Text = "ID Turma:";
+            // 
+            // iD_SalaLabel
+            // 
+            iD_SalaLabel.AutoSize = true;
+            iD_SalaLabel.Location = new System.Drawing.Point(11, 149);
+            iD_SalaLabel.Name = "iD_SalaLabel";
+            iD_SalaLabel.Size = new System.Drawing.Size(45, 13);
+            iD_SalaLabel.TabIndex = 9;
+            iD_SalaLabel.Text = "ID Sala:";
+            // 
             // database1DataSet
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
@@ -92,6 +129,8 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
             this.tableAdapterManager.Horario_SalasTableAdapter = this.horario_SalasTableAdapter;
             this.tableAdapterManager.HorasTableAdapter = this.horasTableAdapter;
             this.tableAdapterManager.MaterialTableAdapter = null;
@@ -244,16 +283,6 @@
             this.salasBindingSource.DataMember = "Salas";
             this.salasBindingSource.DataSource = this.database1DataSet;
             // 
-            // iD_TempoLabel
-            // 
-            iD_TempoLabel.AutoSize = true;
-            iD_TempoLabel.Location = new System.Drawing.Point(11, 68);
-            iD_TempoLabel.Name = "iD_TempoLabel";
-            iD_TempoLabel.Size = new System.Drawing.Size(57, 13);
-            iD_TempoLabel.TabIndex = 3;
-            iD_TempoLabel.Text = "ID Tempo:";
-            iD_TempoLabel.Click += new System.EventHandler(this.iD_TempoLabel_Click);
-            // 
             // iD_TempoComboBox
             // 
             this.iD_TempoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.horario_SalasBindingSource, "ID_Tempo", true));
@@ -262,15 +291,6 @@
             this.iD_TempoComboBox.Name = "iD_TempoComboBox";
             this.iD_TempoComboBox.Size = new System.Drawing.Size(121, 21);
             this.iD_TempoComboBox.TabIndex = 4;
-            // 
-            // iD_SemanaLabel
-            // 
-            iD_SemanaLabel.AutoSize = true;
-            iD_SemanaLabel.Location = new System.Drawing.Point(11, 95);
-            iD_SemanaLabel.Name = "iD_SemanaLabel";
-            iD_SemanaLabel.Size = new System.Drawing.Size(63, 13);
-            iD_SemanaLabel.TabIndex = 5;
-            iD_SemanaLabel.Text = "ID Semana:";
             // 
             // iD_SemanaComboBox
             // 
@@ -281,15 +301,6 @@
             this.iD_SemanaComboBox.Size = new System.Drawing.Size(121, 21);
             this.iD_SemanaComboBox.TabIndex = 6;
             // 
-            // iD_TurmaLabel
-            // 
-            iD_TurmaLabel.AutoSize = true;
-            iD_TurmaLabel.Location = new System.Drawing.Point(11, 122);
-            iD_TurmaLabel.Name = "iD_TurmaLabel";
-            iD_TurmaLabel.Size = new System.Drawing.Size(54, 13);
-            iD_TurmaLabel.TabIndex = 7;
-            iD_TurmaLabel.Text = "ID Turma:";
-            // 
             // iD_TurmaComboBox
             // 
             this.iD_TurmaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.horario_SalasBindingSource, "ID_Turma", true));
@@ -298,15 +309,6 @@
             this.iD_TurmaComboBox.Name = "iD_TurmaComboBox";
             this.iD_TurmaComboBox.Size = new System.Drawing.Size(121, 21);
             this.iD_TurmaComboBox.TabIndex = 8;
-            // 
-            // iD_SalaLabel
-            // 
-            iD_SalaLabel.AutoSize = true;
-            iD_SalaLabel.Location = new System.Drawing.Point(11, 149);
-            iD_SalaLabel.Name = "iD_SalaLabel";
-            iD_SalaLabel.Size = new System.Drawing.Size(45, 13);
-            iD_SalaLabel.TabIndex = 9;
-            iD_SalaLabel.Text = "ID Sala:";
             // 
             // iD_SalaComboBox
             // 
@@ -331,6 +333,7 @@
             this.Controls.Add(iD_SalaLabel);
             this.Controls.Add(this.iD_SalaComboBox);
             this.Controls.Add(this.horario_SalasBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlterarHorario";
             this.Text = "AlterarHorario";
             this.Load += new System.EventHandler(this.AlterarHorario_Load);
