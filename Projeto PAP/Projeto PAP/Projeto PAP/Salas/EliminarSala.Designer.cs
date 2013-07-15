@@ -181,7 +181,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarSala";
-            this.Text = "EliminarReqSala";
+            this.Text = "Eliminar Sala";
             this.Load += new System.EventHandler(this.EliminarReqSala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();

@@ -335,7 +335,7 @@
             this.Controls.Add(this.horario_SalasBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AlterarHorario";
-            this.Text = "AlterarHorario";
+            this.Text = "Alterar Horario";
             this.Load += new System.EventHandler(this.AlterarHorario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horario_SalasBindingSource)).EndInit();

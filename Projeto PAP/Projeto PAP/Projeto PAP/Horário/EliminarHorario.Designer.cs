@@ -328,7 +328,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarHorario";
-            this.Text = "EliminarHorario";
+            this.Text = "Eliminar Horario";
             this.Load += new System.EventHandler(this.EliminarHorario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horario_SalasBindingSource)).EndInit();

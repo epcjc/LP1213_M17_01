@@ -180,7 +180,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EliminarMaterial";
-            this.Text = "EliminarMaterial";
+            this.Text = "Eliminar Material";
             this.Load += new System.EventHandler(this.EliminarMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();

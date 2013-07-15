@@ -291,7 +291,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesqNomeReq";
-            this.Text = "PesqNomeReq";
+            this.Text = "Pesquisar Requisitantes";
             this.Load += new System.EventHandler(this.PesqNomeReq_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

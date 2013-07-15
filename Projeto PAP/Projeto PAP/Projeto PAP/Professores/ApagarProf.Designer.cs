@@ -180,7 +180,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ApagarProf";
-            this.Text = "ApagarProf";
+            this.Text = "Eliminar Professor";
             this.Load += new System.EventHandler(this.ApagarProf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();

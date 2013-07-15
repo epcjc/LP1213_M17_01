@@ -315,7 +315,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PesqHorario";
-            this.Text = "PesqHorario";
+            this.Text = "Pesquisar Horário";
             this.Load += new System.EventHandler(this.PesqHorario_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

@@ -287,7 +287,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirHorario";
-            this.Text = "InserirHorario";
+            this.Text = "Inserir Horario";
             this.Load += new System.EventHandler(this.InserirHorario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horario_SalasBindingSource)).EndInit();

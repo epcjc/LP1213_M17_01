@@ -294,7 +294,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesqProfessores";
-            this.Text = "PesqProfessores";
+            this.Text = "Pesquisar Professores";
             this.Load += new System.EventHandler(this.PesqProfessores_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

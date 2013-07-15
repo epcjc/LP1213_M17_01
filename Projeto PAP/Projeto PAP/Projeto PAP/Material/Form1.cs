@@ -34,8 +34,10 @@ namespace Projeto_PAP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            
             // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
-            this.materialTableAdapter.Fill(this.database1DataSet.Material);
+            //this.materialTableAdapter.Fill(this.database1DataSet.Material);
            
 
         }

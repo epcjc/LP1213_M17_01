@@ -150,7 +150,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(287, 175);
-            this.splitContainer1.SplitterDistance = 114;
+            this.splitContainer1.SplitterDistance = 113;
             this.splitContainer1.TabIndex = 26;
             // 
             // flowLayoutPanel1
@@ -160,7 +160,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(287, 57);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(287, 58);
             this.flowLayoutPanel1.TabIndex = 28;
             // 
             // statusStrip1
@@ -180,7 +180,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Eliminar_Turma";
-            this.Text = "Eliminar_Turma";
+            this.Text = "Eliminar Turma";
             this.Load += new System.EventHandler(this.Eliminar_Turma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmasBindingSource)).EndInit();

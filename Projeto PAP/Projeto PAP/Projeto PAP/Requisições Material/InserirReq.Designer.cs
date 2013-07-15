@@ -373,7 +373,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirReq";
-            this.Text = "InserirReq";
+            this.Text = "Inserir Requisições Material";
             this.Load += new System.EventHandler(this.InserirReq_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();

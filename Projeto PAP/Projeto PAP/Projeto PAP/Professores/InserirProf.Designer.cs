@@ -129,7 +129,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirProf";
-            this.Text = "InserirProf";
+            this.Text = "Inserir Professor";
             this.Load += new System.EventHandler(this.InserirProf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).EndInit();

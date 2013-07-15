@@ -190,7 +190,7 @@
             this.MinimizeBox = false;
             this.Name = "Apagar_Requesitantes";
             this.helpProvider1.SetShowHelp(this, true);
-            this.Text = "Apagar_Requesitantes";
+            this.Text = "Apagar Requesitantes";
             this.Load += new System.EventHandler(this.Apagar_Requesitantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();

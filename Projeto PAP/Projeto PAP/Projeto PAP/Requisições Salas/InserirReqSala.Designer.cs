@@ -285,7 +285,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirReqSala";
-            this.Text = "InserirReqSala";
+            this.Text = "Inserir Requisições Salas";
             this.Load += new System.EventHandler(this.InserirReqSala_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisições_SalasBindingSource)).EndInit();

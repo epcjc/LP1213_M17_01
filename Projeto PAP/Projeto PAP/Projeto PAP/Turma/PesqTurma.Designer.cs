@@ -280,7 +280,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesqTurma";
-            this.Text = "PesqTurma";
+            this.Text = "Pesquisar Turma";
             this.Load += new System.EventHandler(this.PesqTurma_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
