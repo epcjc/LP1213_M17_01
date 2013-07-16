@@ -33,10 +33,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.dataMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.DataMaterialTableAdapter();
+            //this.dataMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.DataMaterialTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.categoriaTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.CategoriaTableAdapter();
-            this.dataMaterialDataGridView = new System.Windows.Forms.DataGridView();
+            //this.dataMaterialDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +46,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMaterialBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMaterialDataGridView)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataMaterialBindingSource)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.dataMaterialDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             // 
             // dataMaterialTableAdapter
             // 
-            this.dataMaterialTableAdapter.ClearBeforeFill = true;
+            //this.dataMaterialTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -94,25 +94,9 @@
             // categoriaTableAdapter
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataMaterialDataGridView
-            // 
-            this.dataMaterialDataGridView.AllowUserToAddRows = false;
-            this.dataMaterialDataGridView.AllowUserToDeleteRows = false;
-            this.dataMaterialDataGridView.AutoGenerateColumns = false;
-            this.dataMaterialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMaterialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataMaterialDataGridView.DataSource = this.dataMaterialBindingSource;
-            this.dataMaterialDataGridView.Location = new System.Drawing.Point(0, 22);
-            this.dataMaterialDataGridView.Name = "dataMaterialDataGridView";
-            this.dataMaterialDataGridView.ReadOnly = true;
-            this.dataMaterialDataGridView.Size = new System.Drawing.Size(678, 220);
-            this.dataMaterialDataGridView.TabIndex = 2;
+          
+       
+           
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -184,15 +168,15 @@
             this.ClientSize = new System.Drawing.Size(885, 496);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dataMaterialDataGridView);
+           // this.Controls.Add(this.dataMaterialDataGridView);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form11";
             this.Text = "Form11";
             this.Load += new System.EventHandler(this.Form11_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMaterialBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMaterialDataGridView)).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)(this.dataMaterialBindingSource)).EndInit();
+          //  ((System.ComponentModel.ISupportInitialize)(this.dataMaterialDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -205,9 +189,9 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource dataMaterialBindingSource;
-        private Database1DataSetTableAdapters.DataMaterialTableAdapter dataMaterialTableAdapter;
+       // private Database1DataSetTableAdapters.DataMaterialTableAdapter dataMaterialTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView dataMaterialDataGridView;
+       // private System.Windows.Forms.DataGridView dataMaterialDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

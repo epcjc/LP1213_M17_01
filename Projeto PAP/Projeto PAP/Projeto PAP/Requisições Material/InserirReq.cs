@@ -25,7 +25,7 @@ namespace Projeto_PAP
             // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
             this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
             // TODO: This line of code loads data into the 'database1DataSet.DataTable1' table. You can move, or remove it, as needed.
-            this.dataTable1TableAdapter.FillRequi_Material(this.database1DataSet.DataTable1);
+            //this.dataTable1TableAdapter.FillRequi_Material(this.database1DataSet.DataTable1);
 
         }
 
@@ -39,7 +39,7 @@ namespace Projeto_PAP
             try
             {
                
-                this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.textBox8.Text);
+                this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.observacoes_Antes_requisicaoTextBox.Text, this.observacoes_apos_requisicaoTextBox.Text, this.estadoTextBox.Text);
 
                 MessageBox.Show("Inserido com Sucesso");
 
@@ -95,10 +95,15 @@ namespace Projeto_PAP
 
         private void textBox8_Validating(object sender, CancelEventArgs e)
         {
-            if (textBox8.Text == "")
+            if (observacoes_Antes_requisicaoTextBox.Text == "")
             {
-                errorProvider1.SetError(textBox8, "Necessario inserir");
+                errorProvider1.SetError(observacoes_Antes_requisicaoTextBox, "Necessario inserir");
             }
+        }
+
+        private void observacoes_apos_requisicaoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         

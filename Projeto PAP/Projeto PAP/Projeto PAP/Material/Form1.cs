@@ -14,8 +14,8 @@ namespace Projeto_PAP
         
         public void atualizarDataGrid()
         {
-            this.materialTableAdapter.Fill(this.database1DataSet.Material);
-            this.materialDataGridView.Refresh();
+            this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
+            this.consultasMaterialDataGridView.Refresh();
             
         }
 
@@ -34,6 +34,8 @@ namespace Projeto_PAP
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.ConsultasMaterial' table. You can move, or remove it, as needed.
+            this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
             
             
             // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.

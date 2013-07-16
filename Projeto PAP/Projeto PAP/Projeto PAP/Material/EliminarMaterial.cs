@@ -26,6 +26,7 @@ namespace Projeto_PAP
 
         private void EliminarMaterial_Load(object sender, EventArgs e)
         {
+           
             // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
             this.materialTableAdapter.Fill(this.database1DataSet.Material);
 
@@ -47,6 +48,14 @@ namespace Projeto_PAP
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void materialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.materialBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.database1DataSet);
+
         }
     }
 }

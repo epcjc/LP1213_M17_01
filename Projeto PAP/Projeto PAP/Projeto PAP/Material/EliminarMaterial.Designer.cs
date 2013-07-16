@@ -33,23 +33,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarMaterial));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
-            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.database1DataSet = new Projeto_PAP.Database1DataSet();
+            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
+            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             nome_RequisitadorLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nome_RequisitadorLabel
@@ -73,24 +73,12 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.materialBindingSource;
-            this.comboBox1.DisplayMember = "Nome_Material";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(111, 46);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.ValueMember = "ID_Material";
-            // 
-            // materialBindingSource
-            // 
-            this.materialBindingSource.DataMember = "Material";
-            this.materialBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
@@ -112,27 +100,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // materialTableAdapter
-            // 
-            this.materialTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.Horario_SalasTableAdapter = null;
-            this.tableAdapterManager.HorasTableAdapter = null;
-            this.tableAdapterManager.MaterialTableAdapter = this.materialTableAdapter;
-            this.tableAdapterManager.ProfessoresTableAdapter = null;
-            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
-            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = null;
-            this.tableAdapterManager.SalasTableAdapter = null;
-            this.tableAdapterManager.SemanaTableAdapter = null;
-            this.tableAdapterManager.TurmasTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,6 +109,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(nome_RequisitadorLabel);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
@@ -172,6 +140,37 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(437, 76);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // materialBindingSource
+            // 
+            this.materialBindingSource.DataMember = "Material";
+            this.materialBindingSource.DataSource = this.database1DataSet;
+            // 
+            // materialTableAdapter
+            // 
+            this.materialTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.Horario_SalasTableAdapter = null;
+            this.tableAdapterManager.HorasTableAdapter = null;
+            this.tableAdapterManager.MaterialTableAdapter = this.materialTableAdapter;
+            this.tableAdapterManager.ProfessoresTableAdapter = null;
+            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
+            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
+            this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.SalasTableAdapter = null;
+            this.tableAdapterManager.SemanaTableAdapter = null;
+            this.tableAdapterManager.TurmasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // EliminarMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,8 +181,6 @@
             this.Name = "EliminarMaterial";
             this.Text = "Eliminar Material";
             this.Load += new System.EventHandler(this.EliminarMaterial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -191,6 +188,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,12 +200,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource materialBindingSource;
         private Database1DataSetTableAdapters.MaterialTableAdapter materialTableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

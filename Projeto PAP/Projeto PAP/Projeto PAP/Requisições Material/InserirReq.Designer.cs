@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label observacoes_Antes_requisicaoLabel;
+            System.Windows.Forms.Label observacoes_apos_requisicaoLabel;
+            System.Windows.Forms.Label estadoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserirReq));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataTable1TableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.DataTable1TableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
             this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
@@ -43,7 +44,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,7 +51,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,8 +63,13 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.observacoes_Antes_requisicaoTextBox = new System.Windows.Forms.TextBox();
+            this.observacoes_apos_requisicaoTextBox = new System.Windows.Forms.TextBox();
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
+            observacoes_Antes_requisicaoLabel = new System.Windows.Forms.Label();
+            observacoes_apos_requisicaoLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisiçõesMaterialBindingSource)).BeginInit();
@@ -82,15 +86,6 @@
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.database1DataSet;
-            // 
-            // dataTable1TableAdapter
-            // 
-            this.dataTable1TableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
@@ -182,16 +177,6 @@
             this.toolTip1.SetToolTip(this.textBox7, "introduza a hora de fim");
             this.textBox7.Validating += new System.ComponentModel.CancelEventHandler(this.textBox7_Validating);
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(125, 197);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(124, 44);
-            this.textBox8.TabIndex = 26;
-            this.toolTip1.SetToolTip(this.textBox8, "faça uma pequena observação");
-            this.textBox8.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8_Validating);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -255,15 +240,6 @@
             this.label7.TabIndex = 33;
             this.label7.Text = "Hora Fim";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 200);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Observações";
-            // 
             // requisitadoresBindingSource
             // 
             this.requisitadoresBindingSource.DataMember = "Requisitadores";
@@ -320,7 +296,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(574, 63);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(574, 77);
             this.flowLayoutPanel1.TabIndex = 37;
             // 
             // splitContainer1
@@ -332,18 +308,23 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.AutoScroll = true;
+            this.splitContainer1.Panel1.Controls.Add(estadoLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.estadoTextBox);
+            this.splitContainer1.Panel1.Controls.Add(observacoes_apos_requisicaoLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.observacoes_apos_requisicaoTextBox);
+            this.splitContainer1.Panel1.Controls.Add(observacoes_Antes_requisicaoLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.observacoes_Antes_requisicaoTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox2);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox2);
             this.splitContainer1.Panel1.Controls.Add(this.textBox3);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.textBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.textBox6);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.textBox7);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox8);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
@@ -352,23 +333,77 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(574, 323);
-            this.splitContainer1.SplitterDistance = 256;
+            this.splitContainer1.Size = new System.Drawing.Size(574, 389);
+            this.splitContainer1.SplitterDistance = 308;
             this.splitContainer1.TabIndex = 38;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 301);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 367);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(574, 22);
             this.statusStrip1.TabIndex = 39;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // observacoes_Antes_requisicaoLabel
+            // 
+            observacoes_Antes_requisicaoLabel.AutoSize = true;
+            observacoes_Antes_requisicaoLabel.Location = new System.Drawing.Point(20, 201);
+            observacoes_Antes_requisicaoLabel.Name = "observacoes_Antes_requisicaoLabel";
+            observacoes_Antes_requisicaoLabel.Size = new System.Drawing.Size(74, 13);
+            observacoes_Antes_requisicaoLabel.TabIndex = 36;
+            observacoes_Antes_requisicaoLabel.Text = "Obs. Pré Req.";
+            // 
+            // observacoes_Antes_requisicaoTextBox
+            // 
+            this.observacoes_Antes_requisicaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Observacoes_Antes_requisicao", true));
+            this.observacoes_Antes_requisicaoTextBox.Location = new System.Drawing.Point(125, 198);
+            this.observacoes_Antes_requisicaoTextBox.Multiline = true;
+            this.observacoes_Antes_requisicaoTextBox.Name = "observacoes_Antes_requisicaoTextBox";
+            this.observacoes_Antes_requisicaoTextBox.Size = new System.Drawing.Size(124, 49);
+            this.observacoes_Antes_requisicaoTextBox.TabIndex = 37;
+            // 
+            // observacoes_apos_requisicaoLabel
+            // 
+            observacoes_apos_requisicaoLabel.AutoSize = true;
+            observacoes_apos_requisicaoLabel.Location = new System.Drawing.Point(20, 256);
+            observacoes_apos_requisicaoLabel.Name = "observacoes_apos_requisicaoLabel";
+            observacoes_apos_requisicaoLabel.Size = new System.Drawing.Size(82, 13);
+            observacoes_apos_requisicaoLabel.TabIndex = 37;
+            observacoes_apos_requisicaoLabel.Text = "Obs. Apos Req.";
+            // 
+            // observacoes_apos_requisicaoTextBox
+            // 
+            this.observacoes_apos_requisicaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Observacoes_apos_requisicao", true));
+            this.observacoes_apos_requisicaoTextBox.Location = new System.Drawing.Point(125, 253);
+            this.observacoes_apos_requisicaoTextBox.Multiline = true;
+            this.observacoes_apos_requisicaoTextBox.Name = "observacoes_apos_requisicaoTextBox";
+            this.observacoes_apos_requisicaoTextBox.Size = new System.Drawing.Size(124, 42);
+            this.observacoes_apos_requisicaoTextBox.TabIndex = 38;
+            this.observacoes_apos_requisicaoTextBox.TextChanged += new System.EventHandler(this.observacoes_apos_requisicaoTextBox_TextChanged);
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(20, 305);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 38;
+            estadoLabel.Text = "Estado:";
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(125, 302);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(124, 20);
+            this.estadoTextBox.TabIndex = 39;
+            // 
             // InserirReq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 323);
+            this.ClientSize = new System.Drawing.Size(574, 389);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -376,7 +411,6 @@
             this.Text = "Inserir Requisições Material";
             this.Load += new System.EventHandler(this.InserirReq_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisiçõesMaterialBindingSource)).EndInit();
@@ -396,8 +430,8 @@
         #endregion
 
         private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource dataTable1BindingSource;
-        private Database1DataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+       // private System.Windows.Forms.BindingSource dataTable1BindingSource;
+      //  private Database1DataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -406,7 +440,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
         private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -415,7 +448,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
         private Database1DataSetTableAdapters.MaterialTableAdapter materialTableAdapter;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -429,5 +461,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox estadoTextBox;
+        private System.Windows.Forms.TextBox observacoes_apos_requisicaoTextBox;
+        private System.Windows.Forms.TextBox observacoes_Antes_requisicaoTextBox;
     }
 }
