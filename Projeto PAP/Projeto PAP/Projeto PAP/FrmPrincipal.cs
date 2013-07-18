@@ -57,12 +57,6 @@ namespace Projeto_PAP
             frm.ShowDialog();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Professores frm = new Professores();
-            frm.ShowDialog();
-
-        }
 
         private void button9_Click(object sender, EventArgs e)
         {
