@@ -41,7 +41,7 @@ namespace Projeto_PAP
                
                 this.requisiçõesMaterialTableAdapter.Insert(Convert.ToInt32(this.comboBox1.SelectedValue), this.textBox2.Text, this.textBox3.Text, this.textBox4.Text, Convert.ToInt32(this.comboBox2.SelectedValue), this.textBox6.Text, this.textBox7.Text, this.observacoes_Antes_requisicaoTextBox.Text, this.observacoes_apos_requisicaoTextBox.Text, this.estadoTextBox.Text);
 
-                MessageBox.Show("Inserido com Sucesso");
+                this.Close();               
 
             }
 

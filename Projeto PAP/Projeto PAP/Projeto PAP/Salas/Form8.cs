@@ -17,6 +17,10 @@ namespace Projeto_PAP
 
             this.salasDataGridView.Refresh();
 
+            this.turmasTableAdapter.Fill(this.database1DataSet.Turmas);
+
+            this.turmasDataGridView.Refresh();
+
         }
 
         public Form8()

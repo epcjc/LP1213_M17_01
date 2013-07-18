@@ -73,6 +73,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.materialBindingSource;
+            this.comboBox1.DisplayMember = "Nome_Material";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(111, 46);
             this.comboBox1.Name = "comboBox1";

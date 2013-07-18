@@ -15,7 +15,7 @@ namespace Projeto_PAP
         {
             this.consultaRequisicaomaterialTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaomaterial);
 
-            this.consultaRequisicaomaterialTableAdapter.Refresh();
+        //    this.consultaRequisicaomaterialTableAdapter
 
         }
 
@@ -24,15 +24,22 @@ namespace Projeto_PAP
             InitializeComponent();
         }
 
-        private void salasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            
+        //private void requisiçõesMaterialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        //{
+        //    this.Validate();
+        //    this.requisiçõesMaterialBindingSource.EndEdit();
+        //    this.tableAdapterManager.UpdateAll(this.database1DataSet);
 
-        }
+        //}
+
+       
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Material' table. You can move, or remove it, as needed.
+            this.materialTableAdapter.Fill(this.database1DataSet.Material);
+            // TODO: This line of code loads data into the 'database1DataSet.RequisiçõesMaterial' table. You can move, or remove it, as needed.
+            this.requisiçõesMaterialTableAdapter.Fill(this.database1DataSet.RequisiçõesMaterial);
             // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaomaterial' table. You can move, or remove it, as needed.
             this.consultaRequisicaomaterialTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaomaterial);
             // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaomaterial' table. You can move, or remove it, as needed.
@@ -66,6 +73,21 @@ namespace Projeto_PAP
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.consultaRequisicaomaterialTableAdapter.FillByMaterial(this.database1DataSet.ConsultaRequisicaomaterial, Convert.ToString(this.comboBox1.SelectedValue));
         }
 
     }

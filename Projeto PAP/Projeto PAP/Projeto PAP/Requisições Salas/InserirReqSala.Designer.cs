@@ -33,6 +33,7 @@
             System.Windows.Forms.Label iD_TempoLabel;
             System.Windows.Forms.Label iD_ProfessorLabel;
             System.Windows.Forms.Label observacoesLabel;
+            System.Windows.Forms.Label estadoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InserirReqSala));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.requisições_SalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,10 +55,12 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
             iD_SalaLabel = new System.Windows.Forms.Label();
             iD_TempoLabel = new System.Windows.Forms.Label();
             iD_ProfessorLabel = new System.Windows.Forms.Label();
             observacoesLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisições_SalasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
@@ -240,7 +243,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 68);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(456, 84);
             this.flowLayoutPanel1.TabIndex = 16;
             // 
             // splitContainer1
@@ -252,6 +255,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(estadoLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.estadoTextBox);
             this.splitContainer1.Panel1.Controls.Add(iD_SalaLabel);
             this.splitContainer1.Panel1.Controls.Add(this.observacoesTextBox);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox3);
@@ -265,23 +270,40 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(456, 239);
-            this.splitContainer1.SplitterDistance = 167;
+            this.splitContainer1.Size = new System.Drawing.Size(456, 292);
+            this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 17;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 46);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 62);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(456, 22);
             this.statusStrip1.TabIndex = 17;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(10, 162);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 13;
+            estadoLabel.Text = "Estado:";
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisições_SalasBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(89, 159);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(146, 20);
+            this.estadoTextBox.TabIndex = 14;
+            // 
             // InserirReqSala
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 239);
+            this.ClientSize = new System.Drawing.Size(456, 292);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InserirReqSala";
@@ -326,5 +348,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.TextBox estadoTextBox;
     }
 }

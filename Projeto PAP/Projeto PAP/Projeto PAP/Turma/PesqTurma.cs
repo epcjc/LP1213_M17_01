@@ -34,6 +34,7 @@ namespace Projeto_PAP
         private void button1_Click(object sender, EventArgs e)
         {
             this.turmasTableAdapter.FillByTurma(this.database1DataSet.Turmas, this.textBox1.Text);
+
         }
     }
 }

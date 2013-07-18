@@ -31,9 +31,14 @@ namespace Projeto_PAP
 
         private void button3_Click(object sender, EventArgs e)
         {
-            RelatReqSalas frm = new RelatReqSalas();
+            RealatorioRequisicaomaterialcs frm = new RealatorioRequisicaomaterialcs ();
             frm.ShowDialog();
            
+        }
+
+        private void Relatórios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

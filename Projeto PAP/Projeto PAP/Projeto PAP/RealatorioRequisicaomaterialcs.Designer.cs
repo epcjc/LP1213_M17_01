@@ -1,6 +1,6 @@
 ﻿namespace Projeto_PAP
 {
-    partial class RelatHorario
+    partial class RealatorioRequisicaomaterialcs
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RelatHorario));
-            this.HorarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ConsultaRequisicaomaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Database1DataSet = new Projeto_PAP.Database1DataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.HorarioTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.HorarioTableAdapter();
+            this.ConsultaRequisicaomaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultaRequisicaomaterialTableAdapter();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.HorarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaRequisicaomaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // HorarioBindingSource
+            // ConsultaRequisicaomaterialBindingSource
             // 
-            this.HorarioBindingSource.DataMember = "Horario";
-            this.HorarioBindingSource.DataSource = this.Database1DataSet;
+            this.ConsultaRequisicaomaterialBindingSource.DataMember = "ConsultaRequisicaomaterial";
+            this.ConsultaRequisicaomaterialBindingSource.DataSource = this.Database1DataSet;
             // 
             // Database1DataSet
             // 
@@ -54,38 +53,37 @@
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.HorarioBindingSource;
+            reportDataSource1.Value = this.ConsultaRequisicaomaterialBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Projeto_PAP.Report2.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Projeto_PAP.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(624, 301);
+            this.reportViewer1.Size = new System.Drawing.Size(292, 272);
             this.reportViewer1.TabIndex = 0;
             // 
-            // HorarioTableAdapter
+            // ConsultaRequisicaomaterialTableAdapter
             // 
-            this.HorarioTableAdapter.ClearBeforeFill = true;
+            this.ConsultaRequisicaomaterialTableAdapter.ClearBeforeFill = true;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 279);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 250);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(624, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(292, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // RelatHorario
+            // RealatorioRequisicaomaterialcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 301);
+            this.ClientSize = new System.Drawing.Size(292, 272);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.reportViewer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RelatHorario";
-            this.Text = "Horário";
-            this.Load += new System.EventHandler(this.RelatHorario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.HorarioBindingSource)).EndInit();
+            this.Name = "RealatorioRequisicaomaterialcs";
+            this.Text = "Requisicao Material";
+            this.Load += new System.EventHandler(this.RealatorioRequisicaomaterialcs_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaRequisicaomaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,9 +93,9 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource HorarioBindingSource;
+        private System.Windows.Forms.BindingSource ConsultaRequisicaomaterialBindingSource;
         private Database1DataSet Database1DataSet;
-        private Database1DataSetTableAdapters.HorarioTableAdapter HorarioTableAdapter;
+        private Database1DataSetTableAdapters.ConsultaRequisicaomaterialTableAdapter ConsultaRequisicaomaterialTableAdapter;
         private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

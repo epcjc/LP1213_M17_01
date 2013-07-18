@@ -21,7 +21,7 @@ namespace Projeto_PAP
             // TODO: This line of code loads data into the 'database1DataSet.Categoria' table. You can move, or remove it, as needed.
             this.categoriaTableAdapter.Fill(this.database1DataSet.Categoria);
             // TODO: This line of code loads data into the 'database1DataSet.DataMaterial' table. You can move, or remove it, as needed.
-            this.dataMaterialTableAdapter.Fill(this.database1DataSet.DataMaterial);
+           // this.dataMaterialTableAdapter.Fill(this.database1DataSet.DataMaterial);
 
 
 

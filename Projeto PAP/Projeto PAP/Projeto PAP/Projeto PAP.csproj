@@ -83,11 +83,23 @@
     <Compile Include="Horário\AlterarHorario.Designer.cs">
       <DependentUpon>AlterarHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="PesquisarMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesquisarMaterial.Designer.cs">
+      <DependentUpon>PesquisarMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Professores\ApagarProf.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Professores\ApagarProf.Designer.cs">
       <DependentUpon>ApagarProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RealatorioRequisicaomaterialcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RealatorioRequisicaomaterialcs.Designer.cs">
+      <DependentUpon>RealatorioRequisicaomaterialcs.cs</DependentUpon>
     </Compile>
     <Compile Include="Requisitantes\Apagar_Requesitantes.cs">
       <SubType>Form</SubType>
@@ -282,12 +294,6 @@
     <Compile Include="RelatMaterial.Designer.cs">
       <DependentUpon>RelatMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelatReqSalas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RelatReqSalas.Designer.cs">
-      <DependentUpon>RelatReqSalas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Relatórios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,9 +306,17 @@
     <EmbeddedResource Include="Material\Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PesquisarMaterial.resx">
+      <DependentUpon>PesquisarMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Professores\ApagarProf.resx">
       <DependentUpon>ApagarProf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RealatorioRequisicaomaterialcs.resx">
+      <DependentUpon>RealatorioRequisicaomaterialcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Requisitantes\Apagar_Requesitantes.resx">
       <DependentUpon>Apagar_Requesitantes.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,15 +419,10 @@
     <EmbeddedResource Include="RelatMaterial.resx">
       <DependentUpon>RelatMaterial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RelatReqSalas.resx">
-      <DependentUpon>RelatReqSalas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Relatórios.resx">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
-    <EmbeddedResource Include="Report3.rdlc" />
     <None Include="Ajuda.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

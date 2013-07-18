@@ -26,6 +26,8 @@ namespace Projeto_PAP
 
         private void Form9_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Salas' table. You can move, or remove it, as needed.
+            this.salasTableAdapter.Fill(this.database1DataSet.Salas);
             // TODO: This line of code loads data into the 'database1DataSet.Horario' table. You can move, or remove it, as needed.
             this.horarioTableAdapter.Fill(this.database1DataSet.Horario);
 
@@ -73,6 +75,11 @@ namespace Projeto_PAP
         private void horarioDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.horarioTableAdapter.FillByPeSALA(this.database1DataSet.Horario, Convert.ToString(this.comboBox1.SelectedValue));
         }
     }
 }

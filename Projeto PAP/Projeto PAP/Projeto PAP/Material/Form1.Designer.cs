@@ -42,16 +42,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.consultasMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultasMaterialTableAdapter();
             this.consultasMaterialDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consultasMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultasMaterialTableAdapter();
+            this.cursoTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.CursoTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -62,9 +66,10 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialBindingSource
@@ -199,35 +204,6 @@
             this.splitContainer2.SplitterDistance = 262;
             this.splitContainer2.TabIndex = 2;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 51);
-            this.flowLayoutPanel1.TabIndex = 7;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 317);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(811, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // consultasMaterialBindingSource
-            // 
-            this.consultasMaterialBindingSource.DataMember = "ConsultasMaterial";
-            this.consultasMaterialBindingSource.DataSource = this.database1DataSet;
-            // 
-            // consultasMaterialTableAdapter
-            // 
-            this.consultasMaterialTableAdapter.ClearBeforeFill = true;
-            // 
             // consultasMaterialDataGridView
             // 
             this.consultasMaterialDataGridView.AutoGenerateColumns = false;
@@ -239,7 +215,6 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.consultasMaterialDataGridView.DataSource = this.consultasMaterialBindingSource;
-            this.consultasMaterialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consultasMaterialDataGridView.Location = new System.Drawing.Point(0, 0);
             this.consultasMaterialDataGridView.Name = "consultasMaterialDataGridView";
             this.consultasMaterialDataGridView.Size = new System.Drawing.Size(811, 262);
@@ -275,6 +250,67 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "categoria";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // consultasMaterialBindingSource
+            // 
+            this.consultasMaterialBindingSource.DataMember = "ConsultasMaterial";
+            this.consultasMaterialBindingSource.DataSource = this.database1DataSet;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.button2);
+            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 51);
+            this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(662, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Pesquisar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 317);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(811, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.database1DataSet;
+            // 
+            // consultasMaterialTableAdapter
+            // 
+            this.consultasMaterialTableAdapter.ClearBeforeFill = true;
+            // 
+            // cursoTableAdapter
+            // 
+            this.cursoTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.cursoBindingSource;
+            this.comboBox1.DisplayMember = "Curso";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(535, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.ValueMember = "Curso";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,10 +333,11 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,6 +366,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource cursoBindingSource;
+        private Database1DataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
 
     }
 }

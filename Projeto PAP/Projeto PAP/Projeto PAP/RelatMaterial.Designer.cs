@@ -35,6 +35,7 @@
             this.Database1DataSet = new Projeto_PAP.Database1DataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.MaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).BeginInit();
             this.SuspendLayout();
@@ -65,19 +66,29 @@
             // 
             this.MaterialTableAdapter.ClearBeforeFill = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 302);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(560, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // RelatMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 324);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RelatMaterial";
-            this.Text = "RelatMaterial";
+            this.Text = "Material";
             this.Load += new System.EventHandler(this.RelatMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Database1DataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -87,5 +98,6 @@
         private System.Windows.Forms.BindingSource MaterialBindingSource;
         private Database1DataSet Database1DataSet;
         private Database1DataSetTableAdapters.MaterialTableAdapter MaterialTableAdapter;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }

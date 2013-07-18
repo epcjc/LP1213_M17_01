@@ -15,6 +15,7 @@ namespace Projeto_PAP
         public void atualizarDataGrid()
         {
             this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
+
             this.consultasMaterialDataGridView.Refresh();
             
         }
@@ -24,16 +25,12 @@ namespace Projeto_PAP
             InitializeComponent();
         }
 
-        private void materialBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database1DataSet);
-
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Curso' table. You can move, or remove it, as needed.
+            this.cursoTableAdapter.Fill(this.database1DataSet.Curso);
             // TODO: This line of code loads data into the 'database1DataSet.ConsultasMaterial' table. You can move, or remove it, as needed.
             this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
             
@@ -44,13 +41,7 @@ namespace Projeto_PAP
 
         }
 
-        private void materialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.materialBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.database1DataSet);
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -80,6 +71,17 @@ namespace Projeto_PAP
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.consultasMaterialTableAdapter.FillByPesqCurso(this.database1DataSet.ConsultasMaterial, Convert.ToString(this.comboBox1.SelectedValue));
+
+       }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

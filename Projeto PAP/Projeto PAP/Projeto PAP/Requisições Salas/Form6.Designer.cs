@@ -31,15 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.rEq_SalasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.REq_SalasTableAdapter();
-            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
-            this.rEq_SalasDataGridView = new System.Windows.Forms.DataGridView();
-            this.salaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaInicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horaFimDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeProfessorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rEqSalasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -49,9 +40,23 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.consultaRequisicaosalaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consultaRequisicaosalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consultaRequisicaosalaTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultaRequisicaosalaTableAdapter();
+            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
+            this.button5 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+            this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEq_SalasDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEqSalasBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,87 +66,16 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // database1DataSet
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rEq_SalasTableAdapter
-            // 
-            this.rEq_SalasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.Horario_SalasTableAdapter = null;
-            this.tableAdapterManager.HorasTableAdapter = null;
-            this.tableAdapterManager.MaterialTableAdapter = null;
-            this.tableAdapterManager.ProfessoresTableAdapter = null;
-            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
-            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = null;
-            this.tableAdapterManager.SalasTableAdapter = null;
-            this.tableAdapterManager.SemanaTableAdapter = null;
-            this.tableAdapterManager.TurmasTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // rEq_SalasDataGridView
-            // 
-            this.rEq_SalasDataGridView.AutoGenerateColumns = false;
-            this.rEq_SalasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rEq_SalasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.salaDataGridViewTextBoxColumn,
-            this.horaInicioDataGridViewTextBoxColumn,
-            this.horaFimDataGridViewTextBoxColumn,
-            this.nomeProfessorDataGridViewTextBoxColumn,
-            this.observacoesDataGridViewTextBoxColumn});
-            this.rEq_SalasDataGridView.DataSource = this.rEqSalasBindingSource;
-            this.rEq_SalasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rEq_SalasDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.rEq_SalasDataGridView.Name = "rEq_SalasDataGridView";
-            this.rEq_SalasDataGridView.Size = new System.Drawing.Size(730, 273);
-            this.rEq_SalasDataGridView.TabIndex = 1;
-            this.rEq_SalasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.rEq_SalasDataGridView_CellContentClick);
-            // 
-            // salaDataGridViewTextBoxColumn
-            // 
-            this.salaDataGridViewTextBoxColumn.DataPropertyName = "Sala";
-            this.salaDataGridViewTextBoxColumn.HeaderText = "Sala";
-            this.salaDataGridViewTextBoxColumn.Name = "salaDataGridViewTextBoxColumn";
-            // 
-            // horaInicioDataGridViewTextBoxColumn
-            // 
-            this.horaInicioDataGridViewTextBoxColumn.DataPropertyName = "Hora_Inicio";
-            this.horaInicioDataGridViewTextBoxColumn.HeaderText = "Hora_Inicio";
-            this.horaInicioDataGridViewTextBoxColumn.Name = "horaInicioDataGridViewTextBoxColumn";
-            // 
-            // horaFimDataGridViewTextBoxColumn
-            // 
-            this.horaFimDataGridViewTextBoxColumn.DataPropertyName = "Hora_Fim";
-            this.horaFimDataGridViewTextBoxColumn.HeaderText = "Hora_Fim";
-            this.horaFimDataGridViewTextBoxColumn.Name = "horaFimDataGridViewTextBoxColumn";
-            // 
-            // nomeProfessorDataGridViewTextBoxColumn
-            // 
-            this.nomeProfessorDataGridViewTextBoxColumn.DataPropertyName = "Nome_Professor";
-            this.nomeProfessorDataGridViewTextBoxColumn.HeaderText = "Nome_Professor";
-            this.nomeProfessorDataGridViewTextBoxColumn.Name = "nomeProfessorDataGridViewTextBoxColumn";
-            // 
-            // observacoesDataGridViewTextBoxColumn
-            // 
-            this.observacoesDataGridViewTextBoxColumn.DataPropertyName = "Observacoes";
-            this.observacoesDataGridViewTextBoxColumn.HeaderText = "Observacoes";
-            this.observacoesDataGridViewTextBoxColumn.Name = "observacoesDataGridViewTextBoxColumn";
-            // 
-            // rEqSalasBindingSource
-            // 
-            this.rEqSalasBindingSource.DataMember = "REq.Salas";
-            this.rEqSalasBindingSource.DataSource = this.database1DataSet;
             // 
             // label1
             // 
@@ -157,7 +91,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(136, 3);
+            this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 23);
             this.button2.TabIndex = 8;
@@ -176,16 +110,17 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(402, 3);
+            this.button3.Location = new System.Drawing.Point(136, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(127, 23);
             this.button3.TabIndex = 10;
             this.button3.Text = "Procurar/Alterar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(402, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 23);
             this.button1.TabIndex = 11;
@@ -195,10 +130,12 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
             this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.button4);
+            this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.button5);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -240,7 +177,8 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.rEq_SalasDataGridView);
+            this.splitContainer2.Panel1.AutoScroll = true;
+            this.splitContainer2.Panel1.Controls.Add(this.consultaRequisicaosalaDataGridView);
             // 
             // splitContainer2.Panel2
             // 
@@ -248,6 +186,126 @@
             this.splitContainer2.Size = new System.Drawing.Size(730, 330);
             this.splitContainer2.SplitterDistance = 273;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // consultaRequisicaosalaDataGridView
+            // 
+            this.consultaRequisicaosalaDataGridView.AutoGenerateColumns = false;
+            this.consultaRequisicaosalaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consultaRequisicaosalaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.consultaRequisicaosalaDataGridView.DataSource = this.consultaRequisicaosalaBindingSource;
+            this.consultaRequisicaosalaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consultaRequisicaosalaDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.consultaRequisicaosalaDataGridView.Name = "consultaRequisicaosalaDataGridView";
+            this.consultaRequisicaosalaDataGridView.Size = new System.Drawing.Size(730, 273);
+            this.consultaRequisicaosalaDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sala";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Sala";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora_Inicio";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Hora Inicio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Hora_Fim";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Hora Fim";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Nome_Professor";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Professor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Observacoes";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Observações";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // consultaRequisicaosalaBindingSource
+            // 
+            this.consultaRequisicaosalaBindingSource.DataMember = "ConsultaRequisicaosala";
+            this.consultaRequisicaosalaBindingSource.DataSource = this.database1DataSet;
+            // 
+            // consultaRequisicaosalaTableAdapter
+            // 
+            this.consultaRequisicaosalaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.Horario_SalasTableAdapter = null;
+            this.tableAdapterManager.HorasTableAdapter = null;
+            this.tableAdapterManager.MaterialTableAdapter = null;
+            this.tableAdapterManager.ProfessoresTableAdapter = null;
+            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
+            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
+            this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.SalasTableAdapter = null;
+            this.tableAdapterManager.SemanaTableAdapter = null;
+            this.tableAdapterManager.TurmasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 32);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Pesquisar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.salasBindingSource;
+            this.comboBox1.DisplayMember = "Sala";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(535, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.ValueMember = "Sala";
+            // 
+            // requisitadoresBindingSource
+            // 
+            this.requisitadoresBindingSource.DataMember = "Requisitadores";
+            this.requisitadoresBindingSource.DataSource = this.database1DataSet;
+            // 
+            // requisitadoresTableAdapter
+            // 
+            this.requisitadoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // salasBindingSource
+            // 
+            this.salasBindingSource.DataMember = "Salas";
+            this.salasBindingSource.DataSource = this.database1DataSet;
+            // 
+            // salasTableAdapter
+            // 
+            this.salasTableAdapter.ClearBeforeFill = true;
             // 
             // Form6
             // 
@@ -261,8 +319,6 @@
             this.Text = "Requisições Salas";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEq_SalasDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rEqSalasBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -272,6 +328,10 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,15 +340,6 @@
         #endregion
 
         private Database1DataSet database1DataSet;
-        private Database1DataSetTableAdapters.REq_SalasTableAdapter rEq_SalasTableAdapter;
-        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView rEq_SalasDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaInicioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horaFimDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProfessorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacoesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource rEqSalasBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
@@ -298,6 +349,22 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.BindingSource consultaRequisicaosalaBindingSource;
+        private Database1DataSetTableAdapters.ConsultaRequisicaosalaTableAdapter consultaRequisicaosalaTableAdapter;
+        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView consultaRequisicaosalaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource requisitadoresBindingSource;
+        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+        private System.Windows.Forms.BindingSource salasBindingSource;
+        private Database1DataSetTableAdapters.SalasTableAdapter salasTableAdapter;
 
 
 

@@ -13,9 +13,9 @@ namespace Projeto_PAP
     {
         public void atualizarDataGrid()
         {
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            this.consultaRequisicaosalaTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaosala);
 
-            this.rEq_SalasDataGridView.Refresh();
+            this.consultaRequisicaosalaDataGridView.Refresh();
 
         }
 
@@ -33,22 +33,30 @@ namespace Projeto_PAP
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet.Salas' table. You can move, or remove it, as needed.
+            this.salasTableAdapter.Fill(this.database1DataSet.Salas);
+            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
+            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+            // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaosala' table. You can move, or remove it, as needed.
+            this.consultaRequisicaosalaTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaosala);
+            // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaomaterial' table. You can move, or remove it, as needed.
+            //this.consultaRequisicaomaterialTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaomaterial);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+           // this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+            //this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
             // TODO: This line of code loads data into the 'database1DataSet._REq_Salas' table. You can move, or remove it, as needed.
-            this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
+          //  this.rEq_SalasTableAdapter.FillReq_salas(this.database1DataSet._REq_Salas);
            
 
         }
@@ -74,6 +82,18 @@ namespace Projeto_PAP
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.consultaRequisicaosalaTableAdapter.FillBySala(this.database1DataSet.ConsultaRequisicaosala, Convert.ToString(this.comboBox1.Text));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PesqREqSalas frm = new PesqREqSalas();
+            frm.ShowDialog();
+            atualizarDataGrid();
         }
     }
 }

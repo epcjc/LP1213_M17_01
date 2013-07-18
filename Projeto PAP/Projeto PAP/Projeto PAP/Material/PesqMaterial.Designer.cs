@@ -33,36 +33,37 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.materialDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
-            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
-            this.materialBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.materialBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.consultasMaterialBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.consultasMaterialBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
+            this.consultasMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultasMaterialTableAdapter();
+            this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consultasMaterialDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.materialDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingNavigator)).BeginInit();
-            this.materialBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingNavigator)).BeginInit();
+            this.consultasMaterialBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -80,8 +81,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.AutoScroll = true;
+            this.splitContainer1.Panel2.Controls.Add(this.consultasMaterialDataGridView);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
-            this.splitContainer1.Panel2.Controls.Add(this.materialDataGridView);
             this.splitContainer1.Size = new System.Drawing.Size(573, 259);
             this.splitContainer1.SplitterDistance = 65;
             this.splitContainer1.TabIndex = 0;
@@ -103,6 +104,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 168);
@@ -110,115 +116,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(573, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // materialDataGridView
-            // 
-            this.materialDataGridView.AllowUserToAddRows = false;
-            this.materialDataGridView.AllowUserToDeleteRows = false;
-            this.materialDataGridView.AutoGenerateColumns = false;
-            this.materialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.materialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.materialDataGridView.DataSource = this.materialBindingSource;
-            this.materialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.materialDataGridView.Name = "materialDataGridView";
-            this.materialDataGridView.Size = new System.Drawing.Size(573, 190);
-            this.materialDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_Material";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID_Material";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome_Material";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome_Material";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // materialBindingSource
-            // 
-            this.materialBindingSource.DataMember = "Material";
-            this.materialBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // materialTableAdapter
-            // 
-            this.materialTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = null;
-            this.tableAdapterManager.CursoTableAdapter = null;
-            this.tableAdapterManager.Horario_SalasTableAdapter = null;
-            this.tableAdapterManager.HorasTableAdapter = null;
-            this.tableAdapterManager.MaterialTableAdapter = this.materialTableAdapter;
-            this.tableAdapterManager.ProfessoresTableAdapter = null;
-            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
-            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = null;
-            this.tableAdapterManager.SalasTableAdapter = null;
-            this.tableAdapterManager.SemanaTableAdapter = null;
-            this.tableAdapterManager.TurmasTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // materialBindingNavigator
-            // 
-            this.materialBindingNavigator.AddNewItem = null;
-            this.materialBindingNavigator.BindingSource = this.materialBindingSource;
-            this.materialBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.materialBindingNavigator.DeleteItem = null;
-            this.materialBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.materialBindingNavigatorSaveItem});
-            this.materialBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.materialBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.materialBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.materialBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.materialBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.materialBindingNavigator.Name = "materialBindingNavigator";
-            this.materialBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.materialBindingNavigator.Size = new System.Drawing.Size(573, 25);
-            this.materialBindingNavigator.TabIndex = 1;
-            this.materialBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -252,6 +149,13 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
@@ -280,21 +184,124 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // materialBindingNavigatorSaveItem
+            // consultasMaterialBindingNavigatorSaveItem
             // 
-            this.materialBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.materialBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("materialBindingNavigatorSaveItem.Image")));
-            this.materialBindingNavigatorSaveItem.Name = "materialBindingNavigatorSaveItem";
-            this.materialBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.materialBindingNavigatorSaveItem.Text = "Save Data";
-            this.materialBindingNavigatorSaveItem.Click += new System.EventHandler(this.materialBindingNavigatorSaveItem_Click);
+            this.consultasMaterialBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.consultasMaterialBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasMaterialBindingNavigatorSaveItem.Image")));
+            this.consultasMaterialBindingNavigatorSaveItem.Name = "consultasMaterialBindingNavigatorSaveItem";
+            this.consultasMaterialBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.consultasMaterialBindingNavigatorSaveItem.Text = "Save Data";
+            this.consultasMaterialBindingNavigatorSaveItem.Click += new System.EventHandler(this.consultasMaterialBindingNavigatorSaveItem_Click_1);
+            // 
+            // consultasMaterialBindingNavigator
+            // 
+            this.consultasMaterialBindingNavigator.AddNewItem = null;
+            this.consultasMaterialBindingNavigator.BindingSource = this.consultasMaterialBindingSource;
+            this.consultasMaterialBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.consultasMaterialBindingNavigator.DeleteItem = null;
+            this.consultasMaterialBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.consultasMaterialBindingNavigatorSaveItem});
+            this.consultasMaterialBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.consultasMaterialBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.consultasMaterialBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.consultasMaterialBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.consultasMaterialBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.consultasMaterialBindingNavigator.Name = "consultasMaterialBindingNavigator";
+            this.consultasMaterialBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.consultasMaterialBindingNavigator.Size = new System.Drawing.Size(573, 25);
+            this.consultasMaterialBindingNavigator.TabIndex = 1;
+            this.consultasMaterialBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.CursoTableAdapter = null;
+            this.tableAdapterManager.Horario_SalasTableAdapter = null;
+            this.tableAdapterManager.HorasTableAdapter = null;
+            this.tableAdapterManager.MaterialTableAdapter = null;
+            this.tableAdapterManager.ProfessoresTableAdapter = null;
+            this.tableAdapterManager.Requisições_SalasTableAdapter = null;
+            this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
+            this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.SalasTableAdapter = null;
+            this.tableAdapterManager.SemanaTableAdapter = null;
+            this.tableAdapterManager.TurmasTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // consultasMaterialTableAdapter
+            // 
+            this.consultasMaterialTableAdapter.ClearBeforeFill = true;
+            // 
+            // consultasMaterialBindingSource
+            // 
+            this.consultasMaterialBindingSource.DataMember = "ConsultasMaterial";
+            this.consultasMaterialBindingSource.DataSource = this.database1DataSet;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "categoria";
+            this.dataGridViewTextBoxColumn5.HeaderText = "categoria";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Curso";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nome_Material";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome_Material";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // consultasMaterialDataGridView
+            // 
+            this.consultasMaterialDataGridView.AllowUserToAddRows = false;
+            this.consultasMaterialDataGridView.AutoGenerateColumns = false;
+            this.consultasMaterialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.consultasMaterialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.consultasMaterialDataGridView.DataSource = this.consultasMaterialBindingSource;
+            this.consultasMaterialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consultasMaterialDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.consultasMaterialDataGridView.Name = "consultasMaterialDataGridView";
+            this.consultasMaterialDataGridView.Size = new System.Drawing.Size(573, 168);
+            this.consultasMaterialDataGridView.TabIndex = 1;
             // 
             // PesqMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 259);
-            this.Controls.Add(this.materialBindingNavigator);
+            this.Controls.Add(this.consultasMaterialBindingNavigator);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PesqMaterial";
@@ -306,12 +313,12 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.materialDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialBindingNavigator)).EndInit();
-            this.materialBindingNavigator.ResumeLayout(false);
-            this.materialBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingNavigator)).EndInit();
+            this.consultasMaterialBindingNavigator.ResumeLayout(false);
+            this.consultasMaterialBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,25 +330,26 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource materialBindingSource;
-        private Database1DataSetTableAdapters.MaterialTableAdapter materialTableAdapter;
-        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator materialBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton materialBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView materialDataGridView;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.DataGridView consultasMaterialDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource consultasMaterialBindingSource;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton consultasMaterialBindingNavigatorSaveItem;
+        private System.Windows.Forms.BindingNavigator consultasMaterialBindingNavigator;
+        private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private Database1DataSetTableAdapters.ConsultasMaterialTableAdapter consultasMaterialTableAdapter;
     }
 }

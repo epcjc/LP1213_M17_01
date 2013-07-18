@@ -45,7 +45,7 @@ namespace Projeto_PAP
         private void button1_Click(object sender, EventArgs e)
         {
             try{
-                this.requisições_SalasTableAdapter.Insert(Convert.ToInt16(this.comboBox1.SelectedValue), Convert.ToInt16(this.comboBox2.SelectedValue), Convert.ToInt16(this.comboBox3.SelectedValue), this.observacoesTextBox.Text);
+                this.requisições_SalasTableAdapter.Insert(Convert.ToInt16(this.comboBox1.SelectedValue), Convert.ToInt16(this.comboBox2.SelectedValue), Convert.ToInt16(this.comboBox3.SelectedValue), this.observacoesTextBox.Text, this.estadoTextBox.Text);
                 MessageBox.Show("Inserido com sucesso");
             }
             catch (Exception ex)
