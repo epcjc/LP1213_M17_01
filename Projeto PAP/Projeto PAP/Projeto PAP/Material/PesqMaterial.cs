@@ -46,10 +46,7 @@ namespace Projeto_PAP
             this.tableAdapterManager.UpdateAll(this.database1DataSet);
         }
 
-        private void consultasMaterialBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         
     }

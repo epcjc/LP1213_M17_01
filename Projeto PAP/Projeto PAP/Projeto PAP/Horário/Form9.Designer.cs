@@ -36,6 +36,11 @@
             this.horarioTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.HorarioTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.horarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,15 +49,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button6 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).BeginInit();
@@ -108,6 +108,7 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -130,6 +131,36 @@
             this.horarioDataGridView.Size = new System.Drawing.Size(816, 258);
             this.horarioDataGridView.TabIndex = 6;
             this.horarioDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.horarioDataGridView_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Hora_Inicio";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Hora Inicio";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora_Fim";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Hora Fim";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Dia_Semana";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Dia Semana";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Turma";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Turma";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sala";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sala";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // button4
             // 
@@ -157,7 +188,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 23);
             this.button2.TabIndex = 12;
-            this.button2.Text = "Inserir Novo";
+            this.button2.Text = "Inserir Horário";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -233,44 +264,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(816, 93);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 93);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(816, 22);
-            this.statusStrip1.TabIndex = 16;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Hora_Inicio";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Hora Inicio";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Hora_Fim";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Hora Fim";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Dia_Semana";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Dia Semana";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Turma";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Turma";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sala";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sala";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.salasBindingSource;
@@ -282,6 +275,11 @@
             this.comboBox1.TabIndex = 16;
             this.comboBox1.ValueMember = "Sala";
             // 
+            // salasBindingSource
+            // 
+            this.salasBindingSource.DataMember = "Salas";
+            this.salasBindingSource.DataSource = this.database1DataSet;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(3, 32);
@@ -292,10 +290,13 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // salasBindingSource
+            // statusStrip1
             // 
-            this.salasBindingSource.DataMember = "Salas";
-            this.salasBindingSource.DataSource = this.database1DataSet;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 93);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(816, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // salasTableAdapter
             // 

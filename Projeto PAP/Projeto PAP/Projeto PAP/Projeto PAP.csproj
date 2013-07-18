@@ -495,10 +495,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Login.mdf</DependentUpon>
     </Content>
-    <Content Include="Material\Escola.mdf">
+    <Content Include="Escola.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Material\Escola_log.ldf">
+    <Content Include="Escola_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Escola.mdf</DependentUpon>
     </Content>

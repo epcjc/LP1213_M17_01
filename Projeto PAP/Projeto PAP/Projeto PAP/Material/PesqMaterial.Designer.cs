@@ -33,6 +33,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -48,21 +49,22 @@
             this.consultasMaterialBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.consultasMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultasMaterialTableAdapter();
-            this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultasMaterialDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingNavigator)).BeginInit();
             this.consultasMaterialBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +105,11 @@
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // consultasMaterialBindingSource
+            // 
+            this.consultasMaterialBindingSource.DataMember = "ConsultasMaterial";
+            this.consultasMaterialBindingSource.DataSource = this.database1DataSet;
             // 
             // database1DataSet
             // 
@@ -191,7 +198,7 @@
             this.consultasMaterialBindingNavigatorSaveItem.Name = "consultasMaterialBindingNavigatorSaveItem";
             this.consultasMaterialBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.consultasMaterialBindingNavigatorSaveItem.Text = "Save Data";
-            this.consultasMaterialBindingNavigatorSaveItem.Click += new System.EventHandler(this.consultasMaterialBindingNavigatorSaveItem_Click_1);
+            this.consultasMaterialBindingNavigatorSaveItem.Click += new System.EventHandler(this.consultasMaterialBindingNavigatorSaveItem_Click);
             // 
             // consultasMaterialBindingNavigator
             // 
@@ -234,6 +241,7 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -243,58 +251,75 @@
             // 
             this.consultasMaterialTableAdapter.ClearBeforeFill = true;
             // 
-            // consultasMaterialBindingSource
-            // 
-            this.consultasMaterialBindingSource.DataMember = "ConsultasMaterial";
-            this.consultasMaterialBindingSource.DataSource = this.database1DataSet;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "categoria";
-            this.dataGridViewTextBoxColumn5.HeaderText = "categoria";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Curso";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Curso";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nome_Material";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nome_Material";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
             // consultasMaterialDataGridView
             // 
             this.consultasMaterialDataGridView.AllowUserToAddRows = false;
             this.consultasMaterialDataGridView.AutoGenerateColumns = false;
             this.consultasMaterialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.consultasMaterialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
             this.consultasMaterialDataGridView.DataSource = this.consultasMaterialBindingSource;
             this.consultasMaterialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consultasMaterialDataGridView.Location = new System.Drawing.Point(0, 0);
             this.consultasMaterialDataGridView.Name = "consultasMaterialDataGridView";
+            this.consultasMaterialDataGridView.ReadOnly = true;
             this.consultasMaterialDataGridView.Size = new System.Drawing.Size(573, 168);
             this.consultasMaterialDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Designacao";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Designação";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Serial number";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Serial number";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Observacao";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Observação";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Curso";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "categoria";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // PesqMaterial
             // 
@@ -313,11 +338,11 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingNavigator)).EndInit();
             this.consultasMaterialBindingNavigator.ResumeLayout(false);
             this.consultasMaterialBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultasMaterialDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,12 +356,8 @@
         private System.Windows.Forms.Button button1;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.DataGridView consultasMaterialDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.BindingSource consultasMaterialBindingSource;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -351,5 +372,13 @@
         private System.Windows.Forms.BindingNavigator consultasMaterialBindingNavigator;
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Database1DataSetTableAdapters.ConsultasMaterialTableAdapter consultasMaterialTableAdapter;
+        private System.Windows.Forms.DataGridView consultasMaterialDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

@@ -37,6 +37,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -50,14 +53,12 @@
             this.consultaRequisicaosalaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultaRequisicaosalaTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultaRequisicaosalaTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
-            this.salasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,7 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // database1DataSet
@@ -95,7 +95,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 23);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Inserir Novo";
+            this.button2.Text = "Inserir Requisição";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -141,6 +141,32 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 53);
             this.flowLayoutPanel1.TabIndex = 12;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.salasBindingSource;
+            this.comboBox1.DisplayMember = "Sala";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(535, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.ValueMember = "Sala";
+            // 
+            // salasBindingSource
+            // 
+            this.salasBindingSource.DataMember = "Salas";
+            this.salasBindingSource.DataSource = this.database1DataSet;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(3, 32);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Pesquisar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // statusStrip1
             // 
@@ -263,31 +289,11 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(3, 32);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "Pesquisar";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.salasBindingSource;
-            this.comboBox1.DisplayMember = "Sala";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(535, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.ValueMember = "Sala";
             // 
             // requisitadoresBindingSource
             // 
@@ -297,11 +303,6 @@
             // requisitadoresTableAdapter
             // 
             this.requisitadoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // salasBindingSource
-            // 
-            this.salasBindingSource.DataMember = "Salas";
-            this.salasBindingSource.DataSource = this.database1DataSet;
             // 
             // salasTableAdapter
             // 
@@ -320,6 +321,7 @@
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -331,7 +333,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultaRequisicaosalaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

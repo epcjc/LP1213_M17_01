@@ -48,14 +48,16 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.consultasMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultasMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultasMaterialTableAdapter();
             this.cursoTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.CursoTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -98,6 +100,7 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -141,7 +144,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(127, 23);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Inserir Novo";
+            this.button2.Text = "Inserir Material";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -206,6 +209,7 @@
             // 
             // consultasMaterialDataGridView
             // 
+            this.consultasMaterialDataGridView.AllowUserToAddRows = false;
             this.consultasMaterialDataGridView.AutoGenerateColumns = false;
             this.consultasMaterialDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.consultasMaterialDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -213,42 +217,65 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
             this.consultasMaterialDataGridView.DataSource = this.consultasMaterialBindingSource;
+            this.consultasMaterialDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.consultasMaterialDataGridView.Location = new System.Drawing.Point(0, 0);
             this.consultasMaterialDataGridView.Name = "consultasMaterialDataGridView";
+            this.consultasMaterialDataGridView.ReadOnly = true;
             this.consultasMaterialDataGridView.Size = new System.Drawing.Size(811, 262);
             this.consultasMaterialDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nome_Material";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nome_Material";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Designacao";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Designacao";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descricao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descricao";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Marca";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Estado";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Serial number";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Serial number";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Curso";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "categoria";
-            this.dataGridViewTextBoxColumn5.HeaderText = "categoria";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Observacao";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Observacao";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Curso";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Curso";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "categoria";
+            this.dataGridViewTextBoxColumn7.HeaderText = "categoria";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // consultasMaterialBindingSource
             // 
@@ -269,6 +296,22 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(811, 51);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.cursoBindingSource;
+            this.comboBox1.DisplayMember = "Curso";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(535, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.ValueMember = "Curso";
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataMember = "Curso";
+            this.cursoBindingSource.DataSource = this.database1DataSet;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(662, 3);
@@ -287,11 +330,6 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataMember = "Curso";
-            this.cursoBindingSource.DataSource = this.database1DataSet;
-            // 
             // consultasMaterialTableAdapter
             // 
             this.consultasMaterialTableAdapter.ClearBeforeFill = true;
@@ -299,17 +337,6 @@
             // cursoTableAdapter
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.cursoBindingSource;
-            this.comboBox1.DisplayMember = "Curso";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(535, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.ValueMember = "Curso";
             // 
             // Form1
             // 
@@ -360,16 +387,18 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.BindingSource consultasMaterialBindingSource;
         private Database1DataSetTableAdapters.ConsultasMaterialTableAdapter consultasMaterialTableAdapter;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource cursoBindingSource;
+        private Database1DataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView consultasMaterialDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.BindingSource cursoBindingSource;
-        private Database1DataSetTableAdapters.CursoTableAdapter cursoTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
 
     }
 }

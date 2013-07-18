@@ -41,7 +41,7 @@ namespace Projeto_PAP
                 }
                 else
                 {
-                    this.professoresTableAdapter.Insert(this.textBox1.Text);
+                    //this.professoresTableAdapter.Insert(this.textBox1.Text);
                     this.Close();
                 }
 

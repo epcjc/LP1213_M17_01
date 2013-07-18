@@ -44,22 +44,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.turmasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.turmasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.TurmasTableAdapter();
-            this.turmasDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,10 +60,6 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +119,7 @@
             this.salasDataGridView.Location = new System.Drawing.Point(0, 0);
             this.salasDataGridView.Name = "salasDataGridView";
             this.salasDataGridView.ReadOnly = true;
-            this.salasDataGridView.Size = new System.Drawing.Size(711, 145);
+            this.salasDataGridView.Size = new System.Drawing.Size(711, 268);
             this.salasDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -181,7 +169,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(136, 32);
+            this.button1.Location = new System.Drawing.Point(402, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 23);
             this.button1.TabIndex = 7;
@@ -197,67 +185,6 @@
             // turmasTableAdapter
             // 
             this.turmasTableAdapter.ClearBeforeFill = true;
-            // 
-            // turmasDataGridView
-            // 
-            this.turmasDataGridView.AllowUserToAddRows = false;
-            this.turmasDataGridView.AutoGenerateColumns = false;
-            this.turmasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.turmasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.turmasDataGridView.DataSource = this.turmasBindingSource;
-            this.turmasDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.turmasDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.turmasDataGridView.Name = "turmasDataGridView";
-            this.turmasDataGridView.ReadOnly = true;
-            this.turmasDataGridView.Size = new System.Drawing.Size(711, 119);
-            this.turmasDataGridView.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID_Turma";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID_Turma";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Turma";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Turma";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(402, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Inserir Nova Turma";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(535, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(127, 23);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Eliminar Turma";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(3, 32);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(127, 23);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Procurar/Alterar Turma";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // splitContainer1
             // 
@@ -286,7 +213,7 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Panel1.Controls.Add(this.salasDataGridView);
             // 
             // splitContainer2.Panel2
             // 
@@ -295,32 +222,11 @@
             this.splitContainer2.SplitterDistance = 268;
             this.splitContainer2.TabIndex = 0;
             // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.salasDataGridView);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.turmasDataGridView);
-            this.splitContainer3.Size = new System.Drawing.Size(711, 268);
-            this.splitContainer3.SplitterDistance = 145;
-            this.splitContainer3.TabIndex = 0;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button3);
             this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -351,7 +257,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.salasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmasDataGridView)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -361,10 +266,6 @@
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -387,15 +288,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource turmasBindingSource;
         private Database1DataSetTableAdapters.TurmasTableAdapter turmasTableAdapter;
-        private System.Windows.Forms.DataGridView turmasDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.StatusStrip statusStrip1;
     }
