@@ -50,7 +50,7 @@ namespace Projeto_PAP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            frmInserirMaterial frm = new frmInserirMaterial();
             frm.ShowDialog();
             atualizarDataGrid();
 
@@ -82,6 +82,17 @@ namespace Projeto_PAP
        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmMaterial frm = new frmMaterial();
+            frm.ShowDialog();
+        }
+
+        private void splitContainer2_SplitterMoved(object sender, SplitterEventArgs e)
         {
 
         }

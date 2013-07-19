@@ -36,6 +36,7 @@ namespace Projeto_PAP
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
+          
             frm.ShowDialog();
         }
 
@@ -76,6 +77,17 @@ namespace Projeto_PAP
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            TiposMaterial frm = new TiposMaterial();
+            frm.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
         {
 
         }

@@ -62,10 +62,10 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.observacoes_Antes_requisicaoTextBox = new System.Windows.Forms.TextBox();
-            this.observacoes_apos_requisicaoTextBox = new System.Windows.Forms.TextBox();
             this.estadoTextBox = new System.Windows.Forms.TextBox();
+            this.observacoes_apos_requisicaoTextBox = new System.Windows.Forms.TextBox();
+            this.observacoes_Antes_requisicaoTextBox = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             observacoes_Antes_requisicaoLabel = new System.Windows.Forms.Label();
             observacoes_apos_requisicaoLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
@@ -81,6 +81,33 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // observacoes_Antes_requisicaoLabel
+            // 
+            observacoes_Antes_requisicaoLabel.AutoSize = true;
+            observacoes_Antes_requisicaoLabel.Location = new System.Drawing.Point(20, 201);
+            observacoes_Antes_requisicaoLabel.Name = "observacoes_Antes_requisicaoLabel";
+            observacoes_Antes_requisicaoLabel.Size = new System.Drawing.Size(74, 13);
+            observacoes_Antes_requisicaoLabel.TabIndex = 36;
+            observacoes_Antes_requisicaoLabel.Text = "Obs. Pré Req.";
+            // 
+            // observacoes_apos_requisicaoLabel
+            // 
+            observacoes_apos_requisicaoLabel.AutoSize = true;
+            observacoes_apos_requisicaoLabel.Location = new System.Drawing.Point(20, 256);
+            observacoes_apos_requisicaoLabel.Name = "observacoes_apos_requisicaoLabel";
+            observacoes_apos_requisicaoLabel.Size = new System.Drawing.Size(82, 13);
+            observacoes_apos_requisicaoLabel.TabIndex = 37;
+            observacoes_apos_requisicaoLabel.Text = "Obs. Apos Req.";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(20, 305);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 38;
+            estadoLabel.Text = "Estado:";
             // 
             // database1DataSet
             // 
@@ -99,6 +126,7 @@
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
             this.tableAdapterManager.RequisitadoresTableAdapter = this.requisitadoresTableAdapter;
+            this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -337,40 +365,13 @@
             this.splitContainer1.SplitterDistance = 308;
             this.splitContainer1.TabIndex = 38;
             // 
-            // statusStrip1
+            // estadoTextBox
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 367);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(574, 22);
-            this.statusStrip1.TabIndex = 39;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // observacoes_Antes_requisicaoLabel
-            // 
-            observacoes_Antes_requisicaoLabel.AutoSize = true;
-            observacoes_Antes_requisicaoLabel.Location = new System.Drawing.Point(20, 201);
-            observacoes_Antes_requisicaoLabel.Name = "observacoes_Antes_requisicaoLabel";
-            observacoes_Antes_requisicaoLabel.Size = new System.Drawing.Size(74, 13);
-            observacoes_Antes_requisicaoLabel.TabIndex = 36;
-            observacoes_Antes_requisicaoLabel.Text = "Obs. Pré Req.";
-            // 
-            // observacoes_Antes_requisicaoTextBox
-            // 
-            this.observacoes_Antes_requisicaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Observacoes_Antes_requisicao", true));
-            this.observacoes_Antes_requisicaoTextBox.Location = new System.Drawing.Point(125, 198);
-            this.observacoes_Antes_requisicaoTextBox.Multiline = true;
-            this.observacoes_Antes_requisicaoTextBox.Name = "observacoes_Antes_requisicaoTextBox";
-            this.observacoes_Antes_requisicaoTextBox.Size = new System.Drawing.Size(124, 49);
-            this.observacoes_Antes_requisicaoTextBox.TabIndex = 37;
-            // 
-            // observacoes_apos_requisicaoLabel
-            // 
-            observacoes_apos_requisicaoLabel.AutoSize = true;
-            observacoes_apos_requisicaoLabel.Location = new System.Drawing.Point(20, 256);
-            observacoes_apos_requisicaoLabel.Name = "observacoes_apos_requisicaoLabel";
-            observacoes_apos_requisicaoLabel.Size = new System.Drawing.Size(82, 13);
-            observacoes_apos_requisicaoLabel.TabIndex = 37;
-            observacoes_apos_requisicaoLabel.Text = "Obs. Apos Req.";
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(125, 302);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(124, 20);
+            this.estadoTextBox.TabIndex = 39;
             // 
             // observacoes_apos_requisicaoTextBox
             // 
@@ -382,22 +383,22 @@
             this.observacoes_apos_requisicaoTextBox.TabIndex = 38;
             this.observacoes_apos_requisicaoTextBox.TextChanged += new System.EventHandler(this.observacoes_apos_requisicaoTextBox_TextChanged);
             // 
-            // estadoLabel
+            // observacoes_Antes_requisicaoTextBox
             // 
-            estadoLabel.AutoSize = true;
-            estadoLabel.Location = new System.Drawing.Point(20, 305);
-            estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new System.Drawing.Size(43, 13);
-            estadoLabel.TabIndex = 38;
-            estadoLabel.Text = "Estado:";
+            this.observacoes_Antes_requisicaoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Observacoes_Antes_requisicao", true));
+            this.observacoes_Antes_requisicaoTextBox.Location = new System.Drawing.Point(125, 198);
+            this.observacoes_Antes_requisicaoTextBox.Multiline = true;
+            this.observacoes_Antes_requisicaoTextBox.Name = "observacoes_Antes_requisicaoTextBox";
+            this.observacoes_Antes_requisicaoTextBox.Size = new System.Drawing.Size(124, 49);
+            this.observacoes_Antes_requisicaoTextBox.TabIndex = 37;
             // 
-            // estadoTextBox
+            // statusStrip1
             // 
-            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.requisiçõesMaterialBindingSource, "Estado", true));
-            this.estadoTextBox.Location = new System.Drawing.Point(125, 302);
-            this.estadoTextBox.Name = "estadoTextBox";
-            this.estadoTextBox.Size = new System.Drawing.Size(124, 20);
-            this.estadoTextBox.TabIndex = 39;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 367);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(574, 22);
+            this.statusStrip1.TabIndex = 39;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // InserirReq
             // 

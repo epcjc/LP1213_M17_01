@@ -6424,6 +6424,8 @@ namespace Projeto_PAP {
             
             private global::System.Data.DataColumn columnid_curso;
             
+            private global::System.Data.DataColumn columnimagem;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MaterialDataTable() {
@@ -6523,6 +6525,14 @@ namespace Projeto_PAP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn imagemColumn {
+                get {
+                    return this.columnimagem;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6558,7 +6568,7 @@ namespace Projeto_PAP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaterialRow AddMaterialRow(string Designacao, string Marca, string Serial_number, string Estado, string Observacao, CategoriaRow parentCategoriaRowByFK_Material_Categoria1, CursoRow parentCursoRowByFK_Material_Curso1) {
+            public MaterialRow AddMaterialRow(string Designacao, string Marca, string Serial_number, string Estado, string Observacao, CategoriaRow parentCategoriaRowByFK_Material_Categoria1, CursoRow parentCursoRowByFK_Material_Curso1, byte[] imagem) {
                 MaterialRow rowMaterialRow = ((MaterialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6568,7 +6578,8 @@ namespace Projeto_PAP {
                         Estado,
                         Observacao,
                         null,
-                        null};
+                        null,
+                        imagem};
                 if ((parentCategoriaRowByFK_Material_Categoria1 != null)) {
                     columnValuesArray[6] = parentCategoriaRowByFK_Material_Categoria1[0];
                 }
@@ -6612,6 +6623,7 @@ namespace Projeto_PAP {
                 this.columnObservacao = base.Columns["Observacao"];
                 this.columnid_categoria = base.Columns["id_categoria"];
                 this.columnid_curso = base.Columns["id_curso"];
+                this.columnimagem = base.Columns["imagem"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6633,6 +6645,8 @@ namespace Projeto_PAP {
                 base.Columns.Add(this.columnid_categoria);
                 this.columnid_curso = new global::System.Data.DataColumn("id_curso", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_curso);
+                this.columnimagem = new global::System.Data.DataColumn("imagem", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimagem);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Material}, true));
                 this.columnID_Material.AutoIncrement = true;
@@ -8755,6 +8769,22 @@ namespace Projeto_PAP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] imagem {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableMaterial.imagemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'imagem\' in table \'Material\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMaterial.imagemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CursoRow CursoRow {
                 get {
                     return ((CursoRow)(this.GetParentRow(this.Table.ParentRelations["FK_Material_Curso1"])));
@@ -8833,6 +8863,18 @@ namespace Projeto_PAP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setid_cursoNull() {
                 this[this.tableMaterial.id_cursoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsimagemNull() {
+                return this.IsNull(this.tableMaterial.imagemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetimagemNull() {
+                this[this.tableMaterial.imagemColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13847,11 +13889,17 @@ WHERE     (Salas.Sala LIKE '%' + @nome + '%')";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_categoria, categoria FROM dbo.Categoria";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id_categoria, categoria FROM dbo.Categoria\r\nWHERE id_categoria = @id_categ" +
+                "oria";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_categoria", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13873,6 +13921,32 @@ WHERE     (Salas.Sala LIKE '%' + @nome + '%')";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Database1DataSet.CategoriaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database1DataSet.CategoriaDataTable dataTable = new Database1DataSet.CategoriaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIdCategoria(Database1DataSet.CategoriaDataTable dataTable, int id_categoria) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_categoria));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Database1DataSet.CategoriaDataTable GetDataByIdCategoria(int id_categoria) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_categoria));
             Database1DataSet.CategoriaDataTable dataTable = new Database1DataSet.CategoriaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14172,11 +14246,16 @@ SELECT Id_Curso, Curso, Portaria FROM Curso WHERE (Id_Curso = @Id_Curso)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_Curso, Curso, Portaria FROM Curso";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id_Curso, Curso, Portaria FROM Curso\r\nwhere id_curso = @id_curso";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_curso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Curso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14198,6 +14277,32 @@ SELECT Id_Curso, Curso, Portaria FROM Curso WHERE (Id_Curso = @Id_Curso)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual Database1DataSet.CursoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database1DataSet.CursoDataTable dataTable = new Database1DataSet.CursoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIdCurso(Database1DataSet.CursoDataTable dataTable, int id_curso) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_curso));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Database1DataSet.CursoDataTable GetDataByIdCurso(int id_curso) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_curso));
             Database1DataSet.CursoDataTable dataTable = new Database1DataSet.CursoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -15327,6 +15432,7 @@ WHERE     (ConsultasMaterial.Curso LIKE '%' + @curso + '%')";
             tableMapping.ColumnMappings.Add("Observacao", "Observacao");
             tableMapping.ColumnMappings.Add("id_categoria", "id_categoria");
             tableMapping.ColumnMappings.Add("id_curso", "id_curso");
+            tableMapping.ColumnMappings.Add("imagem", "imagem");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -15347,8 +15453,8 @@ WHERE     (ConsultasMaterial.Curso LIKE '%' + @curso + '%')";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_curso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_curso", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Material] ([Designacao], [Marca], [Serial number], [Estado], [Observacao], [id_categoria], [id_curso]) VALUES (@Designacao, @Marca, @Serial_number, @Estado, @Observacao, @id_categoria, @id_curso);
-SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_categoria, id_curso FROM Material WHERE (ID_Material = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Material] ([Designacao], [Marca], [Serial number], [Estado], [Observacao], [id_categoria], [id_curso], [imagem]) VALUES (@Designacao, @Marca, @Serial_number, @Estado, @Observacao, @id_categoria, @id_curso, @imagem);
+SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_categoria, id_curso, imagem FROM Material WHERE (ID_Material = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Designacao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15357,10 +15463,11 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_categoria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_curso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_curso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagem", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Material] SET [Designacao] = @Designacao, [Marca] = @Marca, [Serial number] = @Serial_number, [Estado] = @Estado, [Observacao] = @Observacao, [id_categoria] = @id_categoria, [id_curso] = @id_curso WHERE (([ID_Material] = @Original_ID_Material) AND ([Designacao] = @Original_Designacao) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_Serial_number = 1 AND [Serial number] IS NULL) OR ([Serial number] = @Original_Serial_number)) AND ([Estado] = @Original_Estado) AND ((@IsNull_Observacao = 1 AND [Observacao] IS NULL) OR ([Observacao] = @Original_Observacao)) AND ((@IsNull_id_categoria = 1 AND [id_categoria] IS NULL) OR ([id_categoria] = @Original_id_categoria)) AND ((@IsNull_id_curso = 1 AND [id_curso] IS NULL) OR ([id_curso] = @Original_id_curso)));
-SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_categoria, id_curso FROM Material WHERE (ID_Material = @ID_Material)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Material] SET [Designacao] = @Designacao, [Marca] = @Marca, [Serial number] = @Serial_number, [Estado] = @Estado, [Observacao] = @Observacao, [id_categoria] = @id_categoria, [id_curso] = @id_curso, [imagem] = @imagem WHERE (([ID_Material] = @Original_ID_Material) AND ([Designacao] = @Original_Designacao) AND ((@IsNull_Marca = 1 AND [Marca] IS NULL) OR ([Marca] = @Original_Marca)) AND ((@IsNull_Serial_number = 1 AND [Serial number] IS NULL) OR ([Serial number] = @Original_Serial_number)) AND ([Estado] = @Original_Estado) AND ((@IsNull_Observacao = 1 AND [Observacao] IS NULL) OR ([Observacao] = @Original_Observacao)) AND ((@IsNull_id_categoria = 1 AND [id_categoria] IS NULL) OR ([id_categoria] = @Original_id_categoria)) AND ((@IsNull_id_curso = 1 AND [id_curso] IS NULL) OR ([id_curso] = @Original_id_curso)));
+SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_categoria, id_curso, imagem FROM Material WHERE (ID_Material = @ID_Material)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Designacao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15369,6 +15476,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_categoria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_categoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_curso", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_curso", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagem", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Designacao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -15398,8 +15506,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_ca" +
-                "tegoria, id_curso FROM dbo.Material";
+            this._commandCollection[0].CommandText = "SELECT * FROM dbo.Material";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -15408,9 +15515,9 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT     ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, i" +
-                "d_categoria, id_curso\r\nFROM         Material\r\nWHERE     (Designacao LIKE \'%\' + @" +
-                "designacao + \'%\')";
+            this._commandCollection[2].CommandText = "SELECT Designacao, Estado, ID_Material, Marca, Observacao, [Serial number], id_ca" +
+                "tegoria, id_curso, imagem FROM Material WHERE (Designacao LIKE \'%\' + @designacao" +
+                " + \'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -15582,7 +15689,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Designacao, string Marca, string Serial_number, string Estado, string Observacao, global::System.Nullable<int> id_categoria, global::System.Nullable<int> id_curso) {
+        public virtual int Insert(string Designacao, string Marca, string Serial_number, string Estado, string Observacao, global::System.Nullable<int> id_categoria, global::System.Nullable<int> id_curso, byte[] imagem) {
             if ((Designacao == null)) {
                 throw new global::System.ArgumentNullException("Designacao");
             }
@@ -15625,6 +15732,12 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((imagem == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((byte[])(imagem));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15653,6 +15766,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
                     string Observacao, 
                     global::System.Nullable<int> id_categoria, 
                     global::System.Nullable<int> id_curso, 
+                    byte[] imagem, 
                     int Original_ID_Material, 
                     string Original_Designacao, 
                     string Original_Marca, 
@@ -15704,60 +15818,66 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID_Material));
+            if ((imagem == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((byte[])(imagem));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID_Material));
             if ((Original_Designacao == null)) {
                 throw new global::System.ArgumentNullException("Original_Designacao");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Designacao));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Designacao));
             }
             if ((Original_Marca == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Marca));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Marca));
             }
             if ((Original_Serial_number == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Serial_number));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Serial_number));
             }
             if ((Original_Estado == null)) {
                 throw new global::System.ArgumentNullException("Original_Estado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Estado));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Estado));
             }
             if ((Original_Observacao == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Observacao));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Observacao));
             }
             if ((Original_id_categoria.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_id_categoria.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_id_categoria.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_id_curso.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_id_curso.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id_curso.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(ID_Material));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(ID_Material));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15778,8 +15898,24 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Designacao, string Marca, string Serial_number, string Estado, string Observacao, global::System.Nullable<int> id_categoria, global::System.Nullable<int> id_curso, int Original_ID_Material, string Original_Designacao, string Original_Marca, string Original_Serial_number, string Original_Estado, string Original_Observacao, global::System.Nullable<int> Original_id_categoria, global::System.Nullable<int> Original_id_curso) {
-            return this.Update(Designacao, Marca, Serial_number, Estado, Observacao, id_categoria, id_curso, Original_ID_Material, Original_Designacao, Original_Marca, Original_Serial_number, Original_Estado, Original_Observacao, Original_id_categoria, Original_id_curso, Original_ID_Material);
+        public virtual int Update(
+                    string Designacao, 
+                    string Marca, 
+                    string Serial_number, 
+                    string Estado, 
+                    string Observacao, 
+                    global::System.Nullable<int> id_categoria, 
+                    global::System.Nullable<int> id_curso, 
+                    byte[] imagem, 
+                    int Original_ID_Material, 
+                    string Original_Designacao, 
+                    string Original_Marca, 
+                    string Original_Serial_number, 
+                    string Original_Estado, 
+                    string Original_Observacao, 
+                    global::System.Nullable<int> Original_id_categoria, 
+                    global::System.Nullable<int> Original_id_curso) {
+            return this.Update(Designacao, Marca, Serial_number, Estado, Observacao, id_categoria, id_curso, imagem, Original_ID_Material, Original_Designacao, Original_Marca, Original_Serial_number, Original_Estado, Original_Observacao, Original_id_categoria, Original_id_curso, Original_ID_Material);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

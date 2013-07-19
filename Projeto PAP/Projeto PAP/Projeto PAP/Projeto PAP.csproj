@@ -71,6 +71,18 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Material\frmInserirMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmInserirMaterial.Designer.cs">
+      <DependentUpon>frmInserirMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material\frmMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmMaterial.Designer.cs">
+      <DependentUpon>frmMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material\Form11.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     </Compile>
     <Compile Include="Salas\EliminarSala.Designer.cs">
       <DependentUpon>EliminarSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiposMaterial.Designer.cs">
+      <DependentUpon>TiposMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Turma\Eliminar_Turma.cs">
       <SubType>Form</SubType>
@@ -300,6 +318,12 @@
     <Compile Include="Relatórios.Designer.cs">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Material\frmInserirMaterial.resx">
+      <DependentUpon>frmInserirMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\frmMaterial.resx">
+      <DependentUpon>frmMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Horário\AlterarHorario.resx">
       <DependentUpon>AlterarHorario.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Salas\EliminarSala.resx">
       <DependentUpon>EliminarSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposMaterial.resx">
+      <DependentUpon>TiposMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Turma\Eliminar_Turma.resx">
       <DependentUpon>Eliminar_Turma.cs</DependentUpon>
