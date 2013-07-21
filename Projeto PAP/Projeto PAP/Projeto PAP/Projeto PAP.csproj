@@ -72,6 +72,12 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Material\frmMudarAutorizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmMudarAutorizados.Designer.cs">
+      <DependentUpon>frmMudarAutorizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material\frmMudarTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     <Compile Include="Relatórios.Designer.cs">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Material\frmMudarAutorizados.resx">
+      <DependentUpon>frmMudarAutorizados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material\frmMudarTipo.resx">
       <DependentUpon>frmMudarTipo.cs</DependentUpon>
     </EmbeddedResource>

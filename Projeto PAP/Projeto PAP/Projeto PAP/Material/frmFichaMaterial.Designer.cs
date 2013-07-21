@@ -68,7 +68,6 @@
             this.serial_numberTextBox = new System.Windows.Forms.TextBox();
             this.observacaoTextBox = new System.Windows.Forms.TextBox();
             this.imagemPictureBox = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.professoresAutorizadosMaterialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ProfessoresAutorizadosMaterialTableAdapter();
             label1 = new System.Windows.Forms.Label();
@@ -215,7 +214,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 28;
-            this.button3.Text = "Cancelar";
+            this.button3.Text = "Fechar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -249,7 +248,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 49;
-            this.button8.Text = "Mudar";
+            this.button8.Text = "Alterar";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Visible = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -260,7 +259,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 48;
-            this.button7.Text = "Mudar";
+            this.button7.Text = "Alterar";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Visible = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -312,15 +311,12 @@
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.professoresAutorizadosMaterialBindingSource;
-            this.listBox1.DisplayMember = "Nome_Professor";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(142, 286);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(167, 147);
             this.listBox1.TabIndex = 0;
-            this.listBox1.ValueMember = "ID_Professor";
             // 
             // professoresAutorizadosMaterialBindingSource
             // 
@@ -393,23 +389,13 @@
             this.imagemPictureBox.TabIndex = 48;
             this.imagemPictureBox.TabStop = false;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(234, 439);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 49;
-            this.button5.Text = "Retirar";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(142, 439);
+            this.button6.Location = new System.Drawing.Point(234, 439);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 50;
-            this.button6.Text = "Adicionar";
+            this.button6.Text = "Alterar";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Visible = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -424,7 +410,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 516);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.imagemPictureBox);
             this.Controls.Add(designacaoLabel);
             this.Controls.Add(this.designacaoTextBox);
@@ -493,7 +478,6 @@
         private System.Windows.Forms.PictureBox imagemPictureBox;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.BindingSource professoresAutorizadosMaterialBindingSource;
         private Database1DataSetTableAdapters.ProfessoresAutorizadosMaterialTableAdapter professoresAutorizadosMaterialTableAdapter;

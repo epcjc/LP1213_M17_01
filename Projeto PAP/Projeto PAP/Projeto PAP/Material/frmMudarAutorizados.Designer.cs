@@ -1,6 +1,6 @@
 ﻿namespace Projeto_PAP
 {
-    partial class frmMudarTipo
+    partial class frmMudarAutorizados
     {
         /// <summary>
         /// Required designer variable.
@@ -30,35 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.categoriaTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.CategoriaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            this.database1DataSet = new Projeto_PAP.Database1DataSet();
+            this.professoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.professoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ProfessoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.categoriaBindingSource;
-            this.listBox1.DisplayMember = "categoria";
+            this.listBox1.DataSource = this.professoresBindingSource;
+            this.listBox1.DisplayMember = "Nome_Professor";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(210, 186);
             this.listBox1.TabIndex = 0;
-            this.listBox1.ValueMember = "id_categoria";
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.listBox1.ValueMember = "ID_Professor";
             // 
             // button1
             // 
@@ -81,11 +72,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // categoriaTableAdapter
+            // database1DataSet
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // frmMudarTipo
+            // professoresBindingSource
+            // 
+            this.professoresBindingSource.DataMember = "Professores";
+            this.professoresBindingSource.DataSource = this.database1DataSet;
+            // 
+            // professoresTableAdapter
+            // 
+            this.professoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // frmMudarAutorizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,11 +97,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMudarTipo";
-            this.Text = "Alterar Tipo de Material";
-            this.Load += new System.EventHandler(this.frmMudarTipo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            this.Name = "frmMudarAutorizados";
+            this.Text = "Alterar Professores Autorizados";
+            this.Load += new System.EventHandler(this.frmMudarAutorizados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.professoresBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,7 +112,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private Database1DataSet database1DataSet;
-        private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private Database1DataSetTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        private System.Windows.Forms.BindingSource professoresBindingSource;
+        private Database1DataSetTableAdapters.ProfessoresTableAdapter professoresTableAdapter;
     }
 }
