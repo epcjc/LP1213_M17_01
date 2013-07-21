@@ -35,7 +35,7 @@ namespace Projeto_PAP
         private void button1_Click(object sender, EventArgs e)
         {
 
-            this.consultasMaterialTableAdapter.FillByPesqCurso(this.database1DataSet.ConsultasMaterial, this.textBox1.Text);
+           // this.consultasMaterialTableAdapter.FillByPesqCurso(this.database1DataSet.ConsultasMaterial, this.textBox1.Text);
           
         }
 
