@@ -72,6 +72,24 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Material\frmMudarTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmMudarTipo.Designer.cs">
+      <DependentUpon>frmMudarTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material\frmMudarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmMudarCurso.Designer.cs">
+      <DependentUpon>frmMudarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material\frmFichaMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmFichaMaterial.Designer.cs">
+      <DependentUpon>frmFichaMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material\frmInserirMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +337,15 @@
     <Compile Include="Relatórios.Designer.cs">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Material\frmMudarTipo.resx">
+      <DependentUpon>frmMudarTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\frmMudarCurso.resx">
+      <DependentUpon>frmMudarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\frmFichaMaterial.resx">
+      <DependentUpon>frmFichaMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material\frmInserirMaterial.resx">
       <DependentUpon>frmInserirMaterial.cs</DependentUpon>
     </EmbeddedResource>

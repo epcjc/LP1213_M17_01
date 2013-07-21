@@ -216,7 +216,7 @@ namespace Projeto_PAP
                 }
             }
 
-           MessageBox.Show(query);
+          // MessageBox.Show(query);
 
             SqlCommand queryCommand = new SqlCommand(query, conn);
           
@@ -234,6 +234,20 @@ namespace Projeto_PAP
        
 
            
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int linha = consultasMaterialDataGridView.SelectedRows[0].Index;
+
+            
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linha];
+
+            frmFichaMaterial frm = new frmFichaMaterial();
+
+            frm.Id_material = Convert.ToInt32(dgv.Cells[0].Value);
+            frm.ShowDialog();
+
         }
 
         
