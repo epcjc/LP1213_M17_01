@@ -32,10 +32,6 @@ namespace Projeto_PAP {
         
         private Requisições_SalasDataTable tableRequisições_Salas;
         
-        private RequisiçõesMaterialDataTable tableRequisiçõesMaterial;
-        
-        private RequisitadoresDataTable tableRequisitadores;
-        
         private SalasDataTable tableSalas;
         
         private SemanaDataTable tableSemana;
@@ -66,6 +62,8 @@ namespace Projeto_PAP {
         
         private ProfessoresAutorizadosMaterialDataTable tableProfessoresAutorizadosMaterial;
         
+        private RequisiçõesMaterialDataTable tableRequisiçõesMaterial;
+        
         private global::System.Data.DataRelation relationFK_Horario_Salas_Horas;
         
         private global::System.Data.DataRelation relationFK_Horario_Salas_Salas;
@@ -80,8 +78,6 @@ namespace Projeto_PAP {
         
         private global::System.Data.DataRelation relationFK_Requisições_Salas_Salas;
         
-        private global::System.Data.DataRelation relationFK_RequisiçõesMaterial_Requisitadores;
-        
         private global::System.Data.DataRelation relationFK_Requisitantes_material_Professores;
         
         private global::System.Data.DataRelation relationFK_Requisitantes_material_Material1;
@@ -90,11 +86,11 @@ namespace Projeto_PAP {
         
         private global::System.Data.DataRelation relationFK_Material_Categoria1;
         
-        private global::System.Data.DataRelation relationFK_RequisiçõesMaterial_Material1;
+        private global::System.Data.DataRelation relationFK_Requisitantes_material_Material;
         
         private global::System.Data.DataRelation relationFK_RequisiçõesMaterial_Material;
         
-        private global::System.Data.DataRelation relationFK_Requisitantes_material_Material;
+        private global::System.Data.DataRelation relationFK_RequisiçõesMaterial_Professores;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -135,12 +131,6 @@ namespace Projeto_PAP {
                 }
                 if ((ds.Tables["Requisições_Salas"] != null)) {
                     base.Tables.Add(new Requisições_SalasDataTable(ds.Tables["Requisições_Salas"]));
-                }
-                if ((ds.Tables["RequisiçõesMaterial"] != null)) {
-                    base.Tables.Add(new RequisiçõesMaterialDataTable(ds.Tables["RequisiçõesMaterial"]));
-                }
-                if ((ds.Tables["Requisitadores"] != null)) {
-                    base.Tables.Add(new RequisitadoresDataTable(ds.Tables["Requisitadores"]));
                 }
                 if ((ds.Tables["Salas"] != null)) {
                     base.Tables.Add(new SalasDataTable(ds.Tables["Salas"]));
@@ -186,6 +176,9 @@ namespace Projeto_PAP {
                 }
                 if ((ds.Tables["ProfessoresAutorizadosMaterial"] != null)) {
                     base.Tables.Add(new ProfessoresAutorizadosMaterialDataTable(ds.Tables["ProfessoresAutorizadosMaterial"]));
+                }
+                if ((ds.Tables["RequisiçõesMaterial"] != null)) {
+                    base.Tables.Add(new RequisiçõesMaterialDataTable(ds.Tables["RequisiçõesMaterial"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -242,26 +235,6 @@ namespace Projeto_PAP {
         public Requisições_SalasDataTable Requisições_Salas {
             get {
                 return this.tableRequisições_Salas;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RequisiçõesMaterialDataTable RequisiçõesMaterial {
-            get {
-                return this.tableRequisiçõesMaterial;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public RequisitadoresDataTable Requisitadores {
-            get {
-                return this.tableRequisitadores;
             }
         }
         
@@ -417,6 +390,16 @@ namespace Projeto_PAP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public RequisiçõesMaterialDataTable RequisiçõesMaterial {
+            get {
+                return this.tableRequisiçõesMaterial;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -494,12 +477,6 @@ namespace Projeto_PAP {
                 if ((ds.Tables["Requisições_Salas"] != null)) {
                     base.Tables.Add(new Requisições_SalasDataTable(ds.Tables["Requisições_Salas"]));
                 }
-                if ((ds.Tables["RequisiçõesMaterial"] != null)) {
-                    base.Tables.Add(new RequisiçõesMaterialDataTable(ds.Tables["RequisiçõesMaterial"]));
-                }
-                if ((ds.Tables["Requisitadores"] != null)) {
-                    base.Tables.Add(new RequisitadoresDataTable(ds.Tables["Requisitadores"]));
-                }
                 if ((ds.Tables["Salas"] != null)) {
                     base.Tables.Add(new SalasDataTable(ds.Tables["Salas"]));
                 }
@@ -544,6 +521,9 @@ namespace Projeto_PAP {
                 }
                 if ((ds.Tables["ProfessoresAutorizadosMaterial"] != null)) {
                     base.Tables.Add(new ProfessoresAutorizadosMaterialDataTable(ds.Tables["ProfessoresAutorizadosMaterial"]));
+                }
+                if ((ds.Tables["RequisiçõesMaterial"] != null)) {
+                    base.Tables.Add(new RequisiçõesMaterialDataTable(ds.Tables["RequisiçõesMaterial"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -600,18 +580,6 @@ namespace Projeto_PAP {
             if ((initTable == true)) {
                 if ((this.tableRequisições_Salas != null)) {
                     this.tableRequisições_Salas.InitVars();
-                }
-            }
-            this.tableRequisiçõesMaterial = ((RequisiçõesMaterialDataTable)(base.Tables["RequisiçõesMaterial"]));
-            if ((initTable == true)) {
-                if ((this.tableRequisiçõesMaterial != null)) {
-                    this.tableRequisiçõesMaterial.InitVars();
-                }
-            }
-            this.tableRequisitadores = ((RequisitadoresDataTable)(base.Tables["Requisitadores"]));
-            if ((initTable == true)) {
-                if ((this.tableRequisitadores != null)) {
-                    this.tableRequisitadores.InitVars();
                 }
             }
             this.tableSalas = ((SalasDataTable)(base.Tables["Salas"]));
@@ -704,6 +672,12 @@ namespace Projeto_PAP {
                     this.tableProfessoresAutorizadosMaterial.InitVars();
                 }
             }
+            this.tableRequisiçõesMaterial = ((RequisiçõesMaterialDataTable)(base.Tables["RequisiçõesMaterial"]));
+            if ((initTable == true)) {
+                if ((this.tableRequisiçõesMaterial != null)) {
+                    this.tableRequisiçõesMaterial.InitVars();
+                }
+            }
             this.relationFK_Horario_Salas_Horas = this.Relations["FK_Horario_Salas_Horas"];
             this.relationFK_Horario_Salas_Salas = this.Relations["FK_Horario_Salas_Salas"];
             this.relationFK_Horario_Salas_Semana = this.Relations["FK_Horario_Salas_Semana"];
@@ -711,14 +685,13 @@ namespace Projeto_PAP {
             this.relationFK_Requisições_Salas_Horas = this.Relations["FK_Requisições_Salas_Horas"];
             this.relationFK_Requisições_Salas_Professores = this.Relations["FK_Requisições_Salas_Professores"];
             this.relationFK_Requisições_Salas_Salas = this.Relations["FK_Requisições_Salas_Salas"];
-            this.relationFK_RequisiçõesMaterial_Requisitadores = this.Relations["FK_RequisiçõesMaterial_Requisitadores"];
             this.relationFK_Requisitantes_material_Professores = this.Relations["FK_Requisitantes_material_Professores"];
             this.relationFK_Requisitantes_material_Material1 = this.Relations["FK_Requisitantes_material_Material1"];
             this.relationFK_Material_Curso1 = this.Relations["FK_Material_Curso1"];
             this.relationFK_Material_Categoria1 = this.Relations["FK_Material_Categoria1"];
-            this.relationFK_RequisiçõesMaterial_Material1 = this.Relations["FK_RequisiçõesMaterial_Material1"];
-            this.relationFK_RequisiçõesMaterial_Material = this.Relations["FK_RequisiçõesMaterial_Material"];
             this.relationFK_Requisitantes_material_Material = this.Relations["FK_Requisitantes_material_Material"];
+            this.relationFK_RequisiçõesMaterial_Material = this.Relations["FK_RequisiçõesMaterial_Material"];
+            this.relationFK_RequisiçõesMaterial_Professores = this.Relations["FK_RequisiçõesMaterial_Professores"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,10 +710,6 @@ namespace Projeto_PAP {
             base.Tables.Add(this.tableProfessores);
             this.tableRequisições_Salas = new Requisições_SalasDataTable();
             base.Tables.Add(this.tableRequisições_Salas);
-            this.tableRequisiçõesMaterial = new RequisiçõesMaterialDataTable();
-            base.Tables.Add(this.tableRequisiçõesMaterial);
-            this.tableRequisitadores = new RequisitadoresDataTable();
-            base.Tables.Add(this.tableRequisitadores);
             this.tableSalas = new SalasDataTable();
             base.Tables.Add(this.tableSalas);
             this.tableSemana = new SemanaDataTable();
@@ -771,6 +740,8 @@ namespace Projeto_PAP {
             base.Tables.Add(this.tableEstados);
             this.tableProfessoresAutorizadosMaterial = new ProfessoresAutorizadosMaterialDataTable();
             base.Tables.Add(this.tableProfessoresAutorizadosMaterial);
+            this.tableRequisiçõesMaterial = new RequisiçõesMaterialDataTable();
+            base.Tables.Add(this.tableRequisiçõesMaterial);
             this.relationFK_Horario_Salas_Horas = new global::System.Data.DataRelation("FK_Horario_Salas_Horas", new global::System.Data.DataColumn[] {
                         this.tableHoras.ID_TempoColumn}, new global::System.Data.DataColumn[] {
                         this.tableHorario_Salas.ID_TempoColumn}, false);
@@ -799,10 +770,6 @@ namespace Projeto_PAP {
                         this.tableSalas.ID_SalaColumn}, new global::System.Data.DataColumn[] {
                         this.tableRequisições_Salas.ID_SalaColumn}, false);
             this.Relations.Add(this.relationFK_Requisições_Salas_Salas);
-            this.relationFK_RequisiçõesMaterial_Requisitadores = new global::System.Data.DataRelation("FK_RequisiçõesMaterial_Requisitadores", new global::System.Data.DataColumn[] {
-                        this.tableRequisitadores.ID_RequisitadorColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRequisiçõesMaterial.ID_RequisitadorColumn}, false);
-            this.Relations.Add(this.relationFK_RequisiçõesMaterial_Requisitadores);
             this.relationFK_Requisitantes_material_Professores = new global::System.Data.DataRelation("FK_Requisitantes_material_Professores", new global::System.Data.DataColumn[] {
                         this.tableProfessores.ID_ProfessorColumn}, new global::System.Data.DataColumn[] {
                         this.tableRequisitantes_material.Id_professorColumn}, false);
@@ -819,18 +786,18 @@ namespace Projeto_PAP {
                         this.tableCategoria.id_categoriaColumn}, new global::System.Data.DataColumn[] {
                         this.tableMaterial.id_categoriaColumn}, false);
             this.Relations.Add(this.relationFK_Material_Categoria1);
-            this.relationFK_RequisiçõesMaterial_Material1 = new global::System.Data.DataRelation("FK_RequisiçõesMaterial_Material1", new global::System.Data.DataColumn[] {
-                        this.tableMaterial.ID_MaterialColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRequisiçõesMaterial.ID_MaterialColumn}, false);
-            this.Relations.Add(this.relationFK_RequisiçõesMaterial_Material1);
-            this.relationFK_RequisiçõesMaterial_Material = new global::System.Data.DataRelation("FK_RequisiçõesMaterial_Material", new global::System.Data.DataColumn[] {
-                        this.tableProfessoresAutorizadosMaterial.ID_MaterialColumn}, new global::System.Data.DataColumn[] {
-                        this.tableRequisiçõesMaterial.ID_MaterialColumn}, false);
-            this.Relations.Add(this.relationFK_RequisiçõesMaterial_Material);
             this.relationFK_Requisitantes_material_Material = new global::System.Data.DataRelation("FK_Requisitantes_material_Material", new global::System.Data.DataColumn[] {
                         this.tableProfessoresAutorizadosMaterial.ID_MaterialColumn}, new global::System.Data.DataColumn[] {
                         this.tableRequisitantes_material.Id_materialColumn}, false);
             this.Relations.Add(this.relationFK_Requisitantes_material_Material);
+            this.relationFK_RequisiçõesMaterial_Material = new global::System.Data.DataRelation("FK_RequisiçõesMaterial_Material", new global::System.Data.DataColumn[] {
+                        this.tableMaterial.ID_MaterialColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRequisiçõesMaterial.ID_MaterialColumn}, false);
+            this.Relations.Add(this.relationFK_RequisiçõesMaterial_Material);
+            this.relationFK_RequisiçõesMaterial_Professores = new global::System.Data.DataRelation("FK_RequisiçõesMaterial_Professores", new global::System.Data.DataColumn[] {
+                        this.tableProfessores.ID_ProfessorColumn}, new global::System.Data.DataColumn[] {
+                        this.tableRequisiçõesMaterial.ID_RequisitadorColumn}, false);
+            this.Relations.Add(this.relationFK_RequisiçõesMaterial_Professores);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -854,18 +821,6 @@ namespace Projeto_PAP {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeRequisições_Salas() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeRequisiçõesMaterial() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeRequisitadores() {
             return false;
         }
         
@@ -961,6 +916,12 @@ namespace Projeto_PAP {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeRequisiçõesMaterial() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1027,12 +988,6 @@ namespace Projeto_PAP {
         public delegate void Requisições_SalasRowChangeEventHandler(object sender, Requisições_SalasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void RequisiçõesMaterialRowChangeEventHandler(object sender, RequisiçõesMaterialRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void RequisitadoresRowChangeEventHandler(object sender, RequisitadoresRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void SalasRowChangeEventHandler(object sender, SalasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1076,6 +1031,9 @@ namespace Projeto_PAP {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ProfessoresAutorizadosMaterialRowChangeEventHandler(object sender, ProfessoresAutorizadosMaterialRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void RequisiçõesMaterialRowChangeEventHandler(object sender, RequisiçõesMaterialRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2305,724 +2263,6 @@ namespace Projeto_PAP {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "Requisições_SalasDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RequisiçõesMaterialDataTable : global::System.Data.TypedTableBase<RequisiçõesMaterialRow> {
-            
-            private global::System.Data.DataColumn columnID_Requisicao;
-            
-            private global::System.Data.DataColumn columnID_Requisitador;
-            
-            private global::System.Data.DataColumn columnData_Requisicao;
-            
-            private global::System.Data.DataColumn columnInicio_Requisicao;
-            
-            private global::System.Data.DataColumn columnFim_requisicao;
-            
-            private global::System.Data.DataColumn columnID_Material;
-            
-            private global::System.Data.DataColumn columnHora_Requisitado;
-            
-            private global::System.Data.DataColumn columnHora_Entregue;
-            
-            private global::System.Data.DataColumn columnObservacoes_Antes_requisicao;
-            
-            private global::System.Data.DataColumn columnObservacoes_apos_requisicao;
-            
-            private global::System.Data.DataColumn columnEstado;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialDataTable() {
-                this.TableName = "RequisiçõesMaterial";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RequisiçõesMaterialDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected RequisiçõesMaterialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_RequisicaoColumn {
-                get {
-                    return this.columnID_Requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_RequisitadorColumn {
-                get {
-                    return this.columnID_Requisitador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Data_RequisicaoColumn {
-                get {
-                    return this.columnData_Requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Inicio_RequisicaoColumn {
-                get {
-                    return this.columnInicio_Requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Fim_requisicaoColumn {
-                get {
-                    return this.columnFim_requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_MaterialColumn {
-                get {
-                    return this.columnID_Material;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Hora_RequisitadoColumn {
-                get {
-                    return this.columnHora_Requisitado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Hora_EntregueColumn {
-                get {
-                    return this.columnHora_Entregue;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Observacoes_Antes_requisicaoColumn {
-                get {
-                    return this.columnObservacoes_Antes_requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Observacoes_apos_requisicaoColumn {
-                get {
-                    return this.columnObservacoes_apos_requisicao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EstadoColumn {
-                get {
-                    return this.columnEstado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow this[int index] {
-                get {
-                    return ((RequisiçõesMaterialRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddRequisiçõesMaterialRow(RequisiçõesMaterialRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow AddRequisiçõesMaterialRow(RequisitadoresRow parentRequisitadoresRowByFK_RequisiçõesMaterial_Requisitadores, string Data_Requisicao, string Inicio_Requisicao, string Fim_requisicao, MaterialRow parentMaterialRowByFK_RequisiçõesMaterial_Material1, string Hora_Requisitado, string Hora_Entregue, string Observacoes_Antes_requisicao, string Observacoes_apos_requisicao, string Estado) {
-                RequisiçõesMaterialRow rowRequisiçõesMaterialRow = ((RequisiçõesMaterialRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        Data_Requisicao,
-                        Inicio_Requisicao,
-                        Fim_requisicao,
-                        null,
-                        Hora_Requisitado,
-                        Hora_Entregue,
-                        Observacoes_Antes_requisicao,
-                        Observacoes_apos_requisicao,
-                        Estado};
-                if ((parentRequisitadoresRowByFK_RequisiçõesMaterial_Requisitadores != null)) {
-                    columnValuesArray[1] = parentRequisitadoresRowByFK_RequisiçõesMaterial_Requisitadores[0];
-                }
-                if ((parentMaterialRowByFK_RequisiçõesMaterial_Material1 != null)) {
-                    columnValuesArray[5] = parentMaterialRowByFK_RequisiçõesMaterial_Material1[0];
-                }
-                rowRequisiçõesMaterialRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRequisiçõesMaterialRow);
-                return rowRequisiçõesMaterialRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow FindByID_Requisicao(int ID_Requisicao) {
-                return ((RequisiçõesMaterialRow)(this.Rows.Find(new object[] {
-                            ID_Requisicao})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                RequisiçõesMaterialDataTable cln = ((RequisiçõesMaterialDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new RequisiçõesMaterialDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID_Requisicao = base.Columns["ID_Requisicao"];
-                this.columnID_Requisitador = base.Columns["ID_Requisitador"];
-                this.columnData_Requisicao = base.Columns["Data_Requisicao"];
-                this.columnInicio_Requisicao = base.Columns["Inicio_Requisicao"];
-                this.columnFim_requisicao = base.Columns["Fim_requisicao"];
-                this.columnID_Material = base.Columns["ID_Material"];
-                this.columnHora_Requisitado = base.Columns["Hora_Requisitado"];
-                this.columnHora_Entregue = base.Columns["Hora_Entregue"];
-                this.columnObservacoes_Antes_requisicao = base.Columns["Observacoes_Antes_requisicao"];
-                this.columnObservacoes_apos_requisicao = base.Columns["Observacoes_apos_requisicao"];
-                this.columnEstado = base.Columns["Estado"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID_Requisicao = new global::System.Data.DataColumn("ID_Requisicao", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Requisicao);
-                this.columnID_Requisitador = new global::System.Data.DataColumn("ID_Requisitador", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Requisitador);
-                this.columnData_Requisicao = new global::System.Data.DataColumn("Data_Requisicao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnData_Requisicao);
-                this.columnInicio_Requisicao = new global::System.Data.DataColumn("Inicio_Requisicao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInicio_Requisicao);
-                this.columnFim_requisicao = new global::System.Data.DataColumn("Fim_requisicao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFim_requisicao);
-                this.columnID_Material = new global::System.Data.DataColumn("ID_Material", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Material);
-                this.columnHora_Requisitado = new global::System.Data.DataColumn("Hora_Requisitado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHora_Requisitado);
-                this.columnHora_Entregue = new global::System.Data.DataColumn("Hora_Entregue", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHora_Entregue);
-                this.columnObservacoes_Antes_requisicao = new global::System.Data.DataColumn("Observacoes_Antes_requisicao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnObservacoes_Antes_requisicao);
-                this.columnObservacoes_apos_requisicao = new global::System.Data.DataColumn("Observacoes_apos_requisicao", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnObservacoes_apos_requisicao);
-                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEstado);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_Requisicao}, true));
-                this.columnID_Requisicao.AutoIncrement = true;
-                this.columnID_Requisicao.AutoIncrementSeed = -1;
-                this.columnID_Requisicao.AutoIncrementStep = -1;
-                this.columnID_Requisicao.AllowDBNull = false;
-                this.columnID_Requisicao.ReadOnly = true;
-                this.columnID_Requisicao.Unique = true;
-                this.columnID_Requisitador.AllowDBNull = false;
-                this.columnData_Requisicao.AllowDBNull = false;
-                this.columnData_Requisicao.MaxLength = 50;
-                this.columnInicio_Requisicao.AllowDBNull = false;
-                this.columnInicio_Requisicao.MaxLength = 50;
-                this.columnFim_requisicao.AllowDBNull = false;
-                this.columnFim_requisicao.MaxLength = 50;
-                this.columnID_Material.AllowDBNull = false;
-                this.columnHora_Requisitado.AllowDBNull = false;
-                this.columnHora_Requisitado.MaxLength = 50;
-                this.columnHora_Entregue.AllowDBNull = false;
-                this.columnHora_Entregue.MaxLength = 50;
-                this.columnObservacoes_Antes_requisicao.AllowDBNull = false;
-                this.columnObservacoes_Antes_requisicao.MaxLength = 50;
-                this.columnObservacoes_apos_requisicao.MaxLength = 50;
-                this.columnEstado.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow NewRequisiçõesMaterialRow() {
-                return ((RequisiçõesMaterialRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RequisiçõesMaterialRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(RequisiçõesMaterialRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.RequisiçõesMaterialRowChanged != null)) {
-                    this.RequisiçõesMaterialRowChanged(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.RequisiçõesMaterialRowChanging != null)) {
-                    this.RequisiçõesMaterialRowChanging(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.RequisiçõesMaterialRowDeleted != null)) {
-                    this.RequisiçõesMaterialRowDeleted(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.RequisiçõesMaterialRowDeleting != null)) {
-                    this.RequisiçõesMaterialRowDeleting(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveRequisiçõesMaterialRow(RequisiçõesMaterialRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet ds = new Database1DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RequisiçõesMaterialDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class RequisitadoresDataTable : global::System.Data.TypedTableBase<RequisitadoresRow> {
-            
-            private global::System.Data.DataColumn columnID_Requisitador;
-            
-            private global::System.Data.DataColumn columnNome_Requisitador;
-            
-            private global::System.Data.DataColumn columnContacto_Requisitador;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresDataTable() {
-                this.TableName = "Requisitadores";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RequisitadoresDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected RequisitadoresDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ID_RequisitadorColumn {
-                get {
-                    return this.columnID_Requisitador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Nome_RequisitadorColumn {
-                get {
-                    return this.columnNome_Requisitador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Contacto_RequisitadorColumn {
-                get {
-                    return this.columnContacto_Requisitador;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow this[int index] {
-                get {
-                    return ((RequisitadoresRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisitadoresRowChangeEventHandler RequisitadoresRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisitadoresRowChangeEventHandler RequisitadoresRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisitadoresRowChangeEventHandler RequisitadoresRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event RequisitadoresRowChangeEventHandler RequisitadoresRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddRequisitadoresRow(RequisitadoresRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow AddRequisitadoresRow(string Nome_Requisitador, string Contacto_Requisitador) {
-                RequisitadoresRow rowRequisitadoresRow = ((RequisitadoresRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Nome_Requisitador,
-                        Contacto_Requisitador};
-                rowRequisitadoresRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowRequisitadoresRow);
-                return rowRequisitadoresRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow FindByID_Requisitador(int ID_Requisitador) {
-                return ((RequisitadoresRow)(this.Rows.Find(new object[] {
-                            ID_Requisitador})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                RequisitadoresDataTable cln = ((RequisitadoresDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new RequisitadoresDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID_Requisitador = base.Columns["ID_Requisitador"];
-                this.columnNome_Requisitador = base.Columns["Nome_Requisitador"];
-                this.columnContacto_Requisitador = base.Columns["Contacto_Requisitador"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID_Requisitador = new global::System.Data.DataColumn("ID_Requisitador", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID_Requisitador);
-                this.columnNome_Requisitador = new global::System.Data.DataColumn("Nome_Requisitador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNome_Requisitador);
-                this.columnContacto_Requisitador = new global::System.Data.DataColumn("Contacto_Requisitador", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContacto_Requisitador);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID_Requisitador}, true));
-                this.columnID_Requisitador.AutoIncrement = true;
-                this.columnID_Requisitador.AutoIncrementSeed = -1;
-                this.columnID_Requisitador.AutoIncrementStep = -1;
-                this.columnID_Requisitador.AllowDBNull = false;
-                this.columnID_Requisitador.ReadOnly = true;
-                this.columnID_Requisitador.Unique = true;
-                this.columnNome_Requisitador.AllowDBNull = false;
-                this.columnNome_Requisitador.MaxLength = 50;
-                this.columnContacto_Requisitador.AllowDBNull = false;
-                this.columnContacto_Requisitador.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow NewRequisitadoresRow() {
-                return ((RequisitadoresRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new RequisitadoresRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(RequisitadoresRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.RequisitadoresRowChanged != null)) {
-                    this.RequisitadoresRowChanged(this, new RequisitadoresRowChangeEvent(((RequisitadoresRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.RequisitadoresRowChanging != null)) {
-                    this.RequisitadoresRowChanging(this, new RequisitadoresRowChangeEvent(((RequisitadoresRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.RequisitadoresRowDeleted != null)) {
-                    this.RequisitadoresRowDeleted(this, new RequisitadoresRowChangeEvent(((RequisitadoresRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.RequisitadoresRowDeleting != null)) {
-                    this.RequisitadoresRowDeleting(this, new RequisitadoresRowChangeEvent(((RequisitadoresRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveRequisitadoresRow(RequisitadoresRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Database1DataSet ds = new Database1DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "RequisitadoresDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -7757,6 +6997,419 @@ namespace Projeto_PAP {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class RequisiçõesMaterialDataTable : global::System.Data.TypedTableBase<RequisiçõesMaterialRow> {
+            
+            private global::System.Data.DataColumn columnID_Requisicao;
+            
+            private global::System.Data.DataColumn columnID_Requisitador;
+            
+            private global::System.Data.DataColumn columnData_Requisicao;
+            
+            private global::System.Data.DataColumn columnInicio_Requisicao;
+            
+            private global::System.Data.DataColumn columnFim_requisicao;
+            
+            private global::System.Data.DataColumn columnID_Material;
+            
+            private global::System.Data.DataColumn columndata_levantado;
+            
+            private global::System.Data.DataColumn columndata_entregue;
+            
+            private global::System.Data.DataColumn columnObservacoes_Antes_requisicao;
+            
+            private global::System.Data.DataColumn columnObservacoes_apos_requisicao;
+            
+            private global::System.Data.DataColumn columnEstado;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialDataTable() {
+                this.TableName = "RequisiçõesMaterial";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal RequisiçõesMaterialDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected RequisiçõesMaterialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_RequisicaoColumn {
+                get {
+                    return this.columnID_Requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_RequisitadorColumn {
+                get {
+                    return this.columnID_Requisitador;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Data_RequisicaoColumn {
+                get {
+                    return this.columnData_Requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Inicio_RequisicaoColumn {
+                get {
+                    return this.columnInicio_Requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Fim_requisicaoColumn {
+                get {
+                    return this.columnFim_requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ID_MaterialColumn {
+                get {
+                    return this.columnID_Material;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn data_levantadoColumn {
+                get {
+                    return this.columndata_levantado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn data_entregueColumn {
+                get {
+                    return this.columndata_entregue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Observacoes_Antes_requisicaoColumn {
+                get {
+                    return this.columnObservacoes_Antes_requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Observacoes_apos_requisicaoColumn {
+                get {
+                    return this.columnObservacoes_apos_requisicao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EstadoColumn {
+                get {
+                    return this.columnEstado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow this[int index] {
+                get {
+                    return ((RequisiçõesMaterialRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event RequisiçõesMaterialRowChangeEventHandler RequisiçõesMaterialRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddRequisiçõesMaterialRow(RequisiçõesMaterialRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow AddRequisiçõesMaterialRow(ProfessoresRow parentProfessoresRowByFK_RequisiçõesMaterial_Professores, System.DateTime Data_Requisicao, System.DateTime Inicio_Requisicao, System.DateTime Fim_requisicao, MaterialRow parentMaterialRowByFK_RequisiçõesMaterial_Material, System.DateTime data_levantado, System.DateTime data_entregue, string Observacoes_Antes_requisicao, string Observacoes_apos_requisicao, string Estado) {
+                RequisiçõesMaterialRow rowRequisiçõesMaterialRow = ((RequisiçõesMaterialRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        Data_Requisicao,
+                        Inicio_Requisicao,
+                        Fim_requisicao,
+                        null,
+                        data_levantado,
+                        data_entregue,
+                        Observacoes_Antes_requisicao,
+                        Observacoes_apos_requisicao,
+                        Estado};
+                if ((parentProfessoresRowByFK_RequisiçõesMaterial_Professores != null)) {
+                    columnValuesArray[1] = parentProfessoresRowByFK_RequisiçõesMaterial_Professores[0];
+                }
+                if ((parentMaterialRowByFK_RequisiçõesMaterial_Material != null)) {
+                    columnValuesArray[5] = parentMaterialRowByFK_RequisiçõesMaterial_Material[0];
+                }
+                rowRequisiçõesMaterialRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRequisiçõesMaterialRow);
+                return rowRequisiçõesMaterialRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow FindByID_Requisicao(int ID_Requisicao) {
+                return ((RequisiçõesMaterialRow)(this.Rows.Find(new object[] {
+                            ID_Requisicao})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                RequisiçõesMaterialDataTable cln = ((RequisiçõesMaterialDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new RequisiçõesMaterialDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Requisicao = base.Columns["ID_Requisicao"];
+                this.columnID_Requisitador = base.Columns["ID_Requisitador"];
+                this.columnData_Requisicao = base.Columns["Data_Requisicao"];
+                this.columnInicio_Requisicao = base.Columns["Inicio_Requisicao"];
+                this.columnFim_requisicao = base.Columns["Fim_requisicao"];
+                this.columnID_Material = base.Columns["ID_Material"];
+                this.columndata_levantado = base.Columns["data_levantado"];
+                this.columndata_entregue = base.Columns["data_entregue"];
+                this.columnObservacoes_Antes_requisicao = base.Columns["Observacoes_Antes_requisicao"];
+                this.columnObservacoes_apos_requisicao = base.Columns["Observacoes_apos_requisicao"];
+                this.columnEstado = base.Columns["Estado"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID_Requisicao = new global::System.Data.DataColumn("ID_Requisicao", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Requisicao);
+                this.columnID_Requisitador = new global::System.Data.DataColumn("ID_Requisitador", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Requisitador);
+                this.columnData_Requisicao = new global::System.Data.DataColumn("Data_Requisicao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData_Requisicao);
+                this.columnInicio_Requisicao = new global::System.Data.DataColumn("Inicio_Requisicao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInicio_Requisicao);
+                this.columnFim_requisicao = new global::System.Data.DataColumn("Fim_requisicao", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFim_requisicao);
+                this.columnID_Material = new global::System.Data.DataColumn("ID_Material", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Material);
+                this.columndata_levantado = new global::System.Data.DataColumn("data_levantado", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndata_levantado);
+                this.columndata_entregue = new global::System.Data.DataColumn("data_entregue", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndata_entregue);
+                this.columnObservacoes_Antes_requisicao = new global::System.Data.DataColumn("Observacoes_Antes_requisicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacoes_Antes_requisicao);
+                this.columnObservacoes_apos_requisicao = new global::System.Data.DataColumn("Observacoes_apos_requisicao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnObservacoes_apos_requisicao);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Requisicao}, true));
+                this.columnID_Requisicao.AutoIncrement = true;
+                this.columnID_Requisicao.AutoIncrementSeed = -1;
+                this.columnID_Requisicao.AutoIncrementStep = -1;
+                this.columnID_Requisicao.AllowDBNull = false;
+                this.columnID_Requisicao.ReadOnly = true;
+                this.columnID_Requisicao.Unique = true;
+                this.columnID_Requisitador.AllowDBNull = false;
+                this.columnID_Material.AllowDBNull = false;
+                this.columnObservacoes_Antes_requisicao.MaxLength = 50;
+                this.columnObservacoes_apos_requisicao.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow NewRequisiçõesMaterialRow() {
+                return ((RequisiçõesMaterialRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new RequisiçõesMaterialRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(RequisiçõesMaterialRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.RequisiçõesMaterialRowChanged != null)) {
+                    this.RequisiçõesMaterialRowChanged(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.RequisiçõesMaterialRowChanging != null)) {
+                    this.RequisiçõesMaterialRowChanging(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.RequisiçõesMaterialRowDeleted != null)) {
+                    this.RequisiçõesMaterialRowDeleted(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.RequisiçõesMaterialRowDeleting != null)) {
+                    this.RequisiçõesMaterialRowDeleting(this, new RequisiçõesMaterialRowChangeEvent(((RequisiçõesMaterialRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveRequisiçõesMaterialRow(RequisiçõesMaterialRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Database1DataSet ds = new Database1DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "RequisiçõesMaterialDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Horario_SalasRow : global::System.Data.DataRow {
@@ -8025,6 +7678,17 @@ namespace Projeto_PAP {
                     return ((Requisitantes_materialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Requisitantes_material_Professores"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow[] GetRequisiçõesMaterialRows() {
+                if ((this.Table.ChildRelations["FK_RequisiçõesMaterial_Professores"] == null)) {
+                    return new RequisiçõesMaterialRow[0];
+                }
+                else {
+                    return ((RequisiçõesMaterialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RequisiçõesMaterial_Professores"])));
+                }
+            }
         }
         
         /// <summary>
@@ -8155,269 +7819,6 @@ namespace Projeto_PAP {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEstadoNull() {
                 this[this.tableRequisições_Salas.EstadoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class RequisiçõesMaterialRow : global::System.Data.DataRow {
-            
-            private RequisiçõesMaterialDataTable tableRequisiçõesMaterial;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RequisiçõesMaterialRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableRequisiçõesMaterial = ((RequisiçõesMaterialDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Requisicao {
-                get {
-                    return ((int)(this[this.tableRequisiçõesMaterial.ID_RequisicaoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.ID_RequisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Requisitador {
-                get {
-                    return ((int)(this[this.tableRequisiçõesMaterial.ID_RequisitadorColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.ID_RequisitadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Data_Requisicao {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Data_RequisicaoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Data_RequisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Inicio_Requisicao {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Fim_requisicao {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Fim_requisicaoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Fim_requisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Material {
-                get {
-                    return ((int)(this[this.tableRequisiçõesMaterial.ID_MaterialColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.ID_MaterialColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Hora_Requisitado {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Hora_RequisitadoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Hora_RequisitadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Hora_Entregue {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Hora_EntregueColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Hora_EntregueColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Observacoes_Antes_requisicao {
-                get {
-                    return ((string)(this[this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn]));
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Observacoes_apos_requisicao {
-                get {
-                    try {
-                        return ((string)(this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Observacoes_apos_requisicao\' in table \'RequisiçõesMaterial\'" +
-                                " is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Estado {
-                get {
-                    try {
-                        return ((string)(this[this.tableRequisiçõesMaterial.EstadoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'RequisiçõesMaterial\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableRequisiçõesMaterial.EstadoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow RequisitadoresRow {
-                get {
-                    return ((RequisitadoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_RequisiçõesMaterial_Requisitadores"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_RequisiçõesMaterial_Requisitadores"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaterialRow MaterialRow {
-                get {
-                    return ((MaterialRow)(this.GetParentRow(this.Table.ParentRelations["FK_RequisiçõesMaterial_Material1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_RequisiçõesMaterial_Material1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProfessoresAutorizadosMaterialRow ProfessoresAutorizadosMaterialRow {
-                get {
-                    return ((ProfessoresAutorizadosMaterialRow)(this.GetParentRow(this.Table.ParentRelations["FK_RequisiçõesMaterial_Material"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_RequisiçõesMaterial_Material"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsObservacoes_apos_requisicaoNull() {
-                return this.IsNull(this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetObservacoes_apos_requisicaoNull() {
-                this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEstadoNull() {
-                return this.IsNull(this.tableRequisiçõesMaterial.EstadoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEstadoNull() {
-                this[this.tableRequisiçõesMaterial.EstadoColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class RequisitadoresRow : global::System.Data.DataRow {
-            
-            private RequisitadoresDataTable tableRequisitadores;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal RequisitadoresRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableRequisitadores = ((RequisitadoresDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID_Requisitador {
-                get {
-                    return ((int)(this[this.tableRequisitadores.ID_RequisitadorColumn]));
-                }
-                set {
-                    this[this.tableRequisitadores.ID_RequisitadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nome_Requisitador {
-                get {
-                    return ((string)(this[this.tableRequisitadores.Nome_RequisitadorColumn]));
-                }
-                set {
-                    this[this.tableRequisitadores.Nome_RequisitadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Contacto_Requisitador {
-                get {
-                    return ((string)(this[this.tableRequisitadores.Contacto_RequisitadorColumn]));
-                }
-                set {
-                    this[this.tableRequisitadores.Contacto_RequisitadorColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow[] GetRequisiçõesMaterialRows() {
-                if ((this.Table.ChildRelations["FK_RequisiçõesMaterial_Requisitadores"] == null)) {
-                    return new RequisiçõesMaterialRow[0];
-                }
-                else {
-                    return ((RequisiçõesMaterialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RequisiçõesMaterial_Requisitadores"])));
-                }
             }
         }
         
@@ -9447,11 +8848,11 @@ namespace Projeto_PAP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public RequisiçõesMaterialRow[] GetRequisiçõesMaterialRows() {
-                if ((this.Table.ChildRelations["FK_RequisiçõesMaterial_Material1"] == null)) {
+                if ((this.Table.ChildRelations["FK_RequisiçõesMaterial_Material"] == null)) {
                     return new RequisiçõesMaterialRow[0];
                 }
                 else {
-                    return ((RequisiçõesMaterialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RequisiçõesMaterial_Material1"])));
+                    return ((RequisiçõesMaterialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RequisiçõesMaterial_Material"])));
                 }
             }
         }
@@ -9794,17 +9195,6 @@ namespace Projeto_PAP {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow[] GetRequisiçõesMaterialRows() {
-                if ((this.Table.ChildRelations["FK_RequisiçõesMaterial_Material"] == null)) {
-                    return new RequisiçõesMaterialRow[0];
-                }
-                else {
-                    return ((RequisiçõesMaterialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_RequisiçõesMaterial_Material"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Requisitantes_materialRow[] GetRequisitantes_materialRows() {
                 if ((this.Table.ChildRelations["FK_Requisitantes_material_Material"] == null)) {
                     return new Requisitantes_materialRow[0];
@@ -9812,6 +9202,303 @@ namespace Projeto_PAP {
                 else {
                     return ((Requisitantes_materialRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Requisitantes_material_Material"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class RequisiçõesMaterialRow : global::System.Data.DataRow {
+            
+            private RequisiçõesMaterialDataTable tableRequisiçõesMaterial;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal RequisiçõesMaterialRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableRequisiçõesMaterial = ((RequisiçõesMaterialDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Requisicao {
+                get {
+                    return ((int)(this[this.tableRequisiçõesMaterial.ID_RequisicaoColumn]));
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.ID_RequisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Requisitador {
+                get {
+                    return ((int)(this[this.tableRequisiçõesMaterial.ID_RequisitadorColumn]));
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.ID_RequisitadorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Data_Requisicao {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRequisiçõesMaterial.Data_RequisicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Data_Requisicao\' in table \'RequisiçõesMaterial\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.Data_RequisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Inicio_Requisicao {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Inicio_Requisicao\' in table \'RequisiçõesMaterial\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Fim_requisicao {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRequisiçõesMaterial.Fim_requisicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Fim_requisicao\' in table \'RequisiçõesMaterial\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.Fim_requisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID_Material {
+                get {
+                    return ((int)(this[this.tableRequisiçõesMaterial.ID_MaterialColumn]));
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.ID_MaterialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime data_levantado {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRequisiçõesMaterial.data_levantadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'data_levantado\' in table \'RequisiçõesMaterial\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.data_levantadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime data_entregue {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRequisiçõesMaterial.data_entregueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'data_entregue\' in table \'RequisiçõesMaterial\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.data_entregueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Observacoes_Antes_requisicao {
+                get {
+                    try {
+                        return ((string)(this[this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Observacoes_Antes_requisicao\' in table \'RequisiçõesMaterial" +
+                                "\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Observacoes_apos_requisicao {
+                get {
+                    try {
+                        return ((string)(this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Observacoes_apos_requisicao\' in table \'RequisiçõesMaterial\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Estado {
+                get {
+                    try {
+                        return ((string)(this[this.tableRequisiçõesMaterial.EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'RequisiçõesMaterial\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRequisiçõesMaterial.EstadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MaterialRow MaterialRow {
+                get {
+                    return ((MaterialRow)(this.GetParentRow(this.Table.ParentRelations["FK_RequisiçõesMaterial_Material"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_RequisiçõesMaterial_Material"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ProfessoresRow ProfessoresRow {
+                get {
+                    return ((ProfessoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_RequisiçõesMaterial_Professores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_RequisiçõesMaterial_Professores"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsData_RequisicaoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.Data_RequisicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetData_RequisicaoNull() {
+                this[this.tableRequisiçõesMaterial.Data_RequisicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsInicio_RequisicaoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetInicio_RequisicaoNull() {
+                this[this.tableRequisiçõesMaterial.Inicio_RequisicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFim_requisicaoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.Fim_requisicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFim_requisicaoNull() {
+                this[this.tableRequisiçõesMaterial.Fim_requisicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdata_levantadoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.data_levantadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdata_levantadoNull() {
+                this[this.tableRequisiçõesMaterial.data_levantadoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdata_entregueNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.data_entregueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdata_entregueNull() {
+                this[this.tableRequisiçõesMaterial.data_entregueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObservacoes_Antes_requisicaoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObservacoes_Antes_requisicaoNull() {
+                this[this.tableRequisiçõesMaterial.Observacoes_Antes_requisicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsObservacoes_apos_requisicaoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetObservacoes_apos_requisicaoNull() {
+                this[this.tableRequisiçõesMaterial.Observacoes_apos_requisicaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableRequisiçõesMaterial.EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEstadoNull() {
+                this[this.tableRequisiçõesMaterial.EstadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9937,74 +9624,6 @@ namespace Projeto_PAP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Requisições_SalasRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class RequisiçõesMaterialRowChangeEvent : global::System.EventArgs {
-            
-            private RequisiçõesMaterialRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRowChangeEvent(RequisiçõesMaterialRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisiçõesMaterialRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class RequisitadoresRowChangeEvent : global::System.EventArgs {
-            
-            private RequisitadoresRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRowChangeEvent(RequisitadoresRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public RequisitadoresRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -10515,6 +10134,40 @@ namespace Projeto_PAP {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProfessoresAutorizadosMaterialRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class RequisiçõesMaterialRowChangeEvent : global::System.EventArgs {
+            
+            private RequisiçõesMaterialRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRowChangeEvent(RequisiçõesMaterialRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public RequisiçõesMaterialRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12083,1020 +11736,6 @@ SELECT ID, ID_Sala, ID_Tempo, ID_Professor, Observacoes, Estado FROM Requisiçõ
         public virtual int DeleteReqSala(int Original_ID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(Original_ID));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RequisiçõesMaterialTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public RequisiçõesMaterialTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "RequisiçõesMaterial";
-            tableMapping.ColumnMappings.Add("ID_Requisicao", "ID_Requisicao");
-            tableMapping.ColumnMappings.Add("ID_Requisitador", "ID_Requisitador");
-            tableMapping.ColumnMappings.Add("Data_Requisicao", "Data_Requisicao");
-            tableMapping.ColumnMappings.Add("Inicio_Requisicao", "Inicio_Requisicao");
-            tableMapping.ColumnMappings.Add("Fim_requisicao", "Fim_requisicao");
-            tableMapping.ColumnMappings.Add("ID_Material", "ID_Material");
-            tableMapping.ColumnMappings.Add("Hora_Requisitado", "Hora_Requisitado");
-            tableMapping.ColumnMappings.Add("Hora_Entregue", "Hora_Entregue");
-            tableMapping.ColumnMappings.Add("Observacoes_Antes_requisicao", "Observacoes_Antes_requisicao");
-            tableMapping.ColumnMappings.Add("Observacoes_apos_requisicao", "Observacoes_apos_requisicao");
-            tableMapping.ColumnMappings.Add("Estado", "Estado");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [RequisiçõesMaterial] WHERE (([ID_Requisicao] = @Original_ID_Requisicao) AND ([ID_Requisitador] = @Original_ID_Requisitador) AND ([Data_Requisicao] = @Original_Data_Requisicao) AND ([Inicio_Requisicao] = @Original_Inicio_Requisicao) AND ([Fim_requisicao] = @Original_Fim_requisicao) AND ([ID_Material] = @Original_ID_Material) AND ([Hora_Requisitado] = @Original_Hora_Requisitado) AND ([Hora_Entregue] = @Original_Hora_Entregue) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([Observacoes_Antes_requisicao] = @Original_Observacoes_Antes_requisicao) AND ((@IsNull_Observacoes_apos_requisicao = 1 AND [Observacoes_apos_requisicao] IS NULL) OR ([Observacoes_apos_requisicao] = @Original_Observacoes_apos_requisicao)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inicio_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fim_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora_Requisitado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Requisitado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora_Entregue", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Entregue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_apos_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RequisiçõesMaterial] ([ID_Requisitador], [Data_Requisicao], [Inicio_Requisicao], [Fim_requisicao], [ID_Material], [Hora_Requisitado], [Hora_Entregue], [Estado], [Observacoes_Antes_requisicao], [Observacoes_apos_requisicao]) VALUES (@ID_Requisitador, @Data_Requisicao, @Inicio_Requisicao, @Fim_requisicao, @ID_Material, @Hora_Requisitado, @Hora_Entregue, @Estado, @Observacoes_Antes_requisicao, @Observacoes_apos_requisicao);
-SELECT ID_Requisicao, ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, Hora_Requisitado, Hora_Entregue, Estado, Observacoes_Antes_requisicao, Observacoes_apos_requisicao FROM RequisiçõesMaterial WHERE (ID_Requisicao = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicio_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fim_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora_Requisitado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Requisitado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora_Entregue", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Entregue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [RequisiçõesMaterial] SET [ID_Requisitador] = @ID_Requisitador, [Data_Requisicao] = @Data_Requisicao, [Inicio_Requisicao] = @Inicio_Requisicao, [Fim_requisicao] = @Fim_requisicao, [ID_Material] = @ID_Material, [Hora_Requisitado] = @Hora_Requisitado, [Hora_Entregue] = @Hora_Entregue, [Estado] = @Estado, [Observacoes_Antes_requisicao] = @Observacoes_Antes_requisicao, [Observacoes_apos_requisicao] = @Observacoes_apos_requisicao WHERE (([ID_Requisicao] = @Original_ID_Requisicao) AND ([ID_Requisitador] = @Original_ID_Requisitador) AND ([Data_Requisicao] = @Original_Data_Requisicao) AND ([Inicio_Requisicao] = @Original_Inicio_Requisicao) AND ([Fim_requisicao] = @Original_Fim_requisicao) AND ([ID_Material] = @Original_ID_Material) AND ([Hora_Requisitado] = @Original_Hora_Requisitado) AND ([Hora_Entregue] = @Original_Hora_Entregue) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)) AND ([Observacoes_Antes_requisicao] = @Original_Observacoes_Antes_requisicao) AND ((@IsNull_Observacoes_apos_requisicao = 1 AND [Observacoes_apos_requisicao] IS NULL) OR ([Observacoes_apos_requisicao] = @Original_Observacoes_apos_requisicao)));
-SELECT ID_Requisicao, ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, Hora_Requisitado, Hora_Entregue, Estado, Observacoes_Antes_requisicao, Observacoes_apos_requisicao FROM RequisiçõesMaterial WHERE (ID_Requisicao = @ID_Requisicao)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicio_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fim_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora_Requisitado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Requisitado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hora_Entregue", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Entregue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inicio_Requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fim_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora_Requisitado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Requisitado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hora_Entregue", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hora_Entregue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_apos_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisicao", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projeto_PAP.Properties.Settings.Default.Database1ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Requisicao, ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_re" +
-                "quisicao, ID_Material, Hora_Requisitado, Hora_Entregue, Estado, Observacoes_Ante" +
-                "s_requisicao, Observacoes_apos_requisicao FROM RequisiçõesMaterial";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet.RequisiçõesMaterialDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet.RequisiçõesMaterialDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet.RequisiçõesMaterialDataTable dataTable = new Database1DataSet.RequisiçõesMaterialDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet.RequisiçõesMaterialDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "RequisiçõesMaterial");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Requisicao, int Original_ID_Requisitador, string Original_Data_Requisicao, string Original_Inicio_Requisicao, string Original_Fim_requisicao, int Original_ID_Material, string Original_Hora_Requisitado, string Original_Hora_Entregue, string Original_Estado, string Original_Observacoes_Antes_requisicao, string Original_Observacoes_apos_requisicao) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Requisicao));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID_Requisitador));
-            if ((Original_Data_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Data_Requisicao");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Data_Requisicao));
-            }
-            if ((Original_Inicio_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Inicio_Requisicao");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Inicio_Requisicao));
-            }
-            if ((Original_Fim_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Fim_requisicao");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Fim_requisicao));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_ID_Material));
-            if ((Original_Hora_Requisitado == null)) {
-                throw new global::System.ArgumentNullException("Original_Hora_Requisitado");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Hora_Requisitado));
-            }
-            if ((Original_Hora_Entregue == null)) {
-                throw new global::System.ArgumentNullException("Original_Hora_Entregue");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Hora_Entregue));
-            }
-            if ((Original_Estado == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Estado));
-            }
-            if ((Original_Observacoes_Antes_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Observacoes_Antes_requisicao");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Observacoes_Antes_requisicao));
-            }
-            if ((Original_Observacoes_apos_requisicao == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Observacoes_apos_requisicao));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID_Requisitador, string Data_Requisicao, string Inicio_Requisicao, string Fim_requisicao, int ID_Material, string Hora_Requisitado, string Hora_Entregue, string Estado, string Observacoes_Antes_requisicao, string Observacoes_apos_requisicao) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Requisitador));
-            if ((Data_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Data_Requisicao");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Data_Requisicao));
-            }
-            if ((Inicio_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Inicio_Requisicao");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Inicio_Requisicao));
-            }
-            if ((Fim_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Fim_requisicao");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Fim_requisicao));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Material));
-            if ((Hora_Requisitado == null)) {
-                throw new global::System.ArgumentNullException("Hora_Requisitado");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Hora_Requisitado));
-            }
-            if ((Hora_Entregue == null)) {
-                throw new global::System.ArgumentNullException("Hora_Entregue");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Hora_Entregue));
-            }
-            if ((Estado == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Estado));
-            }
-            if ((Observacoes_Antes_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Observacoes_Antes_requisicao");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Observacoes_Antes_requisicao));
-            }
-            if ((Observacoes_apos_requisicao == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Observacoes_apos_requisicao));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int ID_Requisitador, 
-                    string Data_Requisicao, 
-                    string Inicio_Requisicao, 
-                    string Fim_requisicao, 
-                    int ID_Material, 
-                    string Hora_Requisitado, 
-                    string Hora_Entregue, 
-                    string Estado, 
-                    string Observacoes_Antes_requisicao, 
-                    string Observacoes_apos_requisicao, 
-                    int Original_ID_Requisicao, 
-                    int Original_ID_Requisitador, 
-                    string Original_Data_Requisicao, 
-                    string Original_Inicio_Requisicao, 
-                    string Original_Fim_requisicao, 
-                    int Original_ID_Material, 
-                    string Original_Hora_Requisitado, 
-                    string Original_Hora_Entregue, 
-                    string Original_Estado, 
-                    string Original_Observacoes_Antes_requisicao, 
-                    string Original_Observacoes_apos_requisicao, 
-                    int ID_Requisicao) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Requisitador));
-            if ((Data_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Data_Requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Data_Requisicao));
-            }
-            if ((Inicio_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Inicio_Requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Inicio_Requisicao));
-            }
-            if ((Fim_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Fim_requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Fim_requisicao));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Material));
-            if ((Hora_Requisitado == null)) {
-                throw new global::System.ArgumentNullException("Hora_Requisitado");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Hora_Requisitado));
-            }
-            if ((Hora_Entregue == null)) {
-                throw new global::System.ArgumentNullException("Hora_Entregue");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Hora_Entregue));
-            }
-            if ((Estado == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Estado));
-            }
-            if ((Observacoes_Antes_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Observacoes_Antes_requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Observacoes_Antes_requisicao));
-            }
-            if ((Observacoes_apos_requisicao == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Observacoes_apos_requisicao));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_Requisicao));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_Requisitador));
-            if ((Original_Data_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Data_Requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Data_Requisicao));
-            }
-            if ((Original_Inicio_Requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Inicio_Requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Inicio_Requisicao));
-            }
-            if ((Original_Fim_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Fim_requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Fim_requisicao));
-            }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_ID_Material));
-            if ((Original_Hora_Requisitado == null)) {
-                throw new global::System.ArgumentNullException("Original_Hora_Requisitado");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Hora_Requisitado));
-            }
-            if ((Original_Hora_Entregue == null)) {
-                throw new global::System.ArgumentNullException("Original_Hora_Entregue");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Hora_Entregue));
-            }
-            if ((Original_Estado == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Estado));
-            }
-            if ((Original_Observacoes_Antes_requisicao == null)) {
-                throw new global::System.ArgumentNullException("Original_Observacoes_Antes_requisicao");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Observacoes_Antes_requisicao));
-            }
-            if ((Original_Observacoes_apos_requisicao == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Observacoes_apos_requisicao));
-            }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(ID_Requisicao));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int ID_Requisitador, 
-                    string Data_Requisicao, 
-                    string Inicio_Requisicao, 
-                    string Fim_requisicao, 
-                    int ID_Material, 
-                    string Hora_Requisitado, 
-                    string Hora_Entregue, 
-                    string Estado, 
-                    string Observacoes_Antes_requisicao, 
-                    string Observacoes_apos_requisicao, 
-                    int Original_ID_Requisicao, 
-                    int Original_ID_Requisitador, 
-                    string Original_Data_Requisicao, 
-                    string Original_Inicio_Requisicao, 
-                    string Original_Fim_requisicao, 
-                    int Original_ID_Material, 
-                    string Original_Hora_Requisitado, 
-                    string Original_Hora_Entregue, 
-                    string Original_Estado, 
-                    string Original_Observacoes_Antes_requisicao, 
-                    string Original_Observacoes_apos_requisicao) {
-            return this.Update(ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, Hora_Requisitado, Hora_Entregue, Estado, Observacoes_Antes_requisicao, Observacoes_apos_requisicao, Original_ID_Requisicao, Original_ID_Requisitador, Original_Data_Requisicao, Original_Inicio_Requisicao, Original_Fim_requisicao, Original_ID_Material, Original_Hora_Requisitado, Original_Hora_Entregue, Original_Estado, Original_Observacoes_Antes_requisicao, Original_Observacoes_apos_requisicao, Original_ID_Requisicao);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class RequisitadoresTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public RequisitadoresTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Requisitadores";
-            tableMapping.ColumnMappings.Add("ID_Requisitador", "ID_Requisitador");
-            tableMapping.ColumnMappings.Add("Nome_Requisitador", "Nome_Requisitador");
-            tableMapping.ColumnMappings.Add("Contacto_Requisitador", "Contacto_Requisitador");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Requisitadores] WHERE (([ID_Requisitador] = @Original_ID_Requi" +
-                "sitador) AND ([Nome_Requisitador] = @Original_Nome_Requisitador) AND ([Contacto_" +
-                "Requisitador] = @Original_Contacto_Requisitador))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contacto_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Requisitadores] ([Nome_Requisitador], [Contacto_Requisitador]) VALUES (@Nome_Requisitador, @Contacto_Requisitador);
-SELECT ID_Requisitador, Nome_Requisitador, Contacto_Requisitador FROM Requisitadores WHERE (ID_Requisitador = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Requisitadores] SET [Nome_Requisitador] = @Nome_Requisitador, [Contacto_Requisitador] = @Contacto_Requisitador WHERE (([ID_Requisitador] = @Original_ID_Requisitador) AND ([Nome_Requisitador] = @Original_Nome_Requisitador) AND ([Contacto_Requisitador] = @Original_Contacto_Requisitador));
-SELECT ID_Requisitador, Nome_Requisitador, Contacto_Requisitador FROM Requisitadores WHERE (ID_Requisitador = @ID_Requisitador)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contacto_Requisitador", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Projeto_PAP.Properties.Settings.Default.Database1ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Requisitador, Nome_Requisitador, Contacto_Requisitador FROM dbo.Requisi" +
-                "tadores";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM Requisitadores\r\nWHERE     (ID_Requisitador = @Original_ID_Requisitado" +
-                "r) ";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT     ID_Requisitador, Nome_Requisitador, Contacto_Requisitador\r\nFROM       " +
-                "  Requisitadores\r\nWHERE     (Nome_Requisitador LIKE \'%\' + @nome + \'%\')";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nome", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nome_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Database1DataSet.RequisitadoresDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Database1DataSet.RequisitadoresDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            Database1DataSet.RequisitadoresDataTable dataTable = new Database1DataSet.RequisitadoresDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByPesqNome_Req(Database1DataSet.RequisitadoresDataTable dataTable, string nome) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((nome == null)) {
-                throw new global::System.ArgumentNullException("nome");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nome));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Database1DataSet.RequisitadoresDataTable GetDataBy1(string nome) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((nome == null)) {
-                throw new global::System.ArgumentNullException("nome");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nome));
-            }
-            Database1DataSet.RequisitadoresDataTable dataTable = new Database1DataSet.RequisitadoresDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet.RequisitadoresDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Database1DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Requisitadores");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID_Requisitador, string Original_Nome_Requisitador, string Original_Contacto_Requisitador) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Requisitador));
-            if ((Original_Nome_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Original_Nome_Requisitador");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Nome_Requisitador));
-            }
-            if ((Original_Contacto_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Original_Contacto_Requisitador");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Contacto_Requisitador));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nome_Requisitador, string Contacto_Requisitador) {
-            if ((Nome_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Nome_Requisitador");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nome_Requisitador));
-            }
-            if ((Contacto_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Contacto_Requisitador");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Contacto_Requisitador));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome_Requisitador, string Contacto_Requisitador, int Original_ID_Requisitador, string Original_Nome_Requisitador, string Original_Contacto_Requisitador, int ID_Requisitador) {
-            if ((Nome_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Nome_Requisitador");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nome_Requisitador));
-            }
-            if ((Contacto_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Contacto_Requisitador");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Contacto_Requisitador));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID_Requisitador));
-            if ((Original_Nome_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Original_Nome_Requisitador");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Nome_Requisitador));
-            }
-            if ((Original_Contacto_Requisitador == null)) {
-                throw new global::System.ArgumentNullException("Original_Contacto_Requisitador");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Contacto_Requisitador));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID_Requisitador));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nome_Requisitador, string Contacto_Requisitador, int Original_ID_Requisitador, string Original_Nome_Requisitador, string Original_Contacto_Requisitador) {
-            return this.Update(Nome_Requisitador, Contacto_Requisitador, Original_ID_Requisitador, Original_Nome_Requisitador, Original_Contacto_Requisitador, Original_ID_Requisitador);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_ID_Requisitador) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(Original_ID_Requisitador));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16208,7 +14847,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT * FROM dbo.Material";
@@ -16229,37 +14868,44 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[Material] SET [imagem] = @imagem WHERE [ID_Material] = @id_material" +
-                "";
+            this._commandCollection[3].CommandText = "UPDATE [dbo].[Material] SET  [Estado] = @Estado WHERE [ID_Material] = @ID_Materia" +
+                "l";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagem", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "imagem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE [dbo].[Material] SET designacao = @designacao, marca=@marca, [Serial numbe" +
-                "r] = @serial, observacao = @observacao WHERE [ID_Material] = @id_material";
+            this._commandCollection[4].CommandText = "UPDATE [dbo].[Material] SET [imagem] = @imagem WHERE [ID_Material] = @id_material" +
+                "";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serial", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Serial number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Observacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagem", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "imagem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "DELETE FROM Material\r\nWHERE     (ID_Material = @Original_ID_Material)";
+            this._commandCollection[5].CommandText = "UPDATE [dbo].[Material] SET designacao = @designacao, marca=@marca, [Serial numbe" +
+                "r] = @serial, observacao = @observacao WHERE [ID_Material] = @id_material";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serial", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Serial number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Observacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT Designacao, Estado, ID_Material, Marca, Observacao, [Serial number], id_ca" +
-                "tegoria, id_curso, imagem FROM Material WHERE (Designacao LIKE \'%\' + @designacao" +
-                " + \'%\')";
+            this._commandCollection[6].CommandText = "DELETE FROM Material\r\nWHERE     (ID_Material = @Original_ID_Material)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT ident_current(\'Material\')";
+            this._commandCollection[7].CommandText = "SELECT Designacao, Estado, ID_Material, Marca, Observacao, [Serial number], id_ca" +
+                "tegoria, id_curso, imagem FROM Material WHERE (Designacao LIKE \'%\' + @designacao" +
+                " + \'%\')";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designacao", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Designacao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT ident_current(\'Material\')";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16291,7 +14937,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByPesqMaterial(Database1DataSet.MaterialDataTable dataTable, string designacao) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((designacao == null)) {
                 throw new global::System.ArgumentNullException("designacao");
             }
@@ -16310,7 +14956,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Database1DataSet.MaterialDataTable GetDataBy11(string designacao) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((designacao == null)) {
                 throw new global::System.ArgumentNullException("designacao");
             }
@@ -16722,8 +15368,38 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int alterarImagem(byte[] imagem, int id_material) {
+        public virtual int AlterarEstado(string Estado, int ID_Material) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Estado == null)) {
+                throw new global::System.ArgumentNullException("Estado");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Estado));
+            }
+            command.Parameters[1].Value = ((int)(ID_Material));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int alterarImagem(byte[] imagem, int id_material) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((imagem == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16753,7 +15429,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int AtualizarDados(string designacao, string marca, string serial, string observacao, int id_material) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((designacao == null)) {
                 throw new global::System.ArgumentNullException("designacao");
             }
@@ -16801,7 +15477,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteMaterial(int Original_ID_Material) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(Original_ID_Material));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -16824,7 +15500,7 @@ SELECT ID_Material, Designacao, Marca, [Serial number], Estado, Observacao, id_c
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object UltimoID() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17912,6 +16588,774 @@ where material.ID_Material  = @id_material";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class RequisiçõesMaterialTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public RequisiçõesMaterialTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "RequisiçõesMaterial";
+            tableMapping.ColumnMappings.Add("ID_Requisicao", "ID_Requisicao");
+            tableMapping.ColumnMappings.Add("ID_Requisitador", "ID_Requisitador");
+            tableMapping.ColumnMappings.Add("Data_Requisicao", "Data_Requisicao");
+            tableMapping.ColumnMappings.Add("Inicio_Requisicao", "Inicio_Requisicao");
+            tableMapping.ColumnMappings.Add("Fim_requisicao", "Fim_requisicao");
+            tableMapping.ColumnMappings.Add("ID_Material", "ID_Material");
+            tableMapping.ColumnMappings.Add("data_levantado", "data_levantado");
+            tableMapping.ColumnMappings.Add("data_entregue", "data_entregue");
+            tableMapping.ColumnMappings.Add("Observacoes_Antes_requisicao", "Observacoes_Antes_requisicao");
+            tableMapping.ColumnMappings.Add("Observacoes_apos_requisicao", "Observacoes_apos_requisicao");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [RequisiçõesMaterial] WHERE (([ID_Requisicao] = @Original_ID_Requisicao) AND ([ID_Requisitador] = @Original_ID_Requisitador) AND ((@IsNull_Data_Requisicao = 1 AND [Data_Requisicao] IS NULL) OR ([Data_Requisicao] = @Original_Data_Requisicao)) AND ((@IsNull_Inicio_Requisicao = 1 AND [Inicio_Requisicao] IS NULL) OR ([Inicio_Requisicao] = @Original_Inicio_Requisicao)) AND ((@IsNull_Fim_requisicao = 1 AND [Fim_requisicao] IS NULL) OR ([Fim_requisicao] = @Original_Fim_requisicao)) AND ([ID_Material] = @Original_ID_Material) AND ((@IsNull_data_levantado = 1 AND [data_levantado] IS NULL) OR ([data_levantado] = @Original_data_levantado)) AND ((@IsNull_data_entregue = 1 AND [data_entregue] IS NULL) OR ([data_entregue] = @Original_data_entregue)) AND ((@IsNull_Observacoes_Antes_requisicao = 1 AND [Observacoes_Antes_requisicao] IS NULL) OR ([Observacoes_Antes_requisicao] = @Original_Observacoes_Antes_requisicao)) AND ((@IsNull_Observacoes_apos_requisicao = 1 AND [Observacoes_apos_requisicao] IS NULL) OR ([Observacoes_apos_requisicao] = @Original_Observacoes_apos_requisicao)) AND ((@IsNull_Estado = 1 AND [Estado] IS NULL) OR ([Estado] = @Original_Estado)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_Requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inicio_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inicio_Requisicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fim_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fim_requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_levantado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_levantado", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_entregue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_entregue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_apos_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [RequisiçõesMaterial] ([ID_Requisitador], [Data_Requisicao], [Inicio_Requisicao], [Fim_requisicao], [ID_Material], [data_levantado], [data_entregue], [Observacoes_Antes_requisicao], [Observacoes_apos_requisicao], [Estado]) VALUES (@ID_Requisitador, @Data_Requisicao, @Inicio_Requisicao, @Fim_requisicao, @ID_Material, @data_levantado, @data_entregue, @Observacoes_Antes_requisicao, @Observacoes_apos_requisicao, @Estado);
+SELECT ID_Requisicao, ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, data_levantado, data_entregue, Observacoes_Antes_requisicao, Observacoes_apos_requisicao, Estado FROM RequisiçõesMaterial WHERE (ID_Requisicao = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicio_Requisicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fim_requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_levantado", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_entregue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [RequisiçõesMaterial] SET [ID_Requisitador] = @ID_Requisitador, [Data_Requ" +
+                "isicao] = @Data_Requisicao, [Inicio_Requisicao] = @Inicio_Requisicao, [Fim_requi" +
+                "sicao] = @Fim_requisicao, [ID_Material] = @ID_Material, [data_levantado] = @data" +
+                "_levantado, [data_entregue] = @data_entregue, [Observacoes_Antes_requisicao] = @" +
+                "Observacoes_Antes_requisicao, [Observacoes_apos_requisicao] = @Observacoes_apos_" +
+                "requisicao, [Estado] = @Estado WHERE (([ID_Requisicao] = @Original_ID_Requisicao" +
+                ") AND ([ID_Requisitador] = @Original_ID_Requisitador) AND ((@IsNull_Data_Requisi" +
+                "cao = 1 AND [Data_Requisicao] IS NULL) OR ([Data_Requisicao] = @Original_Data_Re" +
+                "quisicao)) AND ((@IsNull_Inicio_Requisicao = 1 AND [Inicio_Requisicao] IS NULL) " +
+                "OR ([Inicio_Requisicao] = @Original_Inicio_Requisicao)) AND ((@IsNull_Fim_requis" +
+                "icao = 1 AND [Fim_requisicao] IS NULL) OR ([Fim_requisicao] = @Original_Fim_requ" +
+                "isicao)) AND ([ID_Material] = @Original_ID_Material) AND ((@IsNull_data_levantad" +
+                "o = 1 AND [data_levantado] IS NULL) OR ([data_levantado] = @Original_data_levant" +
+                "ado)) AND ((@IsNull_data_entregue = 1 AND [data_entregue] IS NULL) OR ([data_ent" +
+                "regue] = @Original_data_entregue)) AND ((@IsNull_Observacoes_Antes_requisicao = " +
+                "1 AND [Observacoes_Antes_requisicao] IS NULL) OR ([Observacoes_Antes_requisicao]" +
+                " = @Original_Observacoes_Antes_requisicao)) AND ((@IsNull_Observacoes_apos_requi" +
+                "sicao = 1 AND [Observacoes_apos_requisicao] IS NULL) OR ([Observacoes_apos_requi" +
+                "sicao] = @Original_Observacoes_apos_requisicao)) AND ((@IsNull_Estado = 1 AND [E" +
+                "stado] IS NULL) OR ([Estado] = @Original_Estado)));\r\nSELECT ID_Requisicao, ID_Re" +
+                "quisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, dat" +
+                "a_levantado, data_entregue, Observacoes_Antes_requisicao, Observacoes_apos_requi" +
+                "sicao, Estado FROM RequisiçõesMaterial WHERE (ID_Requisicao = @ID_Requisicao)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicio_Requisicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fim_requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_levantado", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_entregue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Requisitador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data_Requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Inicio_Requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inicio_Requisicao", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inicio_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fim_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fim_requisicao", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_Material", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_levantado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_levantado", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_levantado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_entregue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_entregue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_entregue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_Antes_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Observacoes_apos_requisicao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Observacoes_apos_requisicao", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisicao", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Projeto_PAP.Properties.Settings.Default.Database1ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        RequisiçõesMaterial.*\r\nFROM            RequisiçõesMaterial";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        RequisiçõesMaterial.*\r\nFROM            RequisiçõesMaterial\r\nwhere f" +
+                "im_requisicao IS NULL and id_material=@id_material";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE [RequisiçõesMaterial] SET [Fim_requisicao] = @Fim_requisicao, [Observacoes" +
+                "_apos_requisicao] = @Observacoes, [Estado] = @Estado WHERE [ID_Requisicao] = @ID" +
+                "_Requisicao";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fim_requisicao", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fim_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_apos_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Estado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisicao", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisicao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO [RequisiçõesMaterial] ([ID_Requisitador], [Data_Requisicao], [ID_Mate" +
+                "rial], Observacoes_Antes_requisicao) VALUES (@ID_Requisitador, @Data_Requisicao," +
+                "  @ID_Material, @observacoes);\r\n";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Requisitador", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Requisitador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data_Requisicao", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Data_Requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Material", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Material", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observacoes", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes_Antes_requisicao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Database1DataSet.RequisiçõesMaterialDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Database1DataSet.RequisiçõesMaterialDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Database1DataSet.RequisiçõesMaterialDataTable dataTable = new Database1DataSet.RequisiçõesMaterialDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByRequisicaoAbertaPorMaterial(Database1DataSet.RequisiçõesMaterialDataTable dataTable, int id_material) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id_material));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Database1DataSet.RequisiçõesMaterialDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Database1DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "RequisiçõesMaterial");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID_Requisicao, int Original_ID_Requisitador, global::System.Nullable<global::System.DateTime> Original_Data_Requisicao, global::System.Nullable<global::System.DateTime> Original_Inicio_Requisicao, global::System.Nullable<global::System.DateTime> Original_Fim_requisicao, int Original_ID_Material, global::System.Nullable<global::System.DateTime> Original_data_levantado, global::System.Nullable<global::System.DateTime> Original_data_entregue, string Original_Observacoes_Antes_requisicao, string Original_Observacoes_apos_requisicao, string Original_Estado) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID_Requisicao));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ID_Requisitador));
+            if ((Original_Data_Requisicao.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Data_Requisicao.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Inicio_Requisicao.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Inicio_Requisicao.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Fim_requisicao.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Fim_requisicao.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_ID_Material));
+            if ((Original_data_levantado.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_data_levantado.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_data_entregue.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_data_entregue.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Observacoes_Antes_requisicao == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Observacoes_Antes_requisicao));
+            }
+            if ((Original_Observacoes_apos_requisicao == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Observacoes_apos_requisicao));
+            }
+            if ((Original_Estado == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Estado));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int ID_Requisitador, global::System.Nullable<global::System.DateTime> Data_Requisicao, global::System.Nullable<global::System.DateTime> Inicio_Requisicao, global::System.Nullable<global::System.DateTime> Fim_requisicao, int ID_Material, global::System.Nullable<global::System.DateTime> data_levantado, global::System.Nullable<global::System.DateTime> data_entregue, string Observacoes_Antes_requisicao, string Observacoes_apos_requisicao, string Estado) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID_Requisitador));
+            if ((Data_Requisicao.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Data_Requisicao.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Inicio_Requisicao.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Inicio_Requisicao.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Fim_requisicao.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Fim_requisicao.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ID_Material));
+            if ((data_levantado.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(data_levantado.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((data_entregue.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(data_entregue.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Observacoes_Antes_requisicao == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Observacoes_Antes_requisicao));
+            }
+            if ((Observacoes_apos_requisicao == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Observacoes_apos_requisicao));
+            }
+            if ((Estado == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Estado));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int ID_Requisitador, 
+                    global::System.Nullable<global::System.DateTime> Data_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Inicio_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Fim_requisicao, 
+                    int ID_Material, 
+                    global::System.Nullable<global::System.DateTime> data_levantado, 
+                    global::System.Nullable<global::System.DateTime> data_entregue, 
+                    string Observacoes_Antes_requisicao, 
+                    string Observacoes_apos_requisicao, 
+                    string Estado, 
+                    int Original_ID_Requisicao, 
+                    int Original_ID_Requisitador, 
+                    global::System.Nullable<global::System.DateTime> Original_Data_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Original_Inicio_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Original_Fim_requisicao, 
+                    int Original_ID_Material, 
+                    global::System.Nullable<global::System.DateTime> Original_data_levantado, 
+                    global::System.Nullable<global::System.DateTime> Original_data_entregue, 
+                    string Original_Observacoes_Antes_requisicao, 
+                    string Original_Observacoes_apos_requisicao, 
+                    string Original_Estado, 
+                    int ID_Requisicao) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID_Requisitador));
+            if ((Data_Requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Data_Requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Inicio_Requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Inicio_Requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Fim_requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Fim_requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ID_Material));
+            if ((data_levantado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(data_levantado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((data_entregue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(data_entregue.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Observacoes_Antes_requisicao == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Observacoes_Antes_requisicao));
+            }
+            if ((Observacoes_apos_requisicao == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Observacoes_apos_requisicao));
+            }
+            if ((Estado == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Estado));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID_Requisicao));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID_Requisitador));
+            if ((Original_Data_Requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Data_Requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Inicio_Requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Inicio_Requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Fim_requisicao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Fim_requisicao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_ID_Material));
+            if ((Original_data_levantado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_data_levantado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_data_entregue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_data_entregue.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Observacoes_Antes_requisicao == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Observacoes_Antes_requisicao));
+            }
+            if ((Original_Observacoes_apos_requisicao == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Observacoes_apos_requisicao));
+            }
+            if ((Original_Estado == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Estado));
+            }
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(ID_Requisicao));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int ID_Requisitador, 
+                    global::System.Nullable<global::System.DateTime> Data_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Inicio_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Fim_requisicao, 
+                    int ID_Material, 
+                    global::System.Nullable<global::System.DateTime> data_levantado, 
+                    global::System.Nullable<global::System.DateTime> data_entregue, 
+                    string Observacoes_Antes_requisicao, 
+                    string Observacoes_apos_requisicao, 
+                    string Estado, 
+                    int Original_ID_Requisicao, 
+                    int Original_ID_Requisitador, 
+                    global::System.Nullable<global::System.DateTime> Original_Data_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Original_Inicio_Requisicao, 
+                    global::System.Nullable<global::System.DateTime> Original_Fim_requisicao, 
+                    int Original_ID_Material, 
+                    global::System.Nullable<global::System.DateTime> Original_data_levantado, 
+                    global::System.Nullable<global::System.DateTime> Original_data_entregue, 
+                    string Original_Observacoes_Antes_requisicao, 
+                    string Original_Observacoes_apos_requisicao, 
+                    string Original_Estado) {
+            return this.Update(ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_requisicao, ID_Material, data_levantado, data_entregue, Observacoes_Antes_requisicao, Observacoes_apos_requisicao, Estado, Original_ID_Requisicao, Original_ID_Requisitador, Original_Data_Requisicao, Original_Inicio_Requisicao, Original_Fim_requisicao, Original_ID_Material, Original_data_levantado, Original_data_entregue, Original_Observacoes_Antes_requisicao, Original_Observacoes_apos_requisicao, Original_Estado, Original_ID_Requisicao);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int FinalizarRequisicao(global::System.Nullable<global::System.DateTime> Fim_requisicao, string Observacoes, string Estado, int ID_Requisicao) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Fim_requisicao.HasValue == true)) {
+                command.Parameters[0].Value = ((System.DateTime)(Fim_requisicao.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Observacoes == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Observacoes));
+            }
+            if ((Estado == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Estado));
+            }
+            command.Parameters[3].Value = ((int)(ID_Requisicao));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsereNova(int ID_Requisitador, global::System.Nullable<global::System.DateTime> Data_Requisicao, int ID_Material, string observacoes) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(ID_Requisitador));
+            if ((Data_Requisicao.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(Data_Requisicao.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[2].Value = ((int)(ID_Material));
+            if ((observacoes == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(observacoes));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -17931,10 +17375,6 @@ where material.ID_Material  = @id_material";
         
         private Requisições_SalasTableAdapter _requisições_SalasTableAdapter;
         
-        private RequisiçõesMaterialTableAdapter _requisiçõesMaterialTableAdapter;
-        
-        private RequisitadoresTableAdapter _requisitadoresTableAdapter;
-        
         private SalasTableAdapter _salasTableAdapter;
         
         private SemanaTableAdapter _semanaTableAdapter;
@@ -17950,6 +17390,8 @@ where material.ID_Material  = @id_material";
         private Requisitantes_materialTableAdapter _requisitantes_materialTableAdapter;
         
         private EstadosTableAdapter _estadosTableAdapter;
+        
+        private RequisiçõesMaterialTableAdapter _requisiçõesMaterialTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -18019,34 +17461,6 @@ where material.ID_Material  = @id_material";
             }
             set {
                 this._requisições_SalasTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public RequisiçõesMaterialTableAdapter RequisiçõesMaterialTableAdapter {
-            get {
-                return this._requisiçõesMaterialTableAdapter;
-            }
-            set {
-                this._requisiçõesMaterialTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public RequisitadoresTableAdapter RequisitadoresTableAdapter {
-            get {
-                return this._requisitadoresTableAdapter;
-            }
-            set {
-                this._requisitadoresTableAdapter = value;
             }
         }
         
@@ -18164,6 +17578,20 @@ where material.ID_Material  = @id_material";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public RequisiçõesMaterialTableAdapter RequisiçõesMaterialTableAdapter {
+            get {
+                return this._requisiçõesMaterialTableAdapter;
+            }
+            set {
+                this._requisiçõesMaterialTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -18197,14 +17625,6 @@ where material.ID_Material  = @id_material";
                             && (this._requisições_SalasTableAdapter.Connection != null))) {
                     return this._requisições_SalasTableAdapter.Connection;
                 }
-                if (((this._requisiçõesMaterialTableAdapter != null) 
-                            && (this._requisiçõesMaterialTableAdapter.Connection != null))) {
-                    return this._requisiçõesMaterialTableAdapter.Connection;
-                }
-                if (((this._requisitadoresTableAdapter != null) 
-                            && (this._requisitadoresTableAdapter.Connection != null))) {
-                    return this._requisitadoresTableAdapter.Connection;
-                }
                 if (((this._salasTableAdapter != null) 
                             && (this._salasTableAdapter.Connection != null))) {
                     return this._salasTableAdapter.Connection;
@@ -18237,6 +17657,10 @@ where material.ID_Material  = @id_material";
                             && (this._estadosTableAdapter.Connection != null))) {
                     return this._estadosTableAdapter.Connection;
                 }
+                if (((this._requisiçõesMaterialTableAdapter != null) 
+                            && (this._requisiçõesMaterialTableAdapter.Connection != null))) {
+                    return this._requisiçõesMaterialTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -18260,12 +17684,6 @@ where material.ID_Material  = @id_material";
                     count = (count + 1);
                 }
                 if ((this._requisições_SalasTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._requisiçõesMaterialTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._requisitadoresTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._salasTableAdapter != null)) {
@@ -18292,6 +17710,9 @@ where material.ID_Material  = @id_material";
                 if ((this._estadosTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._requisiçõesMaterialTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -18303,15 +17724,6 @@ where material.ID_Material  = @id_material";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._categoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._categoriaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cursoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -18321,30 +17733,12 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._semanaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Semana.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._categoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._semanaTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._salasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._salasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._materialTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._materialTableAdapter.Update(updatedRows));
+                    result = (result + this._categoriaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18357,12 +17751,21 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._professoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Professores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._materialTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._professoresTableAdapter.Update(updatedRows));
+                    result = (result + this._materialTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._semanaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Semana.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._semanaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18375,12 +17778,21 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._requisitadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Requisitadores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._professoresTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Professores.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._requisitadoresTableAdapter.Update(updatedRows));
+                    result = (result + this._professoresTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._salasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._salasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18393,12 +17805,12 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._horario_SalasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._requisiçõesMaterialTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._horario_SalasTableAdapter.Update(updatedRows));
+                    result = (result + this._requisiçõesMaterialTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18411,21 +17823,21 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._requisiçõesMaterialTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._requisiçõesMaterialTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._requisições_SalasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Requisições_Salas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._requisições_SalasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._horario_SalasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._horario_SalasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18439,14 +17851,6 @@ where material.ID_Material  = @id_material";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._categoriaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._categoriaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._cursoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -18455,27 +17859,11 @@ where material.ID_Material  = @id_material";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._semanaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Semana.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._categoriaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._semanaTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._salasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._salasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._materialTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._materialTableAdapter.Update(addedRows));
+                    result = (result + this._categoriaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18487,11 +17875,19 @@ where material.ID_Material  = @id_material";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._professoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Professores.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._materialTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._professoresTableAdapter.Update(addedRows));
+                    result = (result + this._materialTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._semanaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Semana.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._semanaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18503,11 +17899,19 @@ where material.ID_Material  = @id_material";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._requisitadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Requisitadores.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._professoresTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Professores.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._requisitadoresTableAdapter.Update(addedRows));
+                    result = (result + this._professoresTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._salasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._salasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18519,11 +17923,11 @@ where material.ID_Material  = @id_material";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._horario_SalasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._requisiçõesMaterialTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._horario_SalasTableAdapter.Update(addedRows));
+                    result = (result + this._requisiçõesMaterialTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18535,19 +17939,19 @@ where material.ID_Material  = @id_material";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._requisiçõesMaterialTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._requisiçõesMaterialTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._requisições_SalasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Requisições_Salas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._requisições_SalasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._horario_SalasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._horario_SalasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18561,19 +17965,19 @@ where material.ID_Material  = @id_material";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(Database1DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._horario_SalasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._horario_SalasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._requisições_SalasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Requisições_Salas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._requisições_SalasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._requisiçõesMaterialTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._requisiçõesMaterialTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18585,11 +17989,11 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._horario_SalasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Horario_Salas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._requisiçõesMaterialTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RequisiçõesMaterial.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._horario_SalasTableAdapter.Update(deletedRows));
+                    result = (result + this._requisiçõesMaterialTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18601,19 +18005,11 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._requisitadoresTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Requisitadores.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._salasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._requisitadoresTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._horasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Horas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._horasTableAdapter.Update(deletedRows));
+                    result = (result + this._salasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18625,27 +18021,11 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._turmasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Turmas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._horasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Horas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._turmasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._materialTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._materialTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._salasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Salas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._salasTableAdapter.Update(deletedRows));
+                    result = (result + this._horasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18657,11 +18037,19 @@ where material.ID_Material  = @id_material";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cursoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._materialTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Material.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cursoTableAdapter.Update(deletedRows));
+                    result = (result + this._materialTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._turmasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Turmas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._turmasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18670,6 +18058,14 @@ where material.ID_Material  = @id_material";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._categoriaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cursoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cursoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18732,16 +18128,6 @@ where material.ID_Material  = @id_material";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._requisiçõesMaterialTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._requisiçõesMaterialTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._requisitadoresTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._requisitadoresTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._salasTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._salasTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -18779,6 +18165,11 @@ where material.ID_Material  = @id_material";
             }
             if (((this._estadosTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._estadosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._requisiçõesMaterialTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._requisiçõesMaterialTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -18848,24 +18239,6 @@ where material.ID_Material  = @id_material";
                     if (this._requisições_SalasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._requisições_SalasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._requisições_SalasTableAdapter.Adapter);
-                    }
-                }
-                if ((this._requisiçõesMaterialTableAdapter != null)) {
-                    revertConnections.Add(this._requisiçõesMaterialTableAdapter, this._requisiçõesMaterialTableAdapter.Connection);
-                    this._requisiçõesMaterialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._requisiçõesMaterialTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._requisiçõesMaterialTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._requisiçõesMaterialTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._requisiçõesMaterialTableAdapter.Adapter);
-                    }
-                }
-                if ((this._requisitadoresTableAdapter != null)) {
-                    revertConnections.Add(this._requisitadoresTableAdapter, this._requisitadoresTableAdapter.Connection);
-                    this._requisitadoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._requisitadoresTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._requisitadoresTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._requisitadoresTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._requisitadoresTableAdapter.Adapter);
                     }
                 }
                 if ((this._salasTableAdapter != null)) {
@@ -18938,6 +18311,15 @@ where material.ID_Material  = @id_material";
                     if (this._estadosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._estadosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._estadosTableAdapter.Adapter);
+                    }
+                }
+                if ((this._requisiçõesMaterialTableAdapter != null)) {
+                    revertConnections.Add(this._requisiçõesMaterialTableAdapter, this._requisiçõesMaterialTableAdapter.Connection);
+                    this._requisiçõesMaterialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._requisiçõesMaterialTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._requisiçõesMaterialTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._requisiçõesMaterialTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._requisiçõesMaterialTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -19014,14 +18396,6 @@ where material.ID_Material  = @id_material";
                     this._requisições_SalasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._requisições_SalasTableAdapter]));
                     this._requisições_SalasTableAdapter.Transaction = null;
                 }
-                if ((this._requisiçõesMaterialTableAdapter != null)) {
-                    this._requisiçõesMaterialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._requisiçõesMaterialTableAdapter]));
-                    this._requisiçõesMaterialTableAdapter.Transaction = null;
-                }
-                if ((this._requisitadoresTableAdapter != null)) {
-                    this._requisitadoresTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._requisitadoresTableAdapter]));
-                    this._requisitadoresTableAdapter.Transaction = null;
-                }
                 if ((this._salasTableAdapter != null)) {
                     this._salasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._salasTableAdapter]));
                     this._salasTableAdapter.Transaction = null;
@@ -19053,6 +18427,10 @@ where material.ID_Material  = @id_material";
                 if ((this._estadosTableAdapter != null)) {
                     this._estadosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._estadosTableAdapter]));
                     this._estadosTableAdapter.Transaction = null;
+                }
+                if ((this._requisiçõesMaterialTableAdapter != null)) {
+                    this._requisiçõesMaterialTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._requisiçõesMaterialTableAdapter]));
+                    this._requisiçõesMaterialTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

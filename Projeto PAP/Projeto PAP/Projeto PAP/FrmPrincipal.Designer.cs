@@ -39,12 +39,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,7 +109,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(558, 353);
+            this.button3.Location = new System.Drawing.Point(24, 346);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 23);
             this.button3.TabIndex = 6;
@@ -130,11 +129,11 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(558, 150);
+            this.button5.Location = new System.Drawing.Point(558, 153);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 23);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Requisições Material";
+            this.button5.Text = "Requisitar";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -148,19 +147,9 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(558, 121);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(133, 23);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Requisitantes";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(558, 325);
+            this.button9.Location = new System.Drawing.Point(558, 346);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(133, 23);
             this.button9.TabIndex = 12;
@@ -170,7 +159,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(73, 353);
+            this.button10.Location = new System.Drawing.Point(163, 346);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(133, 23);
             this.button10.TabIndex = 13;
@@ -186,25 +175,25 @@
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(558, 206);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(133, 23);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "Pesquisa material";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(558, 179);
+            this.button11.Location = new System.Drawing.Point(558, 124);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(133, 23);
             this.button11.TabIndex = 16;
             this.button11.Text = "Tipos Material";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(558, 182);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(133, 23);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "Entregar";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // FrmPrincipal
             // 
@@ -216,7 +205,6 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -252,11 +240,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button8;
     }
 }

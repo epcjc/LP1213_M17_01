@@ -35,8 +35,7 @@ namespace Projeto_PAP
         {
             // TODO: This line of code loads data into the 'database1DataSet.Salas' table. You can move, or remove it, as needed.
             this.salasTableAdapter.Fill(this.database1DataSet.Salas);
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+           
             // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaosala' table. You can move, or remove it, as needed.
             this.consultaRequisicaosalaTableAdapter.Fill(this.database1DataSet.ConsultaRequisicaosala);
             // TODO: This line of code loads data into the 'database1DataSet.ConsultaRequisicaomaterial' table. You can move, or remove it, as needed.

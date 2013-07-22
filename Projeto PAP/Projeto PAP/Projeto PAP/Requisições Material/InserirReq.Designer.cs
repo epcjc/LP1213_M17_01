@@ -36,7 +36,7 @@
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.materialTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.MaterialTableAdapter();
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+            
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -125,7 +125,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = null;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = this.requisitadoresTableAdapter;
+            
             this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
@@ -135,10 +135,7 @@
             // materialTableAdapter
             // 
             this.materialTableAdapter.ClearBeforeFill = true;
-            // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
+            
             // 
             // button1
             // 
@@ -441,7 +438,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+       
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

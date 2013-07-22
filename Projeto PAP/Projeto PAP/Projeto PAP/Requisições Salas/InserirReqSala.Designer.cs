@@ -135,7 +135,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = this.professoresTableAdapter;
             this.tableAdapterManager.Requisições_SalasTableAdapter = this.requisições_SalasTableAdapter;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            
             this.tableAdapterManager.SalasTableAdapter = this.salasTableAdapter;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;

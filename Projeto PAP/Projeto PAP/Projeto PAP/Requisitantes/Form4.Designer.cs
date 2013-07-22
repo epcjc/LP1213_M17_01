@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+           
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.requisitadoresDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +70,7 @@
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
+            
             // 
             // tableAdapterManager
             // 
@@ -86,7 +83,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = null;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = this.requisitadoresTableAdapter;
+           
             this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
@@ -248,7 +245,6 @@
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.requisitadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.requisitadoresDataGridView)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -267,7 +263,7 @@
 
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
-        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+       
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;

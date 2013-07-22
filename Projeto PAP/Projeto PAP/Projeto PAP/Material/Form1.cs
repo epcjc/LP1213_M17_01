@@ -14,6 +14,8 @@ namespace Projeto_PAP
     public partial class Form1 : Form
     {
 
+        private int linhaSelecionada;
+
         public void preencherCombos()
         {
             //Combobox tipos de material
@@ -79,6 +81,8 @@ namespace Projeto_PAP
         {
             this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
 
+            highlightRows();
+
             this.consultasMaterialDataGridView.Refresh();
             
         }
@@ -104,10 +108,8 @@ namespace Projeto_PAP
             this.cursoTableAdapter.Fill(this.database1DataSet.Curso);
             // TODO: This line of code loads data into the 'database1DataSet.ConsultasMaterial' table. You can move, or remove it, as needed.
             this.consultasMaterialTableAdapter.Fill(this.database1DataSet.ConsultasMaterial);
-            
-            
-          
-           
+
+         
 
         }
 
@@ -141,13 +143,6 @@ namespace Projeto_PAP
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -214,6 +209,8 @@ namespace Projeto_PAP
                     query += " Estado = '" + comboBox3.SelectedItem.ToString() + "'";
                     andNeeded = true;
                 }
+
+                
             }
 
           // MessageBox.Show(query);
@@ -231,9 +228,9 @@ namespace Projeto_PAP
             bs.DataSource = tabela;
 
             consultasMaterialDataGridView.DataSource = bs;
-       
 
-           
+            
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -245,19 +242,210 @@ namespace Projeto_PAP
 
             frmFichaMaterial frm = new frmFichaMaterial();
 
+            // indice 0 de dgv.cells -> ID_Material
             frm.Id_material = Convert.ToInt32(dgv.Cells[0].Value);
             frm.ShowDialog();
 
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            linhaSelecionada = consultasMaterialDataGridView.SelectedRows[0].Index;
+
+            doRequisicao(linhaSelecionada);
+        }
+
+
+        private void doRequisicao(int linha)
+        {
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linha];
+
+            frmNovaRequisicao frm = new frmNovaRequisicao();
+
+            frm.Id_material = Convert.ToInt32(dgv.Cells[0].Value);
+            frm.DesignacaoMaterial = dgv.Cells[1].Value.ToString();
+            frm.ShowDialog();
+
+            atualizarDataGrid();
+        }
         
 
+        private void consultasMaterialDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int linha = e.RowIndex;
+
+            checkOptions(linha);
+
+        }
+
+
+        private void checkOptions(int linha)
+        {
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linha];
+
+            // Indice de Cells 4 -> Estado
+            string estado = dgv.Cells[4].Value.ToString();
+
+            if (estado == "Requisitado" || estado == "Indisponível")
+            {
+                button8.Enabled = false;
+                if (estado == "Requisitado")
+                {
+                    button9.Enabled = true;
+                    button3.Enabled = true;
+                }
+                if (estado == "Indisponível")
+                {
+                    button9.Enabled = false;
+                    button3.Enabled = false;
+                }
+            }
+            else
+            {
+                button8.Enabled = true;
+                button9.Enabled = false;
+                button3.Enabled = false;
+            }
+        }
+
+        private void consultasMaterialDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            highlightRows();
+        
+        }
+
+
+
+
+        private void highlightRows()
+        {
+            DataGridViewCellStyle corRequisitado = consultasMaterialDataGridView.DefaultCellStyle.Clone();
+            corRequisitado.BackColor = Color.Gold;
+
+
+            DataGridViewCellStyle corIndisponivel = consultasMaterialDataGridView.DefaultCellStyle.Clone();
+            corIndisponivel.BackColor = Color.LightGray;
+
+            foreach (DataGridViewRow r in consultasMaterialDataGridView.Rows)
+            {
+                if (r.Cells[4].Value.ToString().Equals("Indisponível"))
+                {
+                    r.DefaultCellStyle = corIndisponivel;
+                }
+
+                if (r.Cells[4].Value.ToString().Equals("Requisitado"))
+                {
+                    r.DefaultCellStyle = corRequisitado;
+                }
+            }
+        }
+
+        private void consultasMaterialDataGridView_MouseDown(object sender, MouseEventArgs e)
+        {
+            DataGridView.HitTestInfo hitTest;
+
+            hitTest = consultasMaterialDataGridView.HitTest(e.X, e.Y);
+
+            if (e.Button == MouseButtons.Right) {
+                if (hitTest.Type == DataGridViewHitTestType.Cell) {
+
+                    this.contextMenuStrip1.Show(consultasMaterialDataGridView, e.Location, ToolStripDropDownDirection.BelowRight);
+
+
+                    linhaSelecionada = hitTest.RowIndex;
+                    checkOptions(linhaSelecionada);
+
+                    DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linhaSelecionada];
+
+                    // Indice de Cells 4 -> Estado
+                    string estado = dgv.Cells[4].Value.ToString();
+
+                    
+                        if (estado == "Requisitado")
+                        {
+                            contextMenuStrip1.Items[0].Enabled = false;
+                            contextMenuStrip1.Items[1].Enabled = true;
+                            contextMenuStrip1.Items[3].Enabled = false;
+                            contextMenuStrip1.Items[4].Enabled = false;
+                        }
+                        if (estado == "Indisponível")
+                        {
+                            contextMenuStrip1.Items[0].Enabled = false;
+                            contextMenuStrip1.Items[1].Enabled = false;
+                            contextMenuStrip1.Items[3].Enabled = true;
+                            contextMenuStrip1.Items[4].Enabled = false;
+                        }
+
+                        if (estado == "Disponível")
+                        {
+                            contextMenuStrip1.Items[0].Enabled = true;
+                            contextMenuStrip1.Items[1].Enabled = false;
+                            contextMenuStrip1.Items[3].Enabled = false;
+                            contextMenuStrip1.Items[4].Enabled = true;
+                        }
+
+
+                }
+
+            }
+            
+
+        
+        }
+
+        private void requisitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            doRequisicao(linhaSelecionada);
+        }
+
+        private void disponibilizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linhaSelecionada];
+
+            this.materialTableAdapter.AlterarEstado("Disponível", Convert.ToInt32(dgv.Cells[0].Value));
+
+            atualizarDataGrid();
+        }
+
+        private void indisponibilizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linhaSelecionada];
+
+            this.materialTableAdapter.AlterarEstado("Indisponível", Convert.ToInt32(dgv.Cells[0].Value));
+
+            atualizarDataGrid();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            linhaSelecionada = consultasMaterialDataGridView.SelectedRows[0].Index;
        
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linhaSelecionada];
 
+            frmFinalizarRequisicao frm = new frmFinalizarRequisicao();
+
+            frm.Id_material = Convert.ToInt32(dgv.Cells[0].Value);
+            
+            frm.ShowDialog();
+
+            atualizarDataGrid();
+        }
+
+
+        private void entregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+
+            DataGridViewRow dgv = this.consultasMaterialDataGridView.Rows[linhaSelecionada];
+
+            frmFinalizarRequisicao frm = new frmFinalizarRequisicao();
+
+            frm.Id_material = Convert.ToInt32(dgv.Cells[0].Value);
+
+            frm.ShowDialog();
+
+            atualizarDataGrid();
+        }
         
-
-      
-
-      
     }
 }

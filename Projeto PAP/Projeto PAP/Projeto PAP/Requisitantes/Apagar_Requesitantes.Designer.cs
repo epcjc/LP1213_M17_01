@@ -35,7 +35,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+            
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -93,10 +93,6 @@
             this.requisitadoresBindingSource.DataMember = "Requisitadores";
             this.requisitadoresBindingSource.DataSource = this.database1DataSet;
             // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -108,7 +104,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = null;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = this.requisitadoresTableAdapter;
+      
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -211,7 +207,7 @@
         private System.Windows.Forms.Button button2;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
-        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+        
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ComboBox comboBox1;

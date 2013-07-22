@@ -13,7 +13,7 @@ namespace Projeto_PAP
     {
          public void atualizarDataGrid()
         {
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+          
 
             this.requisitadoresDataGridView.Refresh();
 
@@ -33,8 +33,7 @@ namespace Projeto_PAP
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+            
             
         }
 

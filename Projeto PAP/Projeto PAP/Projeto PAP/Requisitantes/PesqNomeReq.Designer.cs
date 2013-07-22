@@ -40,7 +40,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new Projeto_PAP.Database1DataSet();
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+           
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.requisitadoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -156,10 +156,7 @@
             // 
             this.database1DataSet.DataSetName = "Database1DataSet";
             this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
+            
             // 
             // tableAdapterManager
             // 
@@ -172,7 +169,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = null;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = this.requisitadoresTableAdapter;
+            
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
             this.tableAdapterManager.TurmasTableAdapter = null;
@@ -317,7 +314,7 @@
         private System.Windows.Forms.Button button1;
         private Database1DataSet database1DataSet;
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
-        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+       
         private Database1DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator requisitadoresBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

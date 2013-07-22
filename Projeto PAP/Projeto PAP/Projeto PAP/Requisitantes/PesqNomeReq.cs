@@ -26,18 +26,13 @@ namespace Projeto_PAP
 
         private void PesqNomeReq_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-           // this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+            
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.requisitadoresTableAdapter.FillByPesqNome_Req(this.database1DataSet.Requisitadores, this.textBox1.Text);
+           
         }
 
         //private void requisitadoresBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)

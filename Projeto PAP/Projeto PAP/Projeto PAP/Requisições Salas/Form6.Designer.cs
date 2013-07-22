@@ -54,7 +54,7 @@
             this.consultaRequisicaosalaTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.ConsultaRequisicaosalaTableAdapter();
             this.tableAdapterManager = new Projeto_PAP.Database1DataSetTableAdapters.TableAdapterManager();
             this.requisitadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.requisitadoresTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.RequisitadoresTableAdapter();
+           
             this.salasTableAdapter = new Projeto_PAP.Database1DataSetTableAdapters.SalasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -288,7 +288,7 @@
             this.tableAdapterManager.ProfessoresTableAdapter = null;
             this.tableAdapterManager.Requisições_SalasTableAdapter = null;
             this.tableAdapterManager.RequisiçõesMaterialTableAdapter = null;
-            this.tableAdapterManager.RequisitadoresTableAdapter = null;
+            
             this.tableAdapterManager.Requisitantes_materialTableAdapter = null;
             this.tableAdapterManager.SalasTableAdapter = null;
             this.tableAdapterManager.SemanaTableAdapter = null;
@@ -299,10 +299,7 @@
             // 
             this.requisitadoresBindingSource.DataMember = "Requisitadores";
             this.requisitadoresBindingSource.DataSource = this.database1DataSet;
-            // 
-            // requisitadoresTableAdapter
-            // 
-            this.requisitadoresTableAdapter.ClearBeforeFill = true;
+            
             // 
             // salasTableAdapter
             // 
@@ -363,7 +360,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.BindingSource requisitadoresBindingSource;
-        private Database1DataSetTableAdapters.RequisitadoresTableAdapter requisitadoresTableAdapter;
+       
         private System.Windows.Forms.BindingSource salasBindingSource;
         private Database1DataSetTableAdapters.SalasTableAdapter salasTableAdapter;
 

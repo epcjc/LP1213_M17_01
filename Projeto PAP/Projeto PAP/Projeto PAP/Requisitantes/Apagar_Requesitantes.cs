@@ -25,8 +25,7 @@ namespace Projeto_PAP
 
         private void Apagar_Requesitantes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
+            
 
         }
         private void button2_Click(object sender, EventArgs e)
@@ -38,14 +37,7 @@ namespace Projeto_PAP
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try{
-                this.requisitadoresTableAdapter.DeleteQuery(Convert.ToInt16(this.comboBox1.SelectedValue));
-                this.Close();
-            }
-            catch (Exception )
-            {
-                MessageBox.Show("Professor com requisição");
-            }
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

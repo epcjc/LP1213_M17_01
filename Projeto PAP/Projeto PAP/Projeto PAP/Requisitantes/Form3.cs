@@ -26,9 +26,7 @@ namespace Projeto_PAP
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet.Requisitadores' table. You can move, or remove it, as needed.
-            this.requisitadoresTableAdapter.Fill(this.database1DataSet.Requisitadores);
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,7 +48,7 @@ namespace Projeto_PAP
                 }
                 else
                 {
-                    this.requisitadoresTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text);
+                    //this.requisitadoresTableAdapter.Insert(this.textBox1.Text, this.textBox2.Text);
                     this.Close();
                 }
             }
