@@ -72,6 +72,18 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Material\frmPesquisaPorMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmPesquisaPorMaterial.Designer.cs">
+      <DependentUpon>frmPesquisaPorMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Material\frmRequisicoesAbertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\frmRequisicoesAbertas.Designer.cs">
+      <DependentUpon>frmRequisicoesAbertas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material\frmFinalizarRequisicao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +373,12 @@
     <Compile Include="Relatórios.Designer.cs">
       <DependentUpon>Relatórios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Material\frmPesquisaPorMaterial.resx">
+      <DependentUpon>frmPesquisaPorMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\frmRequisicoesAbertas.resx">
+      <DependentUpon>frmRequisicoesAbertas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material\frmFinalizarRequisicao.resx">
       <DependentUpon>frmFinalizarRequisicao.cs</DependentUpon>
     </EmbeddedResource>

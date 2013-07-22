@@ -1268,7 +1268,7 @@ SELECT ID_Requisicao, ID_Requisitador, Data_Requisicao, Inicio_Requisicao, Fim_r
               <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.RequisiçõesMaterial" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByRequisicaoAbertaPorMaterial" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByRequisicaoAbertaPorMaterial" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByRequisicaoAbertaPorMaterial">
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="dbo.RequisiçõesMaterial" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByRequisicaoAbertaPorMaterial" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByRequisicaoAbertaPorMaterial" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByRequisicaoAbertaPorMaterial">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        RequisiçõesMaterial.*
@@ -1280,7 +1280,7 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="FinalizarRequisicao" Modifier="Public" Name="FinalizarRequisicao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FinalizarRequisicao">
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="FinalizarRequisicao" Modifier="Public" Name="FinalizarRequisicao" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FinalizarRequisicao">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [RequisiçõesMaterial] SET [Fim_requisicao] = @Fim_requisicao, [Observacoes_apos_requisicao] = @Observacoes, [Estado] = @Estado WHERE [ID_Requisicao] = @ID_Requisicao</CommandText>
@@ -1293,7 +1293,7 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsereNova" Modifier="Public" Name="InsereNova" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsereNova">
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsereNova" Modifier="Public" Name="InsereNova" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsereNova">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [RequisiçõesMaterial] ([ID_Requisitador], [Data_Requisicao], [ID_Material], Observacoes_Antes_requisicao) VALUES (@ID_Requisitador, @Data_Requisicao,  @ID_Material, @observacoes);
@@ -1306,6 +1306,68 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HistoricoRequisicoesTableAdapter" GeneratorDataComponentClassName="HistoricoRequisicoesTableAdapter" Name="HistoricoRequisicoes" UserDataComponentName="HistoricoRequisicoesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RequisiçõesMaterial.ID_Requisicao, Material.ID_Material, Material.Designacao, Material.Marca, Material.[Serial number], Professores.Nome_Professor, 
+                         Professores.Contacto, RequisiçõesMaterial.Data_Requisicao, RequisiçõesMaterial.Fim_requisicao, RequisiçõesMaterial.Observacoes_Antes_requisicao, 
+                         RequisiçõesMaterial.Observacoes_apos_requisicao
+FROM            Material INNER JOIN
+                         RequisiçõesMaterial ON Material.ID_Material = RequisiçõesMaterial.ID_Material INNER JOIN
+                         Professores ON RequisiçõesMaterial.ID_Requisitador = Professores.ID_Professor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Material" DataSetColumn="ID_Material" />
+              <Mapping SourceColumn="Designacao" DataSetColumn="Designacao" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Serial number" DataSetColumn="Serial number" />
+              <Mapping SourceColumn="Nome_Professor" DataSetColumn="Nome_Professor" />
+              <Mapping SourceColumn="Contacto" DataSetColumn="Contacto" />
+              <Mapping SourceColumn="Data_Requisicao" DataSetColumn="Data_Requisicao" />
+              <Mapping SourceColumn="Observacoes_Antes_requisicao" DataSetColumn="Observacoes_Antes_requisicao" />
+              <Mapping SourceColumn="Observacoes_apos_requisicao" DataSetColumn="Observacoes_apos_requisicao" />
+              <Mapping SourceColumn="ID_Requisicao" DataSetColumn="ID_Requisicao" />
+              <Mapping SourceColumn="Fim_requisicao" DataSetColumn="Fim_requisicao" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Abertas" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Abertas" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Abertas">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RequisiçõesMaterial.ID_Requisicao, Material.ID_Material, Material.Designacao, Material.Marca, Material.[Serial number], Professores.Nome_Professor, 
+                         Professores.Contacto, RequisiçõesMaterial.Data_Requisicao, RequisiçõesMaterial.Fim_requisicao, RequisiçõesMaterial.Observacoes_Antes_requisicao, 
+                         RequisiçõesMaterial.Observacoes_apos_requisicao
+FROM            Material INNER JOIN
+                         RequisiçõesMaterial ON Material.ID_Material = RequisiçõesMaterial.ID_Material INNER JOIN
+                         Professores ON RequisiçõesMaterial.ID_Requisitador = Professores.ID_Professor
+WHERE        (RequisiçõesMaterial.Fim_requisicao IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Database1ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdMaterial" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdMaterial" GeneratorSourceName="FillByIdMaterial" GetMethodModifier="Public" GetMethodName="GetDataByIdMaterial" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdMaterial" UserSourceName="FillByIdMaterial">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        RequisiçõesMaterial.ID_Requisicao, Material.ID_Material, Material.Designacao, Material.Marca, Material.[Serial number], Professores.Nome_Professor, 
+                         Professores.Contacto, RequisiçõesMaterial.Data_Requisicao, RequisiçõesMaterial.Fim_requisicao, RequisiçõesMaterial.Observacoes_Antes_requisicao, 
+                         RequisiçõesMaterial.Observacoes_apos_requisicao
+FROM            Material INNER JOIN
+                         RequisiçõesMaterial ON Material.ID_Material = RequisiçõesMaterial.ID_Material INNER JOIN
+                         Professores ON RequisiçõesMaterial.ID_Requisitador = Professores.ID_Professor
+where material.id_material = @id_material</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_material" ColumnName="ID_Material" DataSourceName="[C:\USERS\SDCASTRO\DOCUMENTS\GITHUB\LP1213_M17_01\PROJETO PAP\PROJETO PAP\PROJETO PAP\DATABASE1.MDF].dbo.Material" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_material" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Material" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -1899,6 +1961,65 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="HistoricoRequisicoes" msprop:Generator_TableClassName="HistoricoRequisicoesDataTable" msprop:Generator_TableVarName="tableHistoricoRequisicoes" msprop:Generator_TablePropName="HistoricoRequisicoes" msprop:Generator_RowDeletingName="HistoricoRequisicoesRowDeleting" msprop:Generator_UserTableName="HistoricoRequisicoes" msprop:Generator_RowChangingName="HistoricoRequisicoesRowChanging" msprop:Generator_RowEvHandlerName="HistoricoRequisicoesRowChangeEventHandler" msprop:Generator_RowDeletedName="HistoricoRequisicoesRowDeleted" msprop:Generator_RowEvArgName="HistoricoRequisicoesRowChangeEvent" msprop:Generator_RowChangedName="HistoricoRequisicoesRowChanged" msprop:Generator_RowClassName="HistoricoRequisicoesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Material" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Material" msprop:Generator_ColumnPropNameInRow="ID_Material" msprop:Generator_ColumnPropNameInTable="ID_MaterialColumn" msprop:Generator_UserColumnName="ID_Material" type="xs:int" />
+              <xs:element name="Designacao" msprop:Generator_ColumnVarNameInTable="columnDesignacao" msprop:Generator_ColumnPropNameInRow="Designacao" msprop:Generator_ColumnPropNameInTable="DesignacaoColumn" msprop:Generator_UserColumnName="Designacao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serial_x0020_number" msprop:Generator_ColumnVarNameInTable="columnSerial_number" msprop:Generator_ColumnPropNameInRow="Serial_number" msprop:Generator_ColumnPropNameInTable="Serial_numberColumn" msprop:Generator_UserColumnName="Serial number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome_Professor" msprop:Generator_ColumnVarNameInTable="columnNome_Professor" msprop:Generator_ColumnPropNameInRow="Nome_Professor" msprop:Generator_ColumnPropNameInTable="Nome_ProfessorColumn" msprop:Generator_UserColumnName="Nome_Professor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data_Requisicao" msprop:Generator_ColumnVarNameInTable="columnData_Requisicao" msprop:Generator_ColumnPropNameInRow="Data_Requisicao" msprop:Generator_ColumnPropNameInTable="Data_RequisicaoColumn" msprop:Generator_UserColumnName="Data_Requisicao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Observacoes_Antes_requisicao" msprop:Generator_ColumnVarNameInTable="columnObservacoes_Antes_requisicao" msprop:Generator_ColumnPropNameInRow="Observacoes_Antes_requisicao" msprop:Generator_ColumnPropNameInTable="Observacoes_Antes_requisicaoColumn" msprop:Generator_UserColumnName="Observacoes_Antes_requisicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Observacoes_apos_requisicao" msprop:Generator_ColumnVarNameInTable="columnObservacoes_apos_requisicao" msprop:Generator_ColumnPropNameInRow="Observacoes_apos_requisicao" msprop:Generator_ColumnPropNameInTable="Observacoes_apos_requisicaoColumn" msprop:Generator_UserColumnName="Observacoes_apos_requisicao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_Requisicao" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Requisicao" msprop:Generator_ColumnPropNameInRow="ID_Requisicao" msprop:Generator_ColumnPropNameInTable="ID_RequisicaoColumn" msprop:Generator_UserColumnName="ID_Requisicao" type="xs:int" />
+              <xs:element name="Fim_requisicao" msprop:Generator_ColumnVarNameInTable="columnFim_requisicao" msprop:Generator_ColumnPropNameInRow="Fim_requisicao" msprop:Generator_ColumnPropNameInTable="Fim_requisicaoColumn" msprop:Generator_UserColumnName="Fim_requisicao" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1958,6 +2079,10 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
       <xs:selector xpath=".//mstns:RequisiçõesMaterial" />
       <xs:field xpath="mstns:ID_Requisicao" />
     </xs:unique>
+    <xs:unique name="HistoricoRequisicoes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:HistoricoRequisicoes" />
+      <xs:field xpath="mstns:ID_Requisicao" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -1975,6 +2100,8 @@ where fim_requisicao IS NULL and id_material=@id_material</CommandText>
       <msdata:Relationship name="FK_Requisitantes_material_Material" msdata:parent="ProfessoresAutorizadosMaterial" msdata:child="Requisitantes_material" msdata:parentkey="ID_Material" msdata:childkey="Id_material" msprop:Generator_UserChildTable="Requisitantes_material" msprop:Generator_ChildPropName="GetRequisitantes_materialRows" msprop:Generator_ParentPropName="ProfessoresAutorizadosMaterialRow" msprop:Generator_UserRelationName="FK_Requisitantes_material_Material" msprop:Generator_RelationVarName="relationFK_Requisitantes_material_Material" msprop:Generator_UserParentTable="ProfessoresAutorizadosMaterial" />
       <msdata:Relationship name="FK_RequisiçõesMaterial_Material" msdata:parent="Material" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Material" msdata:childkey="ID_Material" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_ParentPropName="MaterialRow" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Material" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Material" msprop:Generator_UserParentTable="Material" />
       <msdata:Relationship name="FK_RequisiçõesMaterial_Professores" msdata:parent="Professores" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Professor" msdata:childkey="ID_Requisitador" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_ParentPropName="ProfessoresRow" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Professores" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Professores" msprop:Generator_UserParentTable="Professores" />
+      <msdata:Relationship name="FK_Requisitantes_material_Material2" msdata:parent="HistoricoRequisicoes" msdata:child="Requisitantes_material" msdata:parentkey="ID_Material" msdata:childkey="Id_material" msprop:Generator_UserChildTable="Requisitantes_material" msprop:Generator_ChildPropName="GetRequisitantes_materialRows" msprop:Generator_UserParentTable="HistoricoRequisicoes" msprop:Generator_UserRelationName="FK_Requisitantes_material_Material2" msprop:Generator_RelationVarName="relationFK_Requisitantes_material_Material2" msprop:Generator_ParentPropName="HistoricoRequisicoesRow" />
+      <msdata:Relationship name="FK_RequisiçõesMaterial_Material1" msdata:parent="HistoricoRequisicoes" msdata:child="RequisiçõesMaterial" msdata:parentkey="ID_Material" msdata:childkey="ID_Material" msprop:Generator_UserChildTable="RequisiçõesMaterial" msprop:Generator_ChildPropName="GetRequisiçõesMaterialRows" msprop:Generator_UserParentTable="HistoricoRequisicoes" msprop:Generator_UserRelationName="FK_RequisiçõesMaterial_Material1" msprop:Generator_RelationVarName="relationFK_RequisiçõesMaterial_Material1" msprop:Generator_ParentPropName="HistoricoRequisicoesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

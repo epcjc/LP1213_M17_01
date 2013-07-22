@@ -44,6 +44,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(558, 235);
+            this.button2.Location = new System.Drawing.Point(558, 247);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 23);
             this.button2.TabIndex = 5;
@@ -119,7 +120,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(558, 264);
+            this.button4.Location = new System.Drawing.Point(558, 276);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(133, 23);
             this.button4.TabIndex = 7;
@@ -129,7 +130,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(558, 153);
+            this.button5.Location = new System.Drawing.Point(558, 150);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(133, 23);
             this.button5.TabIndex = 8;
@@ -139,7 +140,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(558, 293);
+            this.button6.Location = new System.Drawing.Point(558, 305);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(133, 23);
             this.button6.TabIndex = 9;
@@ -177,7 +178,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(558, 124);
+            this.button11.Location = new System.Drawing.Point(558, 121);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(133, 23);
             this.button11.TabIndex = 16;
@@ -187,19 +188,30 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(558, 182);
+            this.button8.Location = new System.Drawing.Point(558, 179);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(133, 23);
             this.button8.TabIndex = 15;
-            this.button8.Text = "Entregar";
+            this.button8.Text = "Material Requisitado";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(558, 208);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 23);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Histórico Material";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(748, 404);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.statusStrip1);
@@ -245,5 +257,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -89,7 +89,15 @@ namespace Projeto_PAP
 
         private void button8_Click(object sender, EventArgs e)
         {
+            frmRequisicoesAbertas frm = new frmRequisicoesAbertas();
 
+            frm.ShowDialog();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            frmPesquisaPorMaterial frm = new frmPesquisaPorMaterial();
+            frm.ShowDialog();
         }
 
        
